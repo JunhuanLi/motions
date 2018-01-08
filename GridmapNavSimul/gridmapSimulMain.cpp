@@ -62,7 +62,13 @@
 
 #define TIMER_MS 10
 
-#include "virtual_map1.xpm"
+///#include "virtual_map1.xpm"
+///#include "map2.xpm"
+///#include "map3.xpm"
+#include "map3pro.xpm"
+///#include "map3pro_mini_xpm"
+///#include "map3pro_mini2.xpm"
+
 
 // A custom Art provider for customizing the icons:
 class MyArtProvider : public wxArtProvider
@@ -100,9 +106,14 @@ wxBitmap MyArtProvider::CreateBitmap(const wxArtID& id,
 
 #include <mrpt/utils/CTicTac.h>
 #include <mrpt/kinematics/CVehicleSimul_DiffDriven.h>
-#include "CActionForwardSteering.h"
-#include "CActionBackwardSteering.h"
-#include "CActionTurns.h"
+#include "CActionForward.h"
+#include "CActionArc.h"
+#include "motion/CMotionWallFollowing.h"
+#include "motion/CMotionPointTracker.h"
+#include "motion/CPTOwnedStates.h"
+#include "motion/CMotionIdle.h"
+#include "motion/CMotion.h"
+#include <vector>
 
 #include <mrpt/obs/CRawlog.h>
 #include <mrpt/maps/COccupancyGridMap2D.h>
@@ -198,36 +209,6 @@ void CMyGLCanvas::OnPostRender()
 	const mrpt::math::TTwist2D vel_local = the_robot.getCurrentGTVelLocal();
 	s = format("V=%.03fm/s  W=%.02fdeg/s", vel_local.vx, RAD2DEG(vel_local.omega) );
 	mrpt::opengl::CRenderizable::renderTextBitmap( 20,45, s.c_str(), 1,0,0 , MRPT_GLUT_BITMAP_HELVETICA_18);
-
-
-
-	//s = format("time needed=%.03fs", CActionForwardSteering::getInstance()->calculateTimeNeeded() );
-	//mrpt::opengl::CRenderizable::renderTextBitmap( 20,85, s.c_str(), 1,0,0 , MRPT_GLUT_BITMAP_HELVETICA_18);
-
-
-	s = format("cur phi=%.03fdegree", the_robot.getCurrentGTPose().phi * 57.3 );
-	mrpt::opengl::CRenderizable::renderTextBitmap( 600,85, s.c_str(), 1,0,0 , MRPT_GLUT_BITMAP_HELVETICA_18);
-
-	switch(CActionForwardSteering::getInstance()->getState())
-	{
-        case NONE:
-            s = format("current state: %s", "NONE");
-            break;
-        case EXECUTING:
-            s = format("current state: %s", "EXECUTING");
-            break;
-        case SUCCESS:
-            s = format("current state: %s", "SUCCESS");
-            break;
-        case FAILED:
-            s = format("current state: %s", "FAILED");
-            break;
-        default:
-            assert(false);
-            break;
-
-    }
-	mrpt::opengl::CRenderizable::renderTextBitmap( 20,65, s.c_str(), 1,0,0 , MRPT_GLUT_BITMAP_HELVETICA_18);
 
 }
 
@@ -333,69 +314,69 @@ gridmapSimulFrame::gridmapSimulFrame(wxWindow* parent,wxWindowID id)
     wxStaticBoxSizer* StaticBoxSizer1;
 
     Create(parent, wxID_ANY, _("Gridmap navigation simulator - Part of the MRPT project"), wxDefaultPosition, wxDefaultSize, wxDEFAULT_FRAME_STYLE, _T("wxID_ANY"));
-    SetMinSize(wxSize(400,400));
+    SetMinSize(wxSize(1,1));
     {
     wxIcon FrameIcon;
     FrameIcon.CopyFromBitmap(wxArtProvider::GetBitmap(wxART_MAKE_ART_ID_FROM_STR(_T("MAIN_ICON")),wxART_FRAME_ICON));
     SetIcon(FrameIcon);
     }
-    FlexGridSizer1 = new wxFlexGridSizer(1, 1, 0, 0);
+    FlexGridSizer1 = new wxFlexGridSizer(0, 0, 0, 0);
     FlexGridSizer1->AddGrowableCol(0);
     FlexGridSizer1->AddGrowableRow(0);
     SplitterWindow1 = new wxSplitterWindow(this, ID_SPLITTERWINDOW1, wxDefaultPosition, wxDefaultSize, wxSP_3D, _T("ID_SPLITTERWINDOW1"));
-    SplitterWindow1->SetMinSize(wxSize(200,200));
-    SplitterWindow1->SetMinimumPaneSize(200);
-    Panel1 = new wxPanel(SplitterWindow1, ID_PANEL1, wxDefaultPosition, wxSize(983,291), wxTAB_TRAVERSAL, _T("ID_PANEL1"));
-    Panel1->SetMinSize(wxSize(400,250));
-    FlexGridSizer2 = new wxFlexGridSizer(1, 1, 0, 0);
+    SplitterWindow1->SetMinSize(wxSize(1,1));
+    SplitterWindow1->SetMinimumPaneSize(1);
+    Panel1 = new wxPanel(SplitterWindow1, ID_PANEL1, wxDefaultPosition, wxSize(0,0), wxTAB_TRAVERSAL, _T("ID_PANEL1"));
+    Panel1->SetMinSize(wxSize(0,0));
+    FlexGridSizer2 = new wxFlexGridSizer(0, 0, 0, 0);
     FlexGridSizer2->AddGrowableCol(0);
     //FlexGridSizer2->AddGrowableRow();
     Panel2 = new wxPanel(Panel1, ID_PANEL2, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL, _T("ID_PANEL2"));
-    FlexGridSizer3 = new wxFlexGridSizer(2, 1, 0, 0);
+    FlexGridSizer3 = new wxFlexGridSizer(0, 0, 0, 0);
     FlexGridSizer3->AddGrowableCol(0);
-    Panel3 = new wxPanel(Panel2, ID_PANEL3, wxDefaultPosition, wxSize(622,67), wxTAB_TRAVERSAL, _T("ID_PANEL3"));
-    FlexGridSizer4 = new wxFlexGridSizer(1, 4, 0, 0);
-    FlexGridSizer4->AddGrowableCol(2);
-    FlexGridSizer12 = new wxFlexGridSizer(0, 1, 0, 0);
+    Panel3 = new wxPanel(Panel2, ID_PANEL3, wxDefaultPosition, wxSize(0,0), wxTAB_TRAVERSAL, _T("ID_PANEL3"));
+    FlexGridSizer4 = new wxFlexGridSizer(0, 0, 0, 0);
+    FlexGridSizer4->AddGrowableCol(0);
+    FlexGridSizer12 = new wxFlexGridSizer(0, 0, 0, 0);
     StaticBoxSizer1 = new wxStaticBoxSizer(wxHORIZONTAL, Panel3, _("Laser sensor"));
-    FlexGridSizer5 = new wxFlexGridSizer(0, 2, 0, 0);
-    StaticText1 = new wxStaticText(Panel3, ID_STATICTEXT1, _("Range count:"), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT1"));
-    FlexGridSizer5->Add(StaticText1, 1, wxALL|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL, 5);
-    edCount = new wxTextCtrl(Panel3, ID_TEXTCTRL1, _("181"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL1"));
-    FlexGridSizer5->Add(edCount, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-    StaticText2 = new wxStaticText(Panel3, ID_STATICTEXT2, _("Span (deg):"), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT2"));
-    FlexGridSizer5->Add(StaticText2, 1, wxALL|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL, 5);
-    edSpan = new wxTextCtrl(Panel3, ID_TEXTCTRL2, _("180"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL2"));
-    FlexGridSizer5->Add(edSpan, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-    StaticText3 = new wxStaticText(Panel3, ID_STATICTEXT3, _("Range noise std. (m):"), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT3"));
-    FlexGridSizer5->Add(StaticText3, 1, wxALL|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL, 5);
-    edStdNoise = new wxTextCtrl(Panel3, ID_TEXTCTRL3, _("0.0"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL3"));
-    FlexGridSizer5->Add(edStdNoise, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-    StaticText8 = new wxStaticText(Panel3, ID_STATICTEXT8, _("Bearing noise std. (deg):"), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT8"));
-    FlexGridSizer5->Add(StaticText8, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-    edStdNoiseAng = new wxTextCtrl(Panel3, ID_TEXTCTRL5, _("0.0"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL5"));
-    FlexGridSizer5->Add(edStdNoiseAng, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-    btnSetLaser = new wxButton(Panel3, ID_BUTTON5, _("Apply"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON5"));
-    FlexGridSizer5->Add(btnSetLaser, 1, wxALL|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL, 5);
+    FlexGridSizer5 = new wxFlexGridSizer(0, 0, 0, 0);
+//    StaticText1 = new wxStaticText(Panel3, ID_STATICTEXT1, _("Range count:"), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT1"));
+//    FlexGridSizer5->Add(StaticText1, 1, wxALL|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL, 5);
+//    edCount = new wxTextCtrl(Panel3, ID_TEXTCTRL1, _("181"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL1"));
+//    FlexGridSizer5->Add(edCount, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+//    StaticText2 = new wxStaticText(Panel3, ID_STATICTEXT2, _("Span (deg):"), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT2"));
+//    FlexGridSizer5->Add(StaticText2, 1, wxALL|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL, 5);
+//    edSpan = new wxTextCtrl(Panel3, ID_TEXTCTRL2, _("180"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL2"));
+//    FlexGridSizer5->Add(edSpan, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+//    StaticText3 = new wxStaticText(Panel3, ID_STATICTEXT3, _("Range noise std. (m):"), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT3"));
+//    FlexGridSizer5->Add(StaticText3, 1, wxALL|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL, 5);
+//    edStdNoise = new wxTextCtrl(Panel3, ID_TEXTCTRL3, _("0.0"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL3"));
+//    FlexGridSizer5->Add(edStdNoise, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+//    StaticText8 = new wxStaticText(Panel3, ID_STATICTEXT8, _("Bearing noise std. (deg):"), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT8"));
+//    FlexGridSizer5->Add(StaticText8, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+//    edStdNoiseAng = new wxTextCtrl(Panel3, ID_TEXTCTRL5, _("0.0"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL5"));
+//    FlexGridSizer5->Add(edStdNoiseAng, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+//    btnSetLaser = new wxButton(Panel3, ID_BUTTON5, _("Apply"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON5"));
+//    FlexGridSizer5->Add(btnSetLaser, 1, wxALL|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL, 5);
     StaticBoxSizer1->Add(FlexGridSizer5, 1, wxALL|wxEXPAND|wxALIGN_LEFT|wxALIGN_TOP, 0);
     FlexGridSizer12->Add(StaticBoxSizer1, 1, wxALL|wxEXPAND|wxALIGN_TOP|wxALIGN_CENTER_HORIZONTAL, 5);
     StaticBoxSizer6 = new wxStaticBoxSizer(wxHORIZONTAL, Panel3, _(" Decimation: "));
-    FlexGridSizer13 = new wxFlexGridSizer(0, 2, 0, 0);
+    FlexGridSizer13 = new wxFlexGridSizer(0, 0, 0, 0);
     FlexGridSizer13->AddGrowableCol(0);
-    StaticText16 = new wxStaticText(Panel3, ID_STATICTEXT16, _("Decimation:"), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT16"));
-    FlexGridSizer13->Add(StaticText16, 1, wxALL|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL, 5);
-    edDecimate = new wxSpinCtrl(Panel3, ID_SPINCTRL1, _T("1"), wxDefaultPosition, wxDefaultSize, 0, 1, 100, 1, _T("ID_SPINCTRL1"));
-    edDecimate->SetValue(_T("1"));
-    FlexGridSizer13->Add(edDecimate, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+//    StaticText16 = new wxStaticText(Panel3, ID_STATICTEXT16, _("Decimation:"), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT16"));
+//    FlexGridSizer13->Add(StaticText16, 1, wxALL|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL, 5);
+//    edDecimate = new wxSpinCtrl(Panel3, ID_SPINCTRL1, _T("1"), wxDefaultPosition, wxDefaultSize, 0, 1, 100, 1, _T("ID_SPINCTRL1"));
+//    edDecimate->SetValue(_T("1"));
+//    FlexGridSizer13->Add(edDecimate, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     StaticBoxSizer6->Add(FlexGridSizer13, 1, wxALL|wxEXPAND|wxALIGN_LEFT|wxALIGN_TOP, 0);
     FlexGridSizer12->Add(StaticBoxSizer6, 1, wxALL|wxEXPAND|wxALIGN_LEFT|wxALIGN_TOP, 5);
     FlexGridSizer4->Add(FlexGridSizer12, 1, wxALL|wxEXPAND|wxALIGN_LEFT|wxALIGN_TOP, 0);
-    FlexGridSizer7 = new wxFlexGridSizer(0, 1, 0, 0);
+    FlexGridSizer7 = new wxFlexGridSizer(0, 0, 0, 0);
     FlexGridSizer7->AddGrowableCol(0);
     StaticBoxSizer3 = new wxStaticBoxSizer(wxHORIZONTAL, Panel3, _("Odometry errors"));
-    FlexGridSizer9 = new wxFlexGridSizer(0, 4, 0, 0);
-    StaticText9 = new wxStaticText(Panel3, ID_STATICTEXT9, _MYTT("\u0394x bias:"), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT9"));
-    FlexGridSizer9->Add(StaticText9, 1, wxALL|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL, 5);
+    FlexGridSizer9 = new wxFlexGridSizer(0, 0, 0, 0);
+    //StaticText9 = new wxStaticText(Panel3, ID_STATICTEXT9, _MYTT("\u0394x bias:"), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT9"));
+    //FlexGridSizer9->Add(StaticText9, 1, wxALL|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL, 5);
 //    edAxb = new wxTextCtrl(Panel3, ID_TEXTCTRL6, _("1e-5"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL6"));
 //    FlexGridSizer9->Add(edAxb, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
 //    StaticText13 = new wxStaticText(Panel3, ID_STATICTEXT13, _MYTT("\u0394x std:"), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT13"));
@@ -418,61 +399,61 @@ gridmapSimulFrame::gridmapSimulFrame(wxWindow* parent,wxWindowID id)
 //    FlexGridSizer9->Add(StaticText14, 1, wxALL|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL, 5);
 //    edAps = new wxTextCtrl(Panel3, ID_TEXTCTRL11, _("10e-4"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL11"));
 //    FlexGridSizer9->Add(edAps, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-    edAxb = new wxTextCtrl(Panel3, ID_TEXTCTRL6, _("0"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL6"));
-    FlexGridSizer9->Add(edAxb, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-    StaticText13 = new wxStaticText(Panel3, ID_STATICTEXT13, _MYTT("\u0394x std:"), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT13"));
-    FlexGridSizer9->Add(StaticText13, 1, wxALL|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL, 5);
-    edAxs = new wxTextCtrl(Panel3, ID_TEXTCTRL7, _("0"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL7"));
-    FlexGridSizer9->Add(edAxs, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-    StaticText10 = new wxStaticText(Panel3, ID_STATICTEXT10, _MYTT("\u0394y bias:"), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT10"));
-    FlexGridSizer9->Add(StaticText10, 1, wxALL|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL, 5);
-    edAyb = new wxTextCtrl(Panel3, ID_TEXTCTRL8, _("0"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL8"));
-    FlexGridSizer9->Add(edAyb, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-    StaticText11 = new wxStaticText(Panel3, ID_STATICTEXT11, _MYTT("\u0394y std:"), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT11"));
-    FlexGridSizer9->Add(StaticText11, 1, wxALL|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL, 5);
-    edAys = new wxTextCtrl(Panel3, ID_TEXTCTRL9, _("0"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL9"));
-    FlexGridSizer9->Add(edAys, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-    StaticText12 = new wxStaticText(Panel3, ID_STATICTEXT12, _MYTT("\u0394\u03C6 bias:"), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT12"));
-    FlexGridSizer9->Add(StaticText12, 1, wxALL|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL, 5);
-    edApb = new wxTextCtrl(Panel3, ID_TEXTCTRL10, _("0"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL10"));
-    FlexGridSizer9->Add(edApb, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-    StaticText14 = new wxStaticText(Panel3, ID_STATICTEXT14, _MYTT("\u0394\u03C6 std:"), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT14"));
-    FlexGridSizer9->Add(StaticText14, 1, wxALL|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL, 5);
-    edAps = new wxTextCtrl(Panel3, ID_TEXTCTRL11, _("0"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL11"));
-    FlexGridSizer9->Add(edAps, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+    //edAxb = new wxTextCtrl(Panel3, ID_TEXTCTRL6, _("0"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL6"));
+    //FlexGridSizer9->Add(edAxb, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+    //StaticText13 = new wxStaticText(Panel3, ID_STATICTEXT13, _MYTT("\u0394x std:"), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT13"));
+    //FlexGridSizer9->Add(StaticText13, 1, wxALL|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL, 5);
+    //edAxs = new wxTextCtrl(Panel3, ID_TEXTCTRL7, _("0"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL7"));
+    //FlexGridSizer9->Add(edAxs, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+    //StaticText10 = new wxStaticText(Panel3, ID_STATICTEXT10, _MYTT("\u0394y bias:"), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT10"));
+    //FlexGridSizer9->Add(StaticText10, 1, wxALL|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL, 5);
+    //edAyb = new wxTextCtrl(Panel3, ID_TEXTCTRL8, _("0"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL8"));
+    //FlexGridSizer9->Add(edAyb, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+    //StaticText11 = new wxStaticText(Panel3, ID_STATICTEXT11, _MYTT("\u0394y std:"), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT11"));
+    //FlexGridSizer9->Add(StaticText11, 1, wxALL|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL, 5);
+    //edAys = new wxTextCtrl(Panel3, ID_TEXTCTRL9, _("0"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL9"));
+    //FlexGridSizer9->Add(edAys, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+    //StaticText12 = new wxStaticText(Panel3, ID_STATICTEXT12, _MYTT("\u0394\u03C6 bias:"), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT12"));
+    //FlexGridSizer9->Add(StaticText12, 1, wxALL|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL, 5);
+    //edApb = new wxTextCtrl(Panel3, ID_TEXTCTRL10, _("0"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL10"));
+    //FlexGridSizer9->Add(edApb, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+    //StaticText14 = new wxStaticText(Panel3, ID_STATICTEXT14, _MYTT("\u0394\u03C6 std:"), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT14"));
+    //FlexGridSizer9->Add(StaticText14, 1, wxALL|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL, 5);
+    //edAps = new wxTextCtrl(Panel3, ID_TEXTCTRL11, _("0"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL11"));
+    //FlexGridSizer9->Add(edAps, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
 
 
     StaticBoxSizer3->Add(FlexGridSizer9, 1, wxALL|wxEXPAND|wxALIGN_LEFT|wxALIGN_TOP, 0);
     FlexGridSizer7->Add(StaticBoxSizer3, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     StaticBoxSizer5 = new wxStaticBoxSizer(wxHORIZONTAL, Panel3, _(" Re-simulate "));
-    FlexGridSizer11 = new wxFlexGridSizer(0, 1, 0, 0);
+    FlexGridSizer11 = new wxFlexGridSizer(0, 0, 0, 0);
     FlexGridSizer11->AddGrowableCol(0);
-    StaticText4 = new wxStaticText(Panel3, ID_STATICTEXT4, _("Select an existing ground truth (GT) file and \nthe corresponding scans will be simulated \nagain with the current laser sensor errors."), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT4"));
-    FlexGridSizer11->Add(StaticText4, 1, wxALL|wxEXPAND|wxALIGN_LEFT|wxALIGN_TOP, 5);
-    btnResimulate = new wxButton(Panel3, ID_BUTTON4, _("Re-simulate..."), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON4"));
-    FlexGridSizer11->Add(btnResimulate, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+//    StaticText4 = new wxStaticText(Panel3, ID_STATICTEXT4, _("Select an existing ground truth (GT) file and \nthe corresponding scans will be simulated \nagain with the current laser sensor errors."), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT4"));
+//    FlexGridSizer11->Add(StaticText4, 1, wxALL|wxEXPAND|wxALIGN_LEFT|wxALIGN_TOP, 5);
+    //btnResimulate = new wxButton(Panel3, ID_BUTTON4, _("Re-simulate..."), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON4"));
+    //FlexGridSizer11->Add(btnResimulate, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     StaticBoxSizer5->Add(FlexGridSizer11, 1, wxALL|wxEXPAND|wxALIGN_LEFT|wxALIGN_TOP, 0);
     FlexGridSizer7->Add(StaticBoxSizer5, 1, wxALL|wxEXPAND|wxALIGN_LEFT|wxALIGN_TOP, 5);
     FlexGridSizer4->Add(FlexGridSizer7, 1, wxALL|wxEXPAND|wxALIGN_LEFT|wxALIGN_TOP, 0);
 
     StaticBoxSizer2 = new wxStaticBoxSizer(wxHORIZONTAL, Panel3, _("Controls"));
-    FlexGridSizer8 = new wxFlexGridSizer(4, 1, 0, 0);
+    FlexGridSizer8 = new wxFlexGridSizer(0, 0, 0, 0);
 
 //    cbJoy = new wxCheckBox(Panel3, ID_CHECKBOX1, _("Use joystick"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_CHECKBOX1"));
 //    //cbJoy->SetValue(true);
 //    cbJoy->SetValue(false);
 //    FlexGridSizer8->Add(cbJoy, 1, wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL, 5);
 
-    foward = new wxCheckBox(Panel3, ID_CHECKBOXF, _("foward"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_CHECKBOXF"));
-    foward->SetValue(false);
-    FlexGridSizer8->Add(foward, 1, wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL, 5);
+//    foward = new wxCheckBox(Panel3, ID_CHECKBOXF, _("foward"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_CHECKBOXF"));
+//    foward->SetValue(false);
+//    FlexGridSizer8->Add(foward, 1, wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL, 5);
 
-    StaticText6 = new wxStaticText(Panel3, ID_STATICTEXT6, _("Use arrow keys for inc/decrement speed and turn."), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT6"));
-    FlexGridSizer8->Add(StaticText6, 1, wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL, 5);
-    StaticText7 = new wxStaticText(Panel3, ID_STATICTEXT7, _("Brake: Space or joystick\'s first button."), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT7"));
-    FlexGridSizer8->Add(StaticText7, 1, wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL, 5);
+    //StaticText6 = new wxStaticText(Panel3, ID_STATICTEXT6, _("Use arrow keys for inc/decrement speed and turn."), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT6"));
+    //FlexGridSizer8->Add(StaticText6, 1, wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL, 5);
+    //StaticText7 = new wxStaticText(Panel3, ID_STATICTEXT7, _("Brake: Space or joystick\'s first button."), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT7"));
+    //FlexGridSizer8->Add(StaticText7, 1, wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL, 5);
 
-	FlexGridSizer8->Add(new wxStaticText(Panel3, ID_STATICTEXT6, _("Enter keystrokes in this box:"), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT6")), 1, wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL, 5);
+	//FlexGridSizer8->Add(new wxStaticText(Panel3, ID_STATICTEXT6, _("Enter keystrokes in this box:"), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT6")), 1, wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL, 5);
     wxTextCtrl *edInput = new wxTextCtrl(Panel3, ID_TEXTCTRL_INPUT, _(""), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL_INPUT"));
     FlexGridSizer8->Add(edInput, 1, wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL, 5);
 
@@ -483,34 +464,34 @@ gridmapSimulFrame::gridmapSimulFrame(wxWindow* parent,wxWindowID id)
     Panel3->SetSizer(FlexGridSizer4);
     FlexGridSizer4->SetSizeHints(Panel3);
     FlexGridSizer3->Add(Panel3, 1, wxALL|wxEXPAND|wxALIGN_LEFT|wxALIGN_TOP, 0);
-    Panel4 = new wxPanel(Panel2, ID_PANEL4, wxDefaultPosition, wxSize(622,55), wxTAB_TRAVERSAL, _T("ID_PANEL4"));
-    FlexGridSizer6 = new wxFlexGridSizer(0, 1, 0, 0);
+    Panel4 = new wxPanel(Panel2, ID_PANEL4, wxDefaultPosition, wxSize(1,1), wxTAB_TRAVERSAL, _T("ID_PANEL4"));
+    FlexGridSizer6 = new wxFlexGridSizer(0, 0, 0, 0);
     FlexGridSizer6->AddGrowableCol(0);
     StaticBoxSizer4 = new wxStaticBoxSizer(wxHORIZONTAL, Panel4, _("Rawlog generation"));
     Panel5 = new wxPanel(Panel4, ID_PANEL6, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL, _T("ID_PANEL6"));
-    FlexGridSizer10 = new wxFlexGridSizer(0, 5, 0, 0);
-    FlexGridSizer10->AddGrowableCol(3);
+    FlexGridSizer10 = new wxFlexGridSizer(0, 0, 0, 0);
+    FlexGridSizer10->AddGrowableCol(0);
     btnStart = new wxButton(Panel5, ID_BUTTON1, _("START"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON1"));
     FlexGridSizer10->Add(btnStart, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     btnEnd = new wxButton(Panel5, ID_BUTTON2, _("STOP"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON2"));
     btnEnd->Disable();
     FlexGridSizer10->Add(btnEnd, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-    StaticText5 = new wxStaticText(Panel5, ID_STATICTEXT5, _("Output rawlog:"), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT5"));
-    FlexGridSizer10->Add(StaticText5, 1, wxALL|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL, 5);
+    //StaticText5 = new wxStaticText(Panel5, ID_STATICTEXT5, _("Output rawlog:"), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT5"));
+    //FlexGridSizer10->Add(StaticText5, 1, wxALL|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL, 5);
     edOutFile = new wxTextCtrl(Panel5, ID_TEXTCTRL4, _("./simul.rawlog"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL4"));
     FlexGridSizer10->Add(edOutFile, 1, wxALL|wxEXPAND|wxALIGN_LEFT|wxALIGN_TOP, 5);
-    btnExplore = new wxButton(Panel5, ID_BUTTON3, _("Browse..."), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON3"));
-    FlexGridSizer10->Add(btnExplore, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+    //btnExplore = new wxButton(Panel5, ID_BUTTON3, _("Browse..."), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON3"));
+    //FlexGridSizer10->Add(btnExplore, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
 
-    //FlexGridSizer10->Add(-1,-1,1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+    FlexGridSizer10->Add(-1,-1,1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
 	cbRawlogSFformat = new wxCheckBox(Panel5, ID_CHECKBOX_RAWLOG_FORMAT, _("Act/SF format"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_CHECKBOX_RAWLOG_FORMAT"));
     cbRawlogSFformat->SetValue(false);
     FlexGridSizer10->Add(cbRawlogSFformat, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
 
 
     FlexGridSizer10->Add(-1,-1,1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-    StaticText15 = new wxStaticText(Panel5, ID_STATICTEXT15, _("Output groundtruth:"), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT15"));
-    FlexGridSizer10->Add(StaticText15, 1, wxALL|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL, 5);
+    //StaticText15 = new wxStaticText(Panel5, ID_STATICTEXT15, _("Output groundtruth:"), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT15"));
+    //FlexGridSizer10->Add(StaticText15, 1, wxALL|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL, 5);
     edOutGT = new wxTextCtrl(Panel5, ID_TEXTCTRL12, _("./simul.rawlog.GT.txt"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL12"));
     edOutGT->Disable();
     FlexGridSizer10->Add(edOutGT, 1, wxALL|wxEXPAND|wxALIGN_LEFT|wxALIGN_TOP, 5);
@@ -562,14 +543,14 @@ gridmapSimulFrame::gridmapSimulFrame(wxWindow* parent,wxWindowID id)
     FlexGridSizer1->Fit(this);
     FlexGridSizer1->SetSizeHints(this);
 
-    Connect(ID_BUTTON5,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&gridmapSimulFrame::OnbtnSetLaserClick);
-    Connect(ID_BUTTON4,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&gridmapSimulFrame::OnbtnResimulateClick);
+    //Connect(ID_BUTTON5,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&gridmapSimulFrame::OnbtnSetLaserClick);
+    //Connect(ID_BUTTON4,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&gridmapSimulFrame::OnbtnResimulateClick);
     Connect(ID_BUTTON6,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&gridmapSimulFrame::OnbtnQuitClick);
-    Connect(ID_BUTTON1,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&gridmapSimulFrame::OnbtnStartClick);
-    Connect(ID_BUTTON2,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&gridmapSimulFrame::OnbtnEndClick);
-    Connect(ID_BUTTON3,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&gridmapSimulFrame::OnbtnExploreClick);
+    //Connect(ID_BUTTON1,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&gridmapSimulFrame::OnbtnStartClick);
+    //Connect(ID_BUTTON2,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&gridmapSimulFrame::OnbtnEndClick);
+    //Connect(ID_BUTTON3,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&gridmapSimulFrame::OnbtnExploreClick);
     Connect(ID_TIMER1,wxEVT_TIMER,(wxObjectEventFunction)&gridmapSimulFrame::OntimRunTrigger);
-    Connect(ID_MENUITEM1,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&gridmapSimulFrame::OnbtnExploreClick);
+    //Connect(ID_MENUITEM1,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&gridmapSimulFrame::OnbtnExploreClick);
     Connect(ID_MENUITEM_LOADMAP,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&gridmapSimulFrame::OnMenuLoadMap);
     Connect(ID_MENUITEM2,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&gridmapSimulFrame::OnbtnQuitClick);
     Connect(ID_MENUITEM3,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&gridmapSimulFrame::OnAbout);
@@ -577,7 +558,7 @@ gridmapSimulFrame::gridmapSimulFrame(wxWindow* parent,wxWindowID id)
 
     // Import grid map:
     {
-		wxImage img(virtual_map1_xpm);
+		wxImage img(map3pro_xpm);
 		CImage *myImg = wxImage2MRPTImage(img);
 		the_grid.loadFromBitmap( *myImg, 0.03f );
 		delete myImg;
@@ -605,7 +586,7 @@ gridmapSimulFrame::gridmapSimulFrame(wxWindow* parent,wxWindowID id)
 	// paths:
 	gl_path_GT = mrpt::opengl::CPointCloud::Create();
 	gl_path_GT->setColor(0,0,0, 0.7);
-	gl_path_GT->setLocation(0,0, 0.01);
+	gl_path_GT->setLocation(0, 0, 0.01);
 	gl_path_GT->setPointSize(3);
 
 	m_canvas->m_openGLScene->insert( gl_path_GT );
@@ -613,16 +594,19 @@ gridmapSimulFrame::gridmapSimulFrame(wxWindow* parent,wxWindowID id)
 
 	gl_path_ODO = mrpt::opengl::CPointCloud::Create();
 	gl_path_ODO->setColor(0,1,0, 0.7);
-	gl_path_ODO->setLocation(0,0, 0.01);
+	gl_path_ODO->setLocation(0, 0, 0.01);
 	gl_path_ODO->setPointSize(2);
 
 	m_canvas->m_openGLScene->insert( gl_path_ODO );
 
 	// Robot & scan:
 	gl_robot = mrpt::opengl::stock_objects::RobotPioneer();
+    gl_robot->setColor(0, 0.4, 0);
+	gl_robot->setLocation(0, 0, 0.01);
 	m_canvas->m_openGLScene->insert( gl_robot );
 
 	gl_scan = mrpt::opengl::CPlanarLaserScan::Create();
+    gl_scan->setLocation(0, 0, 0.01);
 	gl_robot->insert(gl_scan);
 
 	// Redirect all keystrokes in this box to the gl canvas:
@@ -655,60 +639,28 @@ void gridmapSimulFrame::OnbtnQuitClick(wxCommandEvent& event)
 	Close();
 }
 
-void gridmapSimulFrame::setPreDirection(double preDirection)
-{
-    m_preDirection = preDirection;
-}
-
-double gridmapSimulFrame::getPreDirection()
-{
-    return m_preDirection;
-}
-
-bool gridmapSimulFrame::UTFinished()
-{
-    static int s_newcnt=0;
-    if(s_newcnt==0)
-    {
-        setPreDirection(the_robot.getCurrentGTPose().phi);
-        s_newcnt++;
-    }
-
-    double x = cos(getPreDirection());
-    double y = sin(getPreDirection());
-    double xx = cos(the_robot.getCurrentGTPose().phi);
-    double yy = sin(the_robot.getCurrentGTPose().phi);
-
-    float r_a = acos(x*xx+y*yy)*57.3;
-    if( r_a <= 90)
-    {
-        return false;
-    }
-    else if( r_a <= 178)
-    {
-
-        return false;
-    }
-    else s_newcnt=0; return true;
-}
-
-void gridmapSimulFrame::setMinIdx(int idx)
-{
-    m_minIdx=idx;
-}
-
-int gridmapSimulFrame::getMinIdx()
-{
-    return m_minIdx;
-}
-
-float getMinimumDistance(CObservation2DRangeScan scan)
-{
-    return 0;
-}
-
 void gridmapSimulFrame::OntimRunTrigger(wxTimerEvent& event)
 {
+    static bool started = false;
+    /** start the draw */
+    if(!started)
+    {
+        btnStart->Enable(false);
+        btnEnd->Enable(true);
+
+        robot_path_GT.clear();
+        robot_path_ODO.clear();
+
+        gl_path_GT->clear();
+        gl_path_ODO->clear();
+
+        pose_start = CPose2D( the_robot.getCurrentGTPose( ));
+        the_robot.setCurrentOdometricPose( TPose2D(0,0,0) );
+        lastOdo = CPose2D(0,0,0);
+        started = true;
+    }
+
+
 	static CTicTac	tictac;
 
 	if (we_are_closing) return;
@@ -718,30 +670,18 @@ void gridmapSimulFrame::OntimRunTrigger(wxTimerEvent& event)
 
 	// Simul robot:
 	the_robot.simulateOneTimeStep(At);
-    motion::CActionForwardSteering* fwdsteering = motion::CActionForwardSteering::getInstance();
-
-    //motion::CActionBackwardSteering* bwsteering = motion::CActionBackwardSteering::getInstance();
-
-    //motion::CActionTurns* mkturns = motion::CActionTurns::getInstance();
 
     try
     {
-
-        fwdsteering->moveForward(&the_robot, 1, 2);
-
-        the_robot.movementCommand(fwdsteering->getLinearVelocity(),
-                                  fwdsteering->getAngularVelocity());
-
 		const mrpt::math::TPose2D p = the_robot.getCurrentGTPose();
 
 		// Simulate scan:
 		mrpt::obs::CObservation2DRangeScan the_scan;
 		the_scan.sensorLabel = "LASER_SIM";
-		the_scan.sensorPose.setFromValues(0.20,0,0.10);
+		the_scan.sensorPose.setFromValues(0.0,0,0.10);
 		the_scan.maxRange = 80; //LASER_MAX_RANGE;
 		the_scan.aperture = LASER_APERTURE;
 		the_scan.stdError = LASER_STD_ERROR;
-
 
         //min_dist = getMinimumDist(mrpt::obs::CObservation2DRangeScan the_scan);
 
@@ -750,6 +690,114 @@ void gridmapSimulFrame::OntimRunTrigger(wxTimerEvent& event)
 		timlog.enter("laserScanSimulator");
 		the_grid.laserScanSimulator( the_scan, mrpt::poses::CPose2D(p), 0.6f, LASER_N_RANGES, LASER_STD_ERROR, 1, LASER_BEARING_STD_ERROR );
 		timlog.leave("laserScanSimulator");
+
+		///#define MOTION_WF
+		#define MOTION_PT_1
+		///#define MOTION_PT_2
+
+		mtn->updateDist(&the_scan, winLen);
+        mtn->updateCurPose(&the_robot);
+
+		#ifdef MOTION_WF
+		/** motion1: RIGHT Wall Following. */
+		static bool edgeReached = false;
+		static bool ml = false;
+
+		if(!edgeReached)
+		{
+            the_robot.movementCommand(1,0);
+
+            if(mtn->getAheadDist() <= obsStopDist)
+            {
+                printf("[ljh] Stop distance reached.");
+                edgeReached = true;
+            }
+		}
+
+        if(edgeReached && !ml)
+        {
+            mtn->setMotion(WALL_FOLLOWING);
+            ml = true;
+        }
+        else if(ml)
+        {
+            mtn->update();
+            the_robot.movementCommand(mtn->getLinearVelocity(), mtn->getAngularVelocity());
+        }
+        #endif
+
+
+        #ifdef MOTION_PT_1
+        static int state = 0;
+        static int statey = 0;
+        static double arcRadius = 0.6;
+
+        if(state == 0)
+        {
+            state = 1;
+            statey += 1;
+            mtn->setMotion(POINT_TRACKING);
+            mtn->setMotionParams(TMotionParams(4, arcRadius*(statey/2), LPT));
+        }
+        if(state == 1)
+        {
+            if(PT_FINISHED == mtn->getSubMotionState())
+            {
+                state = 2;
+            }
+        }
+
+        if(state == 2)
+        {
+            state = 3;
+
+            statey += 1;
+            mtn->setMotion(POINT_TRACKING);
+            mtn->setMotionParams(TMotionParams(4, arcRadius*(statey/2), APT));
+        }
+        if(state == 3)
+        {
+            if(PT_FINISHED == mtn->getSubMotionState())
+            {
+                state = 4;
+            }
+        }
+
+        if(state == 4)
+        {
+            state = 5;
+            mtn->setMotion(POINT_TRACKING);
+            mtn->setMotionParams(TMotionParams(0, arcRadius*(statey/2), LPT));
+        }
+        if(state == 5)
+        {
+            if(PT_FINISHED == mtn->getSubMotionState())
+            {
+                state = 6;
+            }
+        }
+
+        if(state == 6)
+        {
+            state = 7;
+
+            statey += 2;
+            mtn->setMotion(POINT_TRACKING);
+            mtn->setMotionParams(TMotionParams(0, arcRadius*(statey/2), APT));
+        }
+        if(state == 7)
+        {
+            if(PT_FINISHED == mtn->getSubMotionState())
+            {
+                state = 0;
+            }
+        }
+        mtn->update();
+        the_robot.movementCommand(mtn->getLinearVelocity(), mtn->getAngularVelocity());
+        #endif
+
+
+
 
 #ifdef DO_SCAN_LIKELIHOOD_DEBUG
 		{

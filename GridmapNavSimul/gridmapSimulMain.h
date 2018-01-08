@@ -34,15 +34,8 @@ class gridmapSimulFrame: public wxFrame
 	public:
         gridmapSimulFrame(wxWindow* parent,wxWindowID id = -1);
         virtual ~gridmapSimulFrame();
-        bool UTFinished();
-//        float getMinimumDist(CObservation2DRangeScan scan);
-        void setPreDirection(double);
-        double getPreDirection();
-        int getMinIdx();
-        void setMinIdx(int idx);
+
     private:
-        double m_preDirection;
-        int m_minIdx;
         //(*Handlers(gridmapSimulFrame)
         void OnbtnQuitClick(wxCommandEvent& event);
         void OntimRunTrigger(wxTimerEvent& event);

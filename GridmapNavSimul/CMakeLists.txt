@@ -23,14 +23,19 @@ IF(CMAKE_MRPT_HAS_WXWIDGETS AND CMAKE_MRPT_HAS_OPENGL_GLUT)
 		SET(SRCS ${SRCS} resource.rc)
 	ENDIF()
 
-	file(GLOB action_srcs action/*.cpp)
+	file(GLOB motion_srcs motion/*.cpp)
+	file(GLOB action_srcs motion/action/*.cpp)
+	file(GLOB mics_inc motion/misc/*.h)
+	file(GLOB motion_inc motion/*.h)
 
 	# Define the executable target:
-	ADD_EXECUTABLE(${PROJECT_NAME} WIN32 ${SRCS}  ${MRPT_VERSION_RC_FILE} ${action_srcs})	
+	ADD_EXECUTABLE(${PROJECT_NAME} WIN32 ${SRCS}  ${MRPT_VERSION_RC_FILE} ${motion_srcs} ${action_srcs} ${mics_inc} ${motion_inc})	
 
 	# Add the required libraries for linking:
 	INCLUDE_DIRECTORIES(${wxWidgets_INCLUDE_DIRS})
+	include_directories(motion/action)
 	include_directories(action)
+	include_directories(motion/misc)
 	TARGET_LINK_LIBRARIES(${PROJECT_NAME} ${wxWidgets_LIBRARIES})
 
 	TARGET_LINK_LIBRARIES(${PROJECT_NAME} ${MRPT_LINKER_LIBS})

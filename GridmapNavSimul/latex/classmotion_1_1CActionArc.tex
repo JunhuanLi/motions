@@ -1,0 +1,73 @@
+\hypertarget{classmotion_1_1CActionArc}{}\section{motion\+:\+:C\+Action\+Arc Class Reference}
+\label{classmotion_1_1CActionArc}\index{motion\+::\+C\+Action\+Arc@{motion\+::\+C\+Action\+Arc}}
+Inheritance diagram for motion\+:\+:C\+Action\+Arc\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classmotion_1_1CActionArc}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classmotion_1_1CActionArc_a7b8746c8652bb865f2b606608dffbb16}\label{classmotion_1_1CActionArc_a7b8746c8652bb865f2b606608dffbb16}} 
+void {\bfseries reset} (void)
+\item 
+\mbox{\Hypertarget{classmotion_1_1CActionArc_a45356c022471267db143fd1300f6b465}\label{classmotion_1_1CActionArc_a45356c022471267db143fd1300f6b465}} 
+void {\bfseries set\+State} (E\+Steering\+State\+Type state)
+\item 
+\mbox{\Hypertarget{classmotion_1_1CActionArc_ad6f08adc549f8d19892e0a6a257415dc}\label{classmotion_1_1CActionArc_ad6f08adc549f8d19892e0a6a257415dc}} 
+void {\bfseries set\+End\+Pose} (\mbox{\hyperlink{structmotion_1_1TMotionPose2D}{T\+Motion\+Pose2D}} pose)
+\item 
+\mbox{\Hypertarget{classmotion_1_1CActionArc_a6af47c85b3b8226b6ae5bc3e27185e77}\label{classmotion_1_1CActionArc_a6af47c85b3b8226b6ae5bc3e27185e77}} 
+void {\bfseries set\+Start\+Up} (bool val)
+\item 
+\mbox{\Hypertarget{classmotion_1_1CActionArc_ae196348547fee7f670bb91f66b55fa36}\label{classmotion_1_1CActionArc_ae196348547fee7f670bb91f66b55fa36}} 
+E\+Steering\+State\+Type {\bfseries get\+State} (void)
+\item 
+\mbox{\Hypertarget{classmotion_1_1CActionArc_ad5ff8628c709a14cbcffb030894daa93}\label{classmotion_1_1CActionArc_ad5ff8628c709a14cbcffb030894daa93}} 
+\mbox{\hyperlink{structmotion_1_1TMotionPose2D}{T\+Motion\+Pose2D}} {\bfseries get\+End\+Pose} (void)
+\item 
+\mbox{\Hypertarget{classmotion_1_1CActionArc_aa2ee90e89b02256cd0c3f422f220caca}\label{classmotion_1_1CActionArc_aa2ee90e89b02256cd0c3f422f220caca}} 
+bool {\bfseries get\+Start\+Up} (void)
+\item 
+void \mbox{\hyperlink{classmotion_1_1CActionArc_a64a6fc339df29d196786291f02b2802e}{arc}} (double w, double ang\+Deg, double radius=0)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classmotion_1_1CActionArc_a058d43888af190cf93dc3130746d9e9e}\label{classmotion_1_1CActionArc_a058d43888af190cf93dc3130746d9e9e}} 
+static \mbox{\hyperlink{classmotion_1_1CActionArc}{C\+Action\+Arc}} $\ast$ {\bfseries get\+Instance} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmotion_1_1CActionArc_a64a6fc339df29d196786291f02b2802e}\label{classmotion_1_1CActionArc_a64a6fc339df29d196786291f02b2802e}} 
+\index{motion\+::\+C\+Action\+Arc@{motion\+::\+C\+Action\+Arc}!arc@{arc}}
+\index{arc@{arc}!motion\+::\+C\+Action\+Arc@{motion\+::\+C\+Action\+Arc}}
+\subsubsection{\texorpdfstring{arc()}{arc()}}
+{\footnotesize\ttfamily void C\+Action\+Arc\+::arc (\begin{DoxyParamCaption}\item[{double}]{w,  }\item[{double}]{ang\+Deg,  }\item[{double}]{radius = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Make the vehicle make arc. 
+\begin{DoxyParams}{Parameters}
+{\em w} & Linear velocity(rad/s). w is positive. \\
+\hline
+{\em angle\+Degree} & The desired angle in degree we want the robot rotate. angle\+Degree $>$ 0 rotate counterclockwise. \\
+\hline
+{\em radius} & Arc radius. \\
+\hline
+\end{DoxyParams}
+how to avoid multiple tasks? ~\newline
+~\newline
+~\newline
+~\newline
+ Start the timer
+
+If start up is enabled, update if the vehicle get started everytime. ~\newline
+~\newline
+ throw exceptions assert(!\char`\"{}\+Time out when making Arc move.\char`\"{}); ~\newline
+ throw exceptions assert(!\char`\"{}\+Direction reached but can\textquotesingle{}t reach the appropriate location.\char`\"{}); 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+motion/action/C\+Action\+Arc.\+h\item 
+motion/action/C\+Action\+Arc.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,95 @@
+\hypertarget{classmotion_1_1CActionStraightSteering}{}\section{motion\+:\+:C\+Action\+Straight\+Steering Class Reference}
+\label{classmotion_1_1CActionStraightSteering}\index{motion\+::\+C\+Action\+Straight\+Steering@{motion\+::\+C\+Action\+Straight\+Steering}}
+Inheritance diagram for motion\+:\+:C\+Action\+Straight\+Steering\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classmotion_1_1CActionStraightSteering}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classmotion_1_1CActionStraightSteering_aab377d9509a1cbd765ccbace788000a8}{reset\+Strait}} (void)
+\item 
+\mbox{\Hypertarget{classmotion_1_1CActionStraightSteering_a9d4bdfc1c1d97ef7a90fd51e5fdd937f}\label{classmotion_1_1CActionStraightSteering_a9d4bdfc1c1d97ef7a90fd51e5fdd937f}} 
+\mbox{\hyperlink{structmotion_1_1TMotionPose2D}{T\+Motion\+Pose2D}} {\bfseries get\+End\+Pose} (void)
+\item 
+\mbox{\Hypertarget{classmotion_1_1CActionStraightSteering_a427dae612a3c046a8337ae3f482cd054}\label{classmotion_1_1CActionStraightSteering_a427dae612a3c046a8337ae3f482cd054}} 
+E\+Steering\+State\+Type {\bfseries get\+Forward\+State} (void)
+\item 
+\mbox{\Hypertarget{classmotion_1_1CActionStraightSteering_a5cec421cb431d80bcbe85722cddc5948}\label{classmotion_1_1CActionStraightSteering_a5cec421cb431d80bcbe85722cddc5948}} 
+E\+Steering\+State\+Type {\bfseries get\+Backward\+State} (void)
+\item 
+\mbox{\Hypertarget{classmotion_1_1CActionStraightSteering_add14ef75be6057382e18a05b568ada64}\label{classmotion_1_1CActionStraightSteering_add14ef75be6057382e18a05b568ada64}} 
+void {\bfseries set\+Forward\+State} (E\+Steering\+State\+Type state)
+\item 
+\mbox{\Hypertarget{classmotion_1_1CActionStraightSteering_a24ebd656b7602ef89c8bd2ccd7bfb4c3}\label{classmotion_1_1CActionStraightSteering_a24ebd656b7602ef89c8bd2ccd7bfb4c3}} 
+void {\bfseries set\+Backward\+State} (E\+Steering\+State\+Type state)
+\item 
+E\+Steering\+State\+Type \mbox{\hyperlink{classmotion_1_1CActionStraightSteering_a65795e3e81ed82aa62d8f88ee2ac47ba}{forward}} (mrpt\+::kinematics\+::\+C\+Vehicle\+Simul\+\_\+\+Diff\+Driven $\ast$robot, double v, double distance)
+\item 
+E\+Steering\+State\+Type \mbox{\hyperlink{classmotion_1_1CActionStraightSteering_acece1a757ecdcfdff28d42d0c429bb38}{backward}} (mrpt\+::kinematics\+::\+C\+Vehicle\+Simul\+\_\+\+Diff\+Driven $\ast$robot, double v, double distance)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classmotion_1_1CActionStraightSteering_aba6b74c5722514d61e542aeb8d1786d2}\label{classmotion_1_1CActionStraightSteering_aba6b74c5722514d61e542aeb8d1786d2}} 
+static \mbox{\hyperlink{classmotion_1_1CActionStraightSteering}{C\+Action\+Straight\+Steering}} $\ast$ {\bfseries get\+Instance} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmotion_1_1CActionStraightSteering_acece1a757ecdcfdff28d42d0c429bb38}\label{classmotion_1_1CActionStraightSteering_acece1a757ecdcfdff28d42d0c429bb38}} 
+\index{motion\+::\+C\+Action\+Straight\+Steering@{motion\+::\+C\+Action\+Straight\+Steering}!backward@{backward}}
+\index{backward@{backward}!motion\+::\+C\+Action\+Straight\+Steering@{motion\+::\+C\+Action\+Straight\+Steering}}
+\subsubsection{\texorpdfstring{backward()}{backward()}}
+{\footnotesize\ttfamily E\+Steering\+State\+Type C\+Action\+Straight\+Steering\+::backward (\begin{DoxyParamCaption}\item[{mrpt\+::kinematics\+::\+C\+Vehicle\+Simul\+\_\+\+Diff\+Driven $\ast$}]{robot,  }\item[{double}]{v,  }\item[{double}]{distance }\end{DoxyParamCaption})}
+
+Move the robot backward straightly. 
+\begin{DoxyParams}{Parameters}
+{\em robot} & is the pointer that points to the robot body. \\
+\hline
+{\em v} & is the backward linear velocity. \\
+\hline
+{\em distance} & is the desired distance we want the robot backward. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The current backward state. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+E\+Steering\+State\+Type 
+\end{DoxySeeAlso}
+start the timer \mbox{\Hypertarget{classmotion_1_1CActionStraightSteering_a65795e3e81ed82aa62d8f88ee2ac47ba}\label{classmotion_1_1CActionStraightSteering_a65795e3e81ed82aa62d8f88ee2ac47ba}} 
+\index{motion\+::\+C\+Action\+Straight\+Steering@{motion\+::\+C\+Action\+Straight\+Steering}!forward@{forward}}
+\index{forward@{forward}!motion\+::\+C\+Action\+Straight\+Steering@{motion\+::\+C\+Action\+Straight\+Steering}}
+\subsubsection{\texorpdfstring{forward()}{forward()}}
+{\footnotesize\ttfamily E\+Steering\+State\+Type C\+Action\+Straight\+Steering\+::forward (\begin{DoxyParamCaption}\item[{mrpt\+::kinematics\+::\+C\+Vehicle\+Simul\+\_\+\+Diff\+Driven $\ast$}]{robot,  }\item[{double}]{v,  }\item[{double}]{distance }\end{DoxyParamCaption})}
+
+Move the robot forward straightly. 
+\begin{DoxyParams}{Parameters}
+{\em robot} & is the pointer that points to the robot body. \\
+\hline
+{\em v} & is the forward linear velocity. \\
+\hline
+{\em distance} & is the desired distance we want the robot forward. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The current forward state. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+E\+Steering\+State\+Type 
+\end{DoxySeeAlso}
+start the timer \mbox{\Hypertarget{classmotion_1_1CActionStraightSteering_aab377d9509a1cbd765ccbace788000a8}\label{classmotion_1_1CActionStraightSteering_aab377d9509a1cbd765ccbace788000a8}} 
+\index{motion\+::\+C\+Action\+Straight\+Steering@{motion\+::\+C\+Action\+Straight\+Steering}!reset\+Strait@{reset\+Strait}}
+\index{reset\+Strait@{reset\+Strait}!motion\+::\+C\+Action\+Straight\+Steering@{motion\+::\+C\+Action\+Straight\+Steering}}
+\subsubsection{\texorpdfstring{reset\+Strait()}{resetStrait()}}
+{\footnotesize\ttfamily void C\+Action\+Straight\+Steering\+::reset\+Strait (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+$<$ Reset base private variables. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+action/C\+Action\+Straight\+Steering.\+h\item 
+action/C\+Action\+Straight\+Steering.\+cpp\end{DoxyCompactItemize}
