@@ -130,7 +130,7 @@ void CMotionPointTracker::trackPoint(void)
 
         case ACTION_NONE:
         case FORWARD_EXECUTING:
-            strSteer->forward(pointTracV, m_dist);
+            fwd->forward(pointTracV, m_dist);
             mtn->setSubMotionState(PT_EXECUTING);
             break;
 

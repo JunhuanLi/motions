@@ -1,3 +1,4 @@
+#include <apps/GridmapNavSimul/motion/action/CActionForward.h>
 #include "CWFOwnedStates.h"
 #include "CActionArc.h"
 using namespace motion;
@@ -65,9 +66,7 @@ void CWFObsAvoid::enter(CMotionWallFollowing* wf)
 {
     wf->setSubMotion(WF_OBS);
     printf("[ljh] Obs detected.\n");
-
     wf->storeStartPose();
-    wf->calcEndPhi(deg2Rad(wallFolResumeANDAngle));
 }
 
 void CWFObsAvoid::execute(CMotionWallFollowing* wf)
@@ -79,7 +78,7 @@ void CWFObsAvoid::execute(CMotionWallFollowing* wf)
     }
     else
     {
-        mkturns->arc(1, 360, wallFolObsR);
+        mkturns->arc(wallFolObsW, 360, wallFolObsR);
         if(ARC_EXECUTING == mkturns->getActionState())
         {
             wallFol->setVelocity(mkturns->getLinearVelocity(), mkturns->getAngularVelocity());
@@ -112,22 +111,22 @@ void CWFRidgeTrack::enter(CMotionWallFollowing* wf)
 
 void CWFRidgeTrack::execute(CMotionWallFollowing* wf)
 {
-    if(wf->getSideDist() <= wallFol->getMotionParams().WF_dist + wallFolRidgeR) ///todo nicer resume distance
+    if(wf->getSideDist() <= wallFol->getMotionParams().WF_dist + distErrTolerance + wallFolRidgeR)
     {
         printf("[ljh] WF_Ridge tracking finished.\n");
         wf->getFSM()->changeState(CWFWallFol::getInstance());
     }
     else
     {
-        mkturns->arc(wallFolRidgeW, -360, wallFolRidgeR);
-        if(ARC_EXECUTING == mkturns->getActionState())
-        {
-            wallFol->setVelocity(wallFol->getLinearVelocity(), wallFol->getAngularVelocity());
-        }
-        else
-        {
-            ///todo
-        }
+            mkturns->arc(wallFolRidgeW, -360, wallFolRidgeR);
+            if(ARC_EXECUTING == mkturns->getActionState())
+            {
+                wallFol->setVelocity(wallFol->getLinearVelocity(), wallFol->getAngularVelocity());
+            }
+            else
+            {
+                ///todo
+            }
     }
 }
 

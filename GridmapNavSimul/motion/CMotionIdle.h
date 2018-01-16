@@ -31,8 +31,8 @@ namespace motion
         CMotionIdle(const CMotionIdle&);
         CMotionIdle& operator=(const CMotionIdle&);
 
-        ///CStateMachine<CMotionIdle>* m_pStateMachine;
+        ///CStateMachine<CMotionIdle>* m_pStateMachine;  /**< State machine of idle.*/
 
     };
 }
-#endif // CMOTIONIDLE_H_
+#endif /** CMOTIONIDLE_H_ */

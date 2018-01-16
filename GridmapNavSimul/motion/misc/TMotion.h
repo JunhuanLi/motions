@@ -9,21 +9,26 @@ namespace motion
 {
     struct TMotion
     {
-        double linearVelocity;
-        double angularVelocity;
-        double sideDist;
-        double aheadDist;
-        double timeNeeded;
-        EPTMode ptMode;
-        bool poseStored;
-        TMotionPose2D startPose;
-        TMotionPose2D curPose;
-        EMotion mot;
-        ESubMotion subMot;
-        ESubMotionState subMotState;
-        EAction act;
-        EActionState actState;
-        TMotionParams motParams;
+        double linearVelocity;  /**< Linear velocity of the robot.*/
+        double angularVelocity;  /**< Angular velocity of the robot.*/
+        double sideDist;  /**< The side distance.*/
+        double aheadDist;  /**< The ahead distance.*/
+        double timeNeeded;  /**< Time needed to finished the task.*/
+        double prePhi;  /**< Previous phi.*/
+        bool positiveSet;  /**< The positive-direction-set mark*/
+        ERotateSide positive;  /**< The positive direction when rotating.*/
+        int jumpCount;  /**< Jump count. Jump is defined as the robot rotated -180->180 or 180->-180.*/
+        ERotateSide jumpDirection;  /**< Jump direction.*/
+        EPTMode ptMode;  /**< The point tracking mode. APT: arc point tracking, LPT: linear point tracking.*/
+        bool poseStored;  /**< Pose stored mark.*/
+        TMotionPose2D startPose;  /**< Start pose.*/
+        TMotionPose2D curPose;  /**< Current pose.*/
+        EMotion mot;  /**< Current motion*/
+        ESubMotion subMot;  /**< Current sub-motion.*/
+        ESubMotionState subMotState;  /**< Current Sub-motion state.*/
+        EAction act;  /**< Current action.*/
+        EActionState actState;  /**< Current action state.*/
+        TMotionParams motParams;  /**< Motion related parameters.*/
 
         TMotion(void) { init(); }
 
@@ -34,6 +39,11 @@ namespace motion
             sideDist = 0;
             aheadDist = 0;
             timeNeeded = 0;
+            prePhi = 0.0;
+            positiveSet = false;
+            positive = ROTATECCW;
+            jumpCount = 0;
+            jumpDirection = ROTATECCW;
             poseStored = false;
             startPose.reset();
             curPose.reset();

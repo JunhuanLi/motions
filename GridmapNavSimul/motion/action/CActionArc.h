@@ -82,10 +82,16 @@ namespace motion
          */
         void updateStartUp();
 
-        TMotionPose2D m_endPose;  //!< The end pose.
-        bool m_startUp;  //!< Start up mark.
-        double m_innerStrLen;
-        double m_linVel;
+        TMotionPose2D m_endPose;  /**< The end pose. */
+        bool m_startUp;  /**< Start up mark. */
+        double m_innerStrLen;  /**< Inner string length. Used to calculate target location. */
+        double m_linVel;  /**< Linear velocity needed to finished the arc task. */
+        double m_commandAngDeg;  /**< Command angle in degree. */
+        double m_myCurPhi;  /**< Robot current phi which was translated to range 0~360 degree. */
+        double m_phiRotated;  /**< Rotated phi in rad. */
+        double m_angRem;  /**< Angle remaining which is equal to \sa m_commandAngDeg - rad2Deg(\sa m_phiRotated). */
+        bool m_slightTuneOn;  /**< Slightly tune period on mark. */
+        bool m_slightTuneFinished;  /**< Slightly tune period finished mark. */
         ///TMotionPIDCon m_controller;
     };
 

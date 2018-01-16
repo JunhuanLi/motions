@@ -28,7 +28,7 @@ namespace motion
         CMotion(const CMotion&);
         CMotion& operator=(const CMotion&);
 
-        CStateMachine<CMotion>* m_pStateMachine;
+        CStateMachine<CMotion>* m_pStateMachine;  /**< State machine of motion.*/
     };
 }
 #endif  /** CMOTION_H_ */

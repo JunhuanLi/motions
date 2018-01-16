@@ -28,6 +28,61 @@ void CActionBase::calcTimeNeeded(double velocity, double displacement)
     sm_motion.timeNeeded = motionAbsd(displacement / velocity);
 }
 
+void CActionBase::captureJump(void)
+{
+    double jumpAngDeg = rad2Deg(getCurPose().phi - sm_motion.prePhi);
+    ///printf("**jump is: %.3f\n", jumpAngDeg);
+    if(jumpAngDeg > jumpThreshold)
+    {
+        if(!sm_motion.positiveSet)
+        {
+            sm_motion.positive = ROTATECW;
+            sm_motion.positiveSet = true;
+            printf("**CW positive set!\n");
+        }
+
+        if(sm_motion.positive == ROTATECW)
+            sm_motion.jumpCount++;
+        else
+            sm_motion.jumpCount--;
+        printf("**CW jump count: %d\n", sm_motion.jumpCount);
+
+        sm_motion.jumpDirection = ROTATECW;
+    }
+    else if(jumpAngDeg < -jumpThreshold)
+    {
+        if(!sm_motion.positiveSet)
+        {
+            sm_motion.positive = ROTATECCW;
+            sm_motion.positiveSet = true;
+            printf("**CCW positive set!\n");
+        }
+
+        if(sm_motion.positive == ROTATECCW)
+            sm_motion.jumpCount++;
+        else
+            sm_motion.jumpCount--;
+
+        printf("**CCW jump count: %d\n", sm_motion.jumpCount);
+        sm_motion.jumpDirection = ROTATECCW;
+    }
+    else
+    {
+       /// printf("no jumps.\n");
+    }
+
+    sm_motion.prePhi = getCurPose().phi;
+}
+
+void CActionBase::updateCurPose(mrpt::kinematics::CVehicleSimul_DiffDriven* robot)
+{
+    sm_motion.curPose.x = robot->getCurrentGTPose().x;
+    sm_motion.curPose.y = robot->getCurrentGTPose().y;
+    sm_motion.curPose.phi = robot->getCurrentGTPose().phi;
+
+    captureJump();
+}
+
 void CActionBase::updateDist(
     mrpt::obs::CObservation2DRangeScan* scan, size_t winLength)
 {
@@ -39,6 +94,7 @@ void CActionBase::updateDist(
         tDist += scan->getScanRange(i);
     }
     sm_motion.sideDist = tDist/winLength*cos(deg2Rad(infraredRayAngle));
+    ///printf("sideDist: %.3f\n", sm_motion.sideDist);
 
     /** Calculate ahead distance.*/
     tDist = 0;
@@ -82,7 +138,7 @@ void CActionBase::setMotionParams(TMotionParams param)
             break;
 
         case POINT_TRACKING:
-            pointTra->getFSM()->changeState(CPTTracking::getInstance());
+            mpt->getFSM()->changeState(CPTTracking::getInstance());
             break;
 
         default:
@@ -126,4 +182,6 @@ void CActionBase::resetBase()
     sm_motion.angularVelocity = 0.0;
     sm_motion.timeNeeded = 0.0;
     sm_motion.poseStored = false;
+    sm_motion.jumpCount = 0;
+    sm_motion.positiveSet = false;
 }

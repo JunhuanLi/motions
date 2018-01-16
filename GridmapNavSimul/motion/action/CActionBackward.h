@@ -7,7 +7,7 @@
 #include "CActionBase.h"
 #include "motionUtils.h"
 
-#define strSteer motion::CActionBackward::getInstance()
+#define bkw motion::CActionBackward::getInstance()
 
 namespace motion
 {

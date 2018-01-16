@@ -65,7 +65,8 @@
 ///#include "virtual_map1.xpm"
 ///#include "map2.xpm"
 ///#include "map3.xpm"
-#include "map3pro.xpm"
+///#include "map3pro.xpm"
+#include "ridgeTest.xpm"
 ///#include "map3pro_mini_xpm"
 ///#include "map3pro_mini2.xpm"
 
@@ -558,7 +559,7 @@ gridmapSimulFrame::gridmapSimulFrame(wxWindow* parent,wxWindowID id)
 
     // Import grid map:
     {
-		wxImage img(map3pro_xpm);
+		wxImage img(ridgeTest_xpm);
 		CImage *myImg = wxImage2MRPTImage(img);
 		the_grid.loadFromBitmap( *myImg, 0.03f );
 		delete myImg;
@@ -578,7 +579,7 @@ gridmapSimulFrame::gridmapSimulFrame(wxWindow* parent,wxWindowID id)
 	m_canvas->cameraZoomDistance = 25;
 
 	// Populate scene:
-	m_canvas->m_openGLScene->insert( mrpt::opengl::CGridPlaneXY::Create(-100,100,-100,100,0,5) );
+	m_canvas->m_openGLScene->insert( mrpt::opengl::CGridPlaneXY::Create(-200,200,-200,200,0,5) );
 
 	update_grid_map_3d();
 	m_canvas->m_openGLScene->insert( gl_grid );
@@ -601,7 +602,7 @@ gridmapSimulFrame::gridmapSimulFrame(wxWindow* parent,wxWindowID id)
 
 	// Robot & scan:
 	gl_robot = mrpt::opengl::stock_objects::RobotPioneer();
-    gl_robot->setColor(0, 0.4, 0);
+    gl_robot->setColor(0, 0, 0);
 	gl_robot->setLocation(0, 0, 0.01);
 	m_canvas->m_openGLScene->insert( gl_robot );
 
@@ -613,10 +614,10 @@ gridmapSimulFrame::gridmapSimulFrame(wxWindow* parent,wxWindowID id)
 	edInput->Connect(wxEVT_CHAR,(wxObjectEventFunction)&CMyGLCanvas::OnCharCustom, NULL, m_canvas );
 
 	// fix sizes:
-	SplitterWindow1->SetMinSize(wxSize(200,200));
-	SplitterWindow1->SetSashPosition(200);
+	SplitterWindow1->SetMinSize(wxSize(400,400));
+	SplitterWindow1->SetSashPosition(400);
 	Fit();
-    Maximize();
+    ///Maximize();
 
 }
 
@@ -678,7 +679,7 @@ void gridmapSimulFrame::OntimRunTrigger(wxTimerEvent& event)
 		// Simulate scan:
 		mrpt::obs::CObservation2DRangeScan the_scan;
 		the_scan.sensorLabel = "LASER_SIM";
-		the_scan.sensorPose.setFromValues(0.0,0,0.10);
+		the_scan.sensorPose.setFromValues(0,0,0.20);
 		the_scan.maxRange = 80; //LASER_MAX_RANGE;
 		the_scan.aperture = LASER_APERTURE;
 		the_scan.stdError = LASER_STD_ERROR;
@@ -691,12 +692,32 @@ void gridmapSimulFrame::OntimRunTrigger(wxTimerEvent& event)
 		the_grid.laserScanSimulator( the_scan, mrpt::poses::CPose2D(p), 0.6f, LASER_N_RANGES, LASER_STD_ERROR, 1, LASER_BEARING_STD_ERROR );
 		timlog.leave("laserScanSimulator");
 
-		///#define MOTION_WF
-		#define MOTION_PT_1
+        /// motion test block
+		#define MOTION_WF
+		///#define MOTION_PT_1
 		///#define MOTION_PT_2
 
 		mtn->updateDist(&the_scan, winLen);
         mtn->updateCurPose(&the_robot);
+
+
+        #ifdef MOTION_PT_2
+        static bool tmpmark = false;
+
+        if(!tmpmark)
+        {
+            mkturns->arc(1, 360, 0.5);
+            if(ARC_FINISHED == mkturns->getActionState() || ARC_FAILED == mkturns->getActionState())
+            {
+                tmpmark = true;
+            }
+        }
+        else
+        {
+            mtn->setVelocity(0, 0);
+        }
+        the_robot.movementCommand(mtn->getLinearVelocity(), mtn->getAngularVelocity());
+        #endif /// MOTION_PT_2
 
 		#ifdef MOTION_WF
 		/** motion1: RIGHT Wall Following. */
@@ -793,11 +814,8 @@ void gridmapSimulFrame::OntimRunTrigger(wxTimerEvent& event)
             }
         }
         mtn->update();
-        the_robot.movementCommand(mtn->getLinearVelocity(), mtn->getAngularVelocity());
         #endif
-
-
-
+        //end of motion test block
 
 #ifdef DO_SCAN_LIKELIHOOD_DEBUG
 		{

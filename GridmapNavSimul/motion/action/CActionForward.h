@@ -7,7 +7,7 @@
 #include "CActionBase.h"
 #include "motionUtils.h"
 
-#define strSteer motion::CActionForward::getInstance()
+#define fwd motion::CActionForward::getInstance()
 
 namespace motion
 {

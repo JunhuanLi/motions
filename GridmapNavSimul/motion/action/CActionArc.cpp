@@ -19,6 +19,7 @@ void CActionArc::arc(double w, double angDeg, double radius)
     {
         reset();
         setAction(ARC);
+        m_commandAngDeg = angDeg;
         startUp(angDeg);
         storeStartPose();
         calcTimeNeeded(w, deg2Rad(angDeg));
@@ -38,20 +39,26 @@ void CActionArc::arc(double w, double angDeg, double radius)
     {
         ///throw exceptions
         ///assert(!"Time out when making Arc move.");
-        setVelocity(0.0, 0.0);
-        setPoseStored(false);
+        printf("[ljh] Arc timeOut.\n");
+        reset();
         setActionState(ARC_FAILED);
+        return;
     }
 
     /** Finish condition check.*/
-    if(calcRem() <= angAccuracy && !getStartUp())
+    if(calcRem() <= slightTuneAngDeg && !m_slightTuneOn)
+    {
+        m_slightTuneOn = true;
+        printf("[ljh] slight tune on.\n");
+    }
+
+    if(!getStartUp() && m_slightTuneFinished)
     {
         printf("[ljh] Direction reached.\n");
-        setVelocity(0.0, 0.0);
         if(poseVerified())
         {
             printf("[ljh] Pose verify passed.\n");
-            setPoseStored(false);
+            reset();
             setActionState(ARC_FINISHED);
             setAction(STOP);
         }
@@ -60,14 +67,33 @@ void CActionArc::arc(double w, double angDeg, double radius)
             printf("[ljh] Pose verify not passed.\n");
             ///throw exceptions
             ///assert(!"Direction reached but can't reach the appropriate location.");
-            setPoseStored(false);
+            reset();
             setActionState(ARC_FAILED);
         }
     }
     else
     {
         ///w = m_controller.pid(calcRem());
-        setVelocity(motionAbsd(m_linVel), motionAbsd(w) * getRotSide(angDeg));
+        if(!m_slightTuneOn)
+        {
+            setVelocity(motionAbsd(m_linVel), motionAbsd(w) * getRotSide(angDeg));
+        }
+        else
+        {
+            if(m_angRem <= -angAccuracy)
+            {
+                setVelocity(0, -motionAbsd(w));
+            }
+            else if(m_angRem >= angAccuracy)
+            {
+                setVelocity(0, motionAbsd(w));
+            }
+            else
+            {
+                m_slightTuneFinished = true;
+            }
+
+        }
         setActionState(ARC_EXECUTING);
     }
 }
@@ -85,8 +111,15 @@ void CActionArc::calcEndPose(double angDeg)
 
 double CActionArc::calcRem(void)
 {
-    return motionAbsd(rad2Deg(m_endPose.phi - getCurPose().phi));
-}
+    m_myCurPhi = getCurPose().phi + twoPi * getJumpDir() * getJumpCount();
+    m_phiRotated = m_myCurPhi - getStartPose().phi;
+    ///printf("[ljh] curphi: %.3f, startPhi: %.3f\n", m_myCurPhi, getStartPose().phi);
+    m_angRem = m_commandAngDeg - rad2Deg(m_phiRotated);
+    ///printf("[ljh] comang: %.3f, rotdang: %.3f\n", m_commandAngDeg, rad2Deg(m_phiRotated));
+    printf("[ljh] remain angle: %.3f\n", m_angRem);
+    return motionAbsd(m_angRem);
+    ///return motionAbsd(rad2Deg(m_endPose.phi - getCurPose().phi));
+ }
 
 bool CActionArc::poseVerified(void)
 {
@@ -95,13 +128,13 @@ bool CActionArc::poseVerified(void)
                            + (getCurPose().y - m_endPose.y)
                            * (getCurPose().y - m_endPose.y));
 
-    if(tDist <= 1) return true;
+    if(tDist <= locAccuracy) return true;
     else return false;
 }
 
 void CActionArc::startUp(double angDeg)
 {
-    if(motionAbsd(rad2Deg(twoPi) - motionAbsd(angDeg)) <= angAccuracy * 3)
+    if(motionAbsd(rad2Deg(twoPi) - motionAbsd(angDeg)) <= startUpAngDeg)
     {
         setStartUp(true);
     }
@@ -113,7 +146,7 @@ void CActionArc::startUp(double angDeg)
 
 void CActionArc::updateStartUp(void)
 {
-    if(motionAbsd(rad2Deg(getCurPose().phi - getStartPose().phi)) > angAccuracy * 10)
+    if(rad2Deg(m_phiRotated) > startUpAngDeg)
     {
         setStartUp(false);
     }
@@ -142,6 +175,7 @@ void CActionArc::reset(void)
     resetBase();
 
     m_endPose.reset();
+    m_slightTuneOn = false;
     m_startUp = false;
     m_innerStrLen = 0.0;
     m_linVel = 0.0;

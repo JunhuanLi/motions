@@ -7,7 +7,7 @@ namespace motion
 {
     enum EMotion
     {
-        MOTION_IDLE = 0,  /** Inital motion. */
+        MOTION_IDLE = 0,  /**< Inital motion. */
         WALL_FOLLOWING,  /**< Wall following. */
         POINT_TRACKING  /**< Point tracking. */
     };

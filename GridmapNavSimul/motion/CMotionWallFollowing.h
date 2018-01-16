@@ -32,8 +32,6 @@ namespace motion
          * @return The scale that velocity should be Tuned. It's a ratio between 0 and 1.
          */
         double tuneVelocity(void);
-        /** Calculate phi which is equal to current_phi + wallFolResumeANDAngle.*/
-        void calcEndPhi(double);
         /** Calculate remaining angle, when this angle approached 0, it means the angle
          * condition of \sa angNDistReached is satisfied.
          * @return Remaining angle.
@@ -58,10 +56,9 @@ namespace motion
         CMotionWallFollowing(const CMotionWallFollowing&);
         CMotionWallFollowing& operator=(const CMotionWallFollowing&);
 
-        CStateMachine<CMotionWallFollowing>* m_pStateMachine;
+        CStateMachine<CMotionWallFollowing>* m_pStateMachine;  /**< State machine of wall followign. */
 
-        EAngNDistReachedState m_andState;
-        double m_endPhi;
+        EAngNDistReachedState m_andState;  /**< Angle and distance state. */
     };
 }
 #endif  /** CMOTIONWALLFOLLOWING_H_ */

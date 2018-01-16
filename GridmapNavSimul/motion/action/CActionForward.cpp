@@ -27,6 +27,7 @@ void CActionForward::forward(double v, double distance)
     if(s_tictac.Tac() > getTimeNeeded() + 1)
     {
         //throw
+        printf("[ljh] Forward timeOut.\n");
         setVelocity(0.0, 0.0);
         setPoseStored(false);
         setActionState(FORWARD_FAILED);
@@ -36,6 +37,7 @@ void CActionForward::forward(double v, double distance)
     /** Finish condition check.*/
     if(calcRem() <= locAccuracy)
     {
+        printf("[ljh] Forward finished.\n");
         setVelocity(0.0, 0.0);
         setPoseStored(false);
         setActionState(FORWARD_FINISHED);

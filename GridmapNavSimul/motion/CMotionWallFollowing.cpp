@@ -34,7 +34,6 @@ void CMotionWallFollowing::reset()
 {
     resetBase();
     m_andState = NOT_SATISFIED;
-    m_endPhi = 0.0;
 }
 
 double CMotionWallFollowing::tuneVelocity(void)
@@ -42,11 +41,6 @@ double CMotionWallFollowing::tuneVelocity(void)
     if(getAheadDist() < obsDeceDist)
         return getAheadDist()/obsDeceDist * decelRatio;
     else return 1.0;
-}
-
-void CMotionWallFollowing::calcEndPhi(double angRad)
-{
-    m_endPhi = normalizeTheta(getStartPose().phi + normalizeTheta(angRad, Pi), Pi);
 }
 
 bool CMotionWallFollowing::distReached(void)
@@ -90,5 +84,10 @@ bool CMotionWallFollowing::angNDistReached(void)
 
 double CMotionWallFollowing::calcRemAngle(void)
 {
-    return motionAbsd(rad2Deg(m_endPhi - getCurPose().phi));
+    double myCurPhi = getCurPose().phi + twoPi * getJumpDir() * getJumpCount();
+    double phiRotated = myCurPhi - getStartPose().phi;
+    double angRem = wallFolResumeANDAngle - rad2Deg(phiRotated);
+    printf("remain angle: %.3f\n", angRem);
+    return angRem;
+    ///return motionAbsd(rad2Deg(m_endPhi - getCurPose().phi));
 }

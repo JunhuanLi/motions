@@ -20,7 +20,6 @@ namespace motion
         virtual void enter(CMotionIdle* id);
         virtual void execute(CMotionIdle* id);
         virtual void exit(CMotionIdle* id);
-
     protected:
 
     private:

@@ -74,18 +74,11 @@ namespace motion
 	  CState<state_type>*  getPreviousState(void) const{ return m_pPreviousState; }
 
 	private:
-
-	  /** A pointer to the agent that owns this instance. */
-	  state_type*          m_pOwner;
-
-	  CState<state_type>*   m_pCurrentState;
-
-	  /** A record of the last state the agent was in. */
-	  CState<state_type>*   m_pPreviousState;
-
-	  /** This is called every time the FSM is updated. */
-	  CState<state_type>*   m_pGlobalState;
+	  state_type*          m_pOwner;  /**< A pointer to the agent that owns this instance. */
+	  CState<state_type>*   m_pCurrentState;  /**< A record of current state. */
+	  CState<state_type>*   m_pPreviousState;  /**< A record of the last state the agent was in. */
+	  CState<state_type>*   m_pGlobalState;  /**< This is called every time the FSM is updated. */
 	};
 }
 
-#endif
+#endif /** CSTATEMACHINE_H */

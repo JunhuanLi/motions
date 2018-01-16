@@ -42,14 +42,21 @@ namespace motion
         double getTimeNeeded(void) { return sm_motion.timeNeeded; }
         void setMotionParams(TMotionParams param);
         TMotionParams getMotionParams(void) { return sm_motion.motParams; }
+        void setPrePhi(double pp) { sm_motion.prePhi = pp; }
+        double getPrePhi(void) const { return sm_motion.prePhi; }
+        void setJumpCount(int jc) { sm_motion.jumpCount = jc; }
+        int getJumpCount(void) const { return sm_motion.jumpCount; }
+        void setJumpDir(ERotateSide rs) { sm_motion.jumpDirection = rs; }
+        ERotateSide getJumpDir(void) const { return sm_motion.jumpDirection; }
+        void setPositive(ERotateSide rs) { sm_motion.positive = rs; }
+        ERotateSide getPositive(void) const { return sm_motion.positive; }
+        void setJumpCount(bool ps) { sm_motion.positiveSet = ps; }
+        bool getPositiveSet(void) const { return sm_motion.positiveSet; }
+
+        void captureJump(void);
 
         /** Remove later.*/
-        void updateCurPose(mrpt::kinematics::CVehicleSimul_DiffDriven* robot)
-        {
-        	sm_motion.curPose.x = robot->getCurrentGTPose().x;
-   	 		sm_motion.curPose.y = robot->getCurrentGTPose().y;
-    		sm_motion.curPose.phi = robot->getCurrentGTPose().phi;
-        }
+        void updateCurPose(mrpt::kinematics::CVehicleSimul_DiffDriven* robot);
 
         /** Calculate the distance between robot and wall in the heading direction.
          * And calculate the distance between robot and wall on right side.

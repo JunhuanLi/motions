@@ -1,4 +1,5 @@
-#pragma once
+#ifndef TMOTIONPOINT_H_
+#define TMOTIONPOINT_H_
 
 #include <climits>
 #include <stdio.h>
@@ -27,3 +28,4 @@ namespace motion
 		void calcF(void) { F = G + H; }
 	};
 }
+#endif /** TMOTIONPOINT_H_ */

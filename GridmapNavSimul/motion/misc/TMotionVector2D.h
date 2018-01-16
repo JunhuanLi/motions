@@ -40,6 +40,10 @@ namespace motion
             y /= rRoot;
         }
 
+        /** Calculate the dot product.
+         * @param vecX A vector.
+         * @return dot product
+         */
         double dotProduct(TMotionVector2D vecX)
         {
             this->normVec();
@@ -56,6 +60,10 @@ namespace motion
             return res;
         }
 
+        /** Calculate the cross product.
+         * @param vecX A vector.
+         * @return cross product
+         */
         inline double crossProduct(TMotionVector2D vecX)
         {
             this->normVec();

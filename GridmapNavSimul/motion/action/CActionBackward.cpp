@@ -28,6 +28,7 @@ void CActionBackward::backward(double v, double distance)
     {
         ///throw exceptions
         ///assert(!"Time out when backwarding.");
+        printf("[ljh] Backward timeOut.\n");
         setVelocity(0.0, 0.0);
         setPoseStored(false);
         setActionState(BACKWARD_FAILED);
@@ -37,6 +38,7 @@ void CActionBackward::backward(double v, double distance)
     /** Finish condition check.*/
     if(calcRem() <= locAccuracy)
     {
+        printf("[ljh] Backward finished.\n");
         setVelocity(0.0, 0.0);
         setPoseStored(false);
         setActionState(BACKWARD_FINISHED);
