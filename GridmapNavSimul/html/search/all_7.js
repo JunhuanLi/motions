@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['leftfollow',['leftFollow',['../classmotion_1_1CMotionWallFollowing.html#aba9a2fc075a0241af6ed9caf7bbbdb1d',1,'motion::CMotionWallFollowing']]],
-  ['loc2glob',['loc2Glob',['../classmotion_1_1CActionBase.html#aa8f8a1e485bd85508dc8819938d0a9a1',1,'motion::CActionBase']]]
+  ['infraredrayangle',['infraredRayAngle',['../motionUtils_8h.html#a74cef680dc2a52dc7d6513576ccd105a',1,'motion']]],
+  ['isexist',['isExist',['../classmotion_1_1CPathGenerator.html#a2ff43d2afeedcd679aca4795b193ef1b',1,'motion::CPathGenerator']]]
 ];

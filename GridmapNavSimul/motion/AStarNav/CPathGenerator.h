@@ -1,3 +1,18 @@
+/**
+  * Copyright (C), 1996-2017, TOPBAND. Co., Ltd. \n
+  * All right reserved.
+  *
+  * @file CPathGenerator.h
+  * @author Junhuan Li       
+  * @version v1.0      
+  * @date 18/01/17
+  * @brief Path generator
+  * @note 
+  * 1. --- \n
+  * History: Create this file \n
+  * <author>       <time>   <version >      <desc> \n
+  * Junhuan Li    18/01/17     1.0         create file
+  */
 #ifndef CPATHGENERATOR_H_
 #define CPATHGENERATOR_H_
 
@@ -10,6 +25,11 @@ using namespace std;
 
 namespace motion
 {
+   /** 
+    * Generate a path
+    * input: start point, end point, isIgnoreCorner mark
+    * output: path(a list of point or NULL)
+    */
     class CPathGenerator
     {
     public:

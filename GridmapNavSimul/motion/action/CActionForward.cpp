@@ -1,3 +1,18 @@
+/**
+  * Copyright (C), 1996-2017, TOPBAND. Co., Ltd. \n
+  * All right reserved.
+  *
+  * @file CActionForward.cpp
+  * @author Junhuan Li       
+  * @version v1.0      
+  * @date 18/01/17
+  * @brief Forward action
+  * @note 
+  * 1. --- \n
+  * History: Create this file \n
+  * <author>       <time>   <version >      <desc> \n
+  * Junhuan Li    18/01/17     1.0         create file
+  */
 #include "CActionForward.h"
 using namespace motion;
 
@@ -11,7 +26,7 @@ void CActionForward::forward(double v, double distance)
 {
     static mrpt::utils::CTicTac	s_tictac;
 
-    /** Store current information and calculate information needed*/
+    /// Store current information and calculate information needed.
     if(!getPoseStored())
     {
         reset();
@@ -23,7 +38,7 @@ void CActionForward::forward(double v, double distance)
         s_tictac.Tic();  /// start the timer
     }
 
-    /** Timeout check.*/
+    /// Timeout check.
     if(s_tictac.Tac() > getTimeNeeded() + 1)
     {
         //throw
@@ -34,7 +49,7 @@ void CActionForward::forward(double v, double distance)
         return;
     }
 
-    /** Finish condition check.*/
+    /// Finish condition check.
     if(calcRem() <= locAccuracy)
     {
         printf("[ljh] Forward finished.\n");
@@ -45,7 +60,7 @@ void CActionForward::forward(double v, double distance)
     }
     else
     {
-        ///todo w!=0
+        ///todo w!=0 should be closeloop
         setVelocity(motionAbsd(v), 0.0);
         setActionState(FORWARD_EXECUTING);
     }
@@ -69,7 +84,7 @@ double CActionForward::calcRem()
 
 void CActionForward::reset()
 {
-    resetBase();  //!< Reset base private variables.
+    resetBase();
 
     m_endPose.reset();
 }

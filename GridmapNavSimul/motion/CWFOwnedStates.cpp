@@ -1,4 +1,19 @@
-#include <apps/GridmapNavSimul/motion/action/CActionForward.h>
+/**
+  * Copyright (C), 1996-2017, TOPBAND. Co., Ltd. \n
+  * All right reserved.
+  *
+  * @file CWFOwnedStates.cpp
+  * @author Junhuan Li       
+  * @version v1.0      
+  * @date 18/01/17
+  * @brief Motion wall following owned state(s)
+  * @note 
+  * 1. --- \n
+  * History: Create this file \n
+  * <author>       <time>   <version >      <desc> \n
+  * Junhuan Li    18/01/17     1.0         create file
+  */
+#include "action/CActionForward.h"
 #include "CWFOwnedStates.h"
 #include "CActionArc.h"
 using namespace motion;
@@ -18,34 +33,34 @@ void CWFWallFol::enter(CMotionWallFollowing* wf)
 
 void CWFWallFol::execute(CMotionWallFollowing* wf)
 {
-    /** If ahead distance is small enough, then go obstacle avoidance. */
+    /// If ahead distance is small enough, then go obstacle avoidance.
     if(wf->getAheadDist() <= obsStopDist)
     {
         wf->getFSM()->changeState(CWFObsAvoid::getInstance());
         return;
     }
-    /** If side distance have big jump, then go ridge tracking. */
+    /// If side distance have big jump, then go ridge tracking.
     if(wf->getSideDist() >= maxAllowedSideDist)
     {
         wf->getFSM()->changeState(CWFRidgeTrack::getInstance());
         return;
     }
 
-    /** Wall following. */
+    /// Wall following.
     double v = wallFol->getMotionParams().WF_V;
+    double distErr = wallFol->getMotionParams().WF_dist - wf->getSideDist();
+
     v *= wf->tuneVelocity();
 
-    if(wf->getSideDist() < wallFol->getMotionParams().WF_dist - distErrTolerance)
+    if(motionAbsd(distErr) < distErrTolerance)
     {
-        wf->setVelocity(v, wallFolW);  ///todo w!=constant
-    }
-    else if(wf->getSideDist() > wallFol->getMotionParams().WF_dist + distErrTolerance)
-    {
-        wf->setVelocity(v, -wallFolW);
+        wf->setVelocity(v, 0.0);
     }
     else
     {
-        wf->setVelocity(v, 0.0);
+        double ctrlOutput = wallFol->getWFController().pid(distErr);
+        ///printf("co = %.3f\n", ctrlOutput);
+        wf->setVelocity(v, ctrlOutput);
     }
 }
 
@@ -125,7 +140,7 @@ void CWFRidgeTrack::execute(CMotionWallFollowing* wf)
             }
             else
             {
-                ///todo
+                ///todo exceptions
             }
     }
 }

@@ -1,5 +1,9 @@
 \hypertarget{classmotion_1_1CActionForward}{}\section{motion\+:\+:C\+Action\+Forward Class Reference}
 \label{classmotion_1_1CActionForward}\index{motion\+::\+C\+Action\+Forward@{motion\+::\+C\+Action\+Forward}}
+
+
+{\ttfamily \#include $<$C\+Action\+Forward.\+h$>$}
+
 Inheritance diagram for motion\+:\+:C\+Action\+Forward\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -11,12 +15,6 @@ Inheritance diagram for motion\+:\+:C\+Action\+Forward\+:\begin{figure}[H]
 \item 
 void \mbox{\hyperlink{classmotion_1_1CActionForward_af7c72ffee0c2f41c8608259ef3268f23}{reset}} (void)
 \item 
-\mbox{\Hypertarget{classmotion_1_1CActionForward_af986e75f2773dced403311b3e5e1d7b8}\label{classmotion_1_1CActionForward_af986e75f2773dced403311b3e5e1d7b8}} 
-E\+Steering\+State\+Type {\bfseries get\+State} (void)
-\item 
-\mbox{\Hypertarget{classmotion_1_1CActionForward_a0a17ba177738541886131deca36c6bf1}\label{classmotion_1_1CActionForward_a0a17ba177738541886131deca36c6bf1}} 
-void {\bfseries set\+State} (E\+Steering\+State\+Type state)
-\item 
 void \mbox{\hyperlink{classmotion_1_1CActionForward_abc4d3b39f49514f9d3f64a92393aa6d2}{forward}} (double v, double distance)
 \end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
@@ -26,6 +24,16 @@ void \mbox{\hyperlink{classmotion_1_1CActionForward_abc4d3b39f49514f9d3f64a92393
 static \mbox{\hyperlink{classmotion_1_1CActionForward}{C\+Action\+Forward}} $\ast$ {\bfseries get\+Instance} (void)
 \end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+Forward ~\newline
+ example\+: ~\newline
+ \#include \mbox{\hyperlink{CActionForward_8h}{C\+Action\+Forward.\+h}} ~\newline
+ fwd-\/$>$forward(1, 90); ~\newline
+if(fwd-\/$>$get\+Action\+State()==F\+O\+R\+W\+A\+R\+D\+\_\+\+F\+I\+N\+I\+S\+H\+ED) ~\newline
+\{ ~\newline
+ printf(\char`\"{}\+Forwarding task finished. Please command the next order.\textbackslash{}n\char`\"{}); ~\newline
+\} 
 
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{classmotion_1_1CActionForward_abc4d3b39f49514f9d3f64a92393aa6d2}\label{classmotion_1_1CActionForward_abc4d3b39f49514f9d3f64a92393aa6d2}} 
@@ -41,7 +49,15 @@ Move the robot forward straightly.
 {\em distance} & is the desired distance we want the robot forward. \\
 \hline
 \end{DoxyParams}
-start the timer \mbox{\Hypertarget{classmotion_1_1CActionForward_af7c72ffee0c2f41c8608259ef3268f23}\label{classmotion_1_1CActionForward_af7c72ffee0c2f41c8608259ef3268f23}} 
+Store current information and calculate information needed
+
+start the timer
+
+Timeout check.
+
+Finish condition check.
+
+todo w!=0 \mbox{\Hypertarget{classmotion_1_1CActionForward_af7c72ffee0c2f41c8608259ef3268f23}\label{classmotion_1_1CActionForward_af7c72ffee0c2f41c8608259ef3268f23}} 
 \index{motion\+::\+C\+Action\+Forward@{motion\+::\+C\+Action\+Forward}!reset@{reset}}
 \index{reset@{reset}!motion\+::\+C\+Action\+Forward@{motion\+::\+C\+Action\+Forward}}
 \subsubsection{\texorpdfstring{reset()}{reset()}}
@@ -51,5 +67,5 @@ $<$ Reset base private variables.
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-motion/action/C\+Action\+Forward.\+h\item 
-motion/action/C\+Action\+Forward.\+cpp\end{DoxyCompactItemize}
+motion/action/\mbox{\hyperlink{CActionForward_8h}{C\+Action\+Forward.\+h}}\item 
+motion/action/\mbox{\hyperlink{CActionForward_8cpp}{C\+Action\+Forward.\+cpp}}\end{DoxyCompactItemize}

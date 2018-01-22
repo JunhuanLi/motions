@@ -16,30 +16,27 @@ void {\bfseries set\+Previous\+State} (\mbox{\hyperlink{classmotion_1_1CState}{C
 \item 
 void \mbox{\hyperlink{classmotion_1_1CStateMachine_a8a944b6b5dcff9b614b434fabcd8955c}{update}} () const
 \item 
-void \mbox{\hyperlink{classmotion_1_1CStateMachine_ab042e01b5080db6e638ad65f3a5cfab4}{Change\+State}} (\mbox{\hyperlink{classmotion_1_1CState}{C\+State}}$<$ state\+\_\+type $>$ $\ast$p\+New\+State)
+void \mbox{\hyperlink{classmotion_1_1CStateMachine_a13d97b778f850709c7f9060de4aba142}{change\+State}} (\mbox{\hyperlink{classmotion_1_1CState}{C\+State}}$<$ state\+\_\+type $>$ $\ast$p\+New\+State)
 \item 
 void \mbox{\hyperlink{classmotion_1_1CStateMachine_ae8e1d802793aded65b1da25dad007486}{revert\+To\+Previous\+State}} ()
 \item 
-bool \mbox{\hyperlink{classmotion_1_1CStateMachine_a562ec539af12a828f189d82d7821ca4a}{is\+In\+State}} (const \mbox{\hyperlink{classmotion_1_1CState}{C\+State}}$<$ state\+\_\+type $>$ \&st) const
+\mbox{\hyperlink{classmotion_1_1CState}{C\+State}}$<$ state\+\_\+type $>$ $\ast$ \mbox{\hyperlink{classmotion_1_1CStateMachine_a2231e1232b1fe6a793b95e0e2217f362}{get\+Current\+State}} (void) const
 \item 
-\mbox{\Hypertarget{classmotion_1_1CStateMachine_a987d982f7d737dbd9e363e334bf1fec6}\label{classmotion_1_1CStateMachine_a987d982f7d737dbd9e363e334bf1fec6}} 
-\mbox{\hyperlink{classmotion_1_1CState}{C\+State}}$<$ state\+\_\+type $>$ $\ast$ {\bfseries get\+Current\+State} () const
+\mbox{\Hypertarget{classmotion_1_1CStateMachine_ac9e635be4cb960479c6cdef54966480b}\label{classmotion_1_1CStateMachine_ac9e635be4cb960479c6cdef54966480b}} 
+\mbox{\hyperlink{classmotion_1_1CState}{C\+State}}$<$ state\+\_\+type $>$ $\ast$ {\bfseries get\+Global\+State} (void) const
 \item 
-\mbox{\Hypertarget{classmotion_1_1CStateMachine_a4457b058926d999e32675919fb098185}\label{classmotion_1_1CStateMachine_a4457b058926d999e32675919fb098185}} 
-\mbox{\hyperlink{classmotion_1_1CState}{C\+State}}$<$ state\+\_\+type $>$ $\ast$ {\bfseries get\+Global\+State} () const
-\item 
-\mbox{\Hypertarget{classmotion_1_1CStateMachine_a9f1c1616c71601892b697ec203ba88bb}\label{classmotion_1_1CStateMachine_a9f1c1616c71601892b697ec203ba88bb}} 
-\mbox{\hyperlink{classmotion_1_1CState}{C\+State}}$<$ state\+\_\+type $>$ $\ast$ {\bfseries get\+Previous\+State} () const
+\mbox{\Hypertarget{classmotion_1_1CStateMachine_acab2aefef8b1fa57d211eb68aa8e96f8}\label{classmotion_1_1CStateMachine_acab2aefef8b1fa57d211eb68aa8e96f8}} 
+\mbox{\hyperlink{classmotion_1_1CState}{C\+State}}$<$ state\+\_\+type $>$ $\ast$ {\bfseries get\+Previous\+State} (void) const
 \end{DoxyCompactItemize}
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{classmotion_1_1CStateMachine_ab042e01b5080db6e638ad65f3a5cfab4}\label{classmotion_1_1CStateMachine_ab042e01b5080db6e638ad65f3a5cfab4}} 
-\index{motion\+::\+C\+State\+Machine@{motion\+::\+C\+State\+Machine}!Change\+State@{Change\+State}}
-\index{Change\+State@{Change\+State}!motion\+::\+C\+State\+Machine@{motion\+::\+C\+State\+Machine}}
-\subsubsection{\texorpdfstring{Change\+State()}{ChangeState()}}
-{\footnotesize\ttfamily template$<$class state\+\_\+type $>$ \\
-void \mbox{\hyperlink{classmotion_1_1CStateMachine}{motion\+::\+C\+State\+Machine}}$<$ state\+\_\+type $>$\+::Change\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmotion_1_1CState}{C\+State}}$<$ state\+\_\+type $>$ $\ast$}]{p\+New\+State }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\Hypertarget{classmotion_1_1CStateMachine_a13d97b778f850709c7f9060de4aba142}\label{classmotion_1_1CStateMachine_a13d97b778f850709c7f9060de4aba142}} 
+\index{motion\+::\+C\+State\+Machine@{motion\+::\+C\+State\+Machine}!change\+State@{change\+State}}
+\index{change\+State@{change\+State}!motion\+::\+C\+State\+Machine@{motion\+::\+C\+State\+Machine}}
+\subsubsection{\texorpdfstring{change\+State()}{changeState()}}
+{\footnotesize\ttfamily template$<$class state\+\_\+type$>$ \\
+void \mbox{\hyperlink{classmotion_1_1CStateMachine}{motion\+::\+C\+State\+Machine}}$<$ state\+\_\+type $>$\+::change\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmotion_1_1CState}{C\+State}}$<$ state\+\_\+type $>$ $\ast$}]{p\+New\+State }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 Change to a new state. Keep a record of the previous state. ~\newline
 ~\newline
@@ -47,37 +44,40 @@ Change to a new state. Keep a record of the previous state. ~\newline
  Call the exit method of the existing state. ~\newline
 ~\newline
  Change state to the new state. ~\newline
- Call the entry method of the new state. \mbox{\Hypertarget{classmotion_1_1CStateMachine_a562ec539af12a828f189d82d7821ca4a}\label{classmotion_1_1CStateMachine_a562ec539af12a828f189d82d7821ca4a}} 
-\index{motion\+::\+C\+State\+Machine@{motion\+::\+C\+State\+Machine}!is\+In\+State@{is\+In\+State}}
-\index{is\+In\+State@{is\+In\+State}!motion\+::\+C\+State\+Machine@{motion\+::\+C\+State\+Machine}}
-\subsubsection{\texorpdfstring{is\+In\+State()}{isInState()}}
-{\footnotesize\ttfamily template$<$class state\+\_\+type $>$ \\
-bool \mbox{\hyperlink{classmotion_1_1CStateMachine}{motion\+::\+C\+State\+Machine}}$<$ state\+\_\+type $>$\+::is\+In\+State (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classmotion_1_1CState}{C\+State}}$<$ state\+\_\+type $>$ \&}]{st }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+ Call the entry method of the new state. \mbox{\Hypertarget{classmotion_1_1CStateMachine_a2231e1232b1fe6a793b95e0e2217f362}\label{classmotion_1_1CStateMachine_a2231e1232b1fe6a793b95e0e2217f362}} 
+\index{motion\+::\+C\+State\+Machine@{motion\+::\+C\+State\+Machine}!get\+Current\+State@{get\+Current\+State}}
+\index{get\+Current\+State@{get\+Current\+State}!motion\+::\+C\+State\+Machine@{motion\+::\+C\+State\+Machine}}
+\subsubsection{\texorpdfstring{get\+Current\+State()}{getCurrentState()}}
+{\footnotesize\ttfamily template$<$class state\+\_\+type$>$ \\
+\mbox{\hyperlink{classmotion_1_1CState}{C\+State}}$<$state\+\_\+type$>$$\ast$ \mbox{\hyperlink{classmotion_1_1CStateMachine}{motion\+::\+C\+State\+Machine}}$<$ state\+\_\+type $>$\+::get\+Current\+State (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Returns true if the current state\textquotesingle{}s type is equal to the type of the class passed as a parameter. \mbox{\Hypertarget{classmotion_1_1CStateMachine_ae8e1d802793aded65b1da25dad007486}\label{classmotion_1_1CStateMachine_ae8e1d802793aded65b1da25dad007486}} 
+Returns true if the current state\textquotesingle{}s type is equal to the type of the class passed as a parameter.\+bool is\+In\+State(const C\+State$<$state\+\_\+type$>$\& st) const \{ return typeid($\ast$m\+\_\+p\+Current\+State) == typeid(st); \} \mbox{\Hypertarget{classmotion_1_1CStateMachine_ae8e1d802793aded65b1da25dad007486}\label{classmotion_1_1CStateMachine_ae8e1d802793aded65b1da25dad007486}} 
 \index{motion\+::\+C\+State\+Machine@{motion\+::\+C\+State\+Machine}!revert\+To\+Previous\+State@{revert\+To\+Previous\+State}}
 \index{revert\+To\+Previous\+State@{revert\+To\+Previous\+State}!motion\+::\+C\+State\+Machine@{motion\+::\+C\+State\+Machine}}
 \subsubsection{\texorpdfstring{revert\+To\+Previous\+State()}{revertToPreviousState()}}
-{\footnotesize\ttfamily template$<$class state\+\_\+type $>$ \\
+{\footnotesize\ttfamily template$<$class state\+\_\+type$>$ \\
 void \mbox{\hyperlink{classmotion_1_1CStateMachine}{motion\+::\+C\+State\+Machine}}$<$ state\+\_\+type $>$\+::revert\+To\+Previous\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 Change state back to the previous state. \mbox{\Hypertarget{classmotion_1_1CStateMachine_a57407660e1054b7b6e912efc3afb9495}\label{classmotion_1_1CStateMachine_a57407660e1054b7b6e912efc3afb9495}} 
 \index{motion\+::\+C\+State\+Machine@{motion\+::\+C\+State\+Machine}!set\+Current\+State@{set\+Current\+State}}
 \index{set\+Current\+State@{set\+Current\+State}!motion\+::\+C\+State\+Machine@{motion\+::\+C\+State\+Machine}}
 \subsubsection{\texorpdfstring{set\+Current\+State()}{setCurrentState()}}
-{\footnotesize\ttfamily template$<$class state\+\_\+type $>$ \\
+{\footnotesize\ttfamily template$<$class state\+\_\+type$>$ \\
 void \mbox{\hyperlink{classmotion_1_1CStateMachine}{motion\+::\+C\+State\+Machine}}$<$ state\+\_\+type $>$\+::set\+Current\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmotion_1_1CState}{C\+State}}$<$ state\+\_\+type $>$ $\ast$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 Use these methods to initialize the F\+SM. \mbox{\Hypertarget{classmotion_1_1CStateMachine_a8a944b6b5dcff9b614b434fabcd8955c}\label{classmotion_1_1CStateMachine_a8a944b6b5dcff9b614b434fabcd8955c}} 
 \index{motion\+::\+C\+State\+Machine@{motion\+::\+C\+State\+Machine}!update@{update}}
 \index{update@{update}!motion\+::\+C\+State\+Machine@{motion\+::\+C\+State\+Machine}}
 \subsubsection{\texorpdfstring{update()}{update()}}
-{\footnotesize\ttfamily template$<$class state\+\_\+type $>$ \\
-void \mbox{\hyperlink{classmotion_1_1CStateMachine}{motion\+::\+C\+State\+Machine}}$<$ state\+\_\+type $>$\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily template$<$class state\+\_\+type$>$ \\
+void \mbox{\hyperlink{classmotion_1_1CStateMachine}{motion\+::\+C\+State\+Machine}}$<$ state\+\_\+type $>$\+::update (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 Call this to update the F\+SM. If a global state exists, call its execute method, else do nothing. ~\newline
- Same for the current state. 
+~\newline
+ if(m\+\_\+p\+Global\+State) m\+\_\+p\+Global\+State-\/$>$execute(m\+\_\+p\+Owner);
+
+Same for the current state. 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-motion/C\+State\+Machine.\+h\end{DoxyCompactItemize}
+motion/\mbox{\hyperlink{CStateMachine_8h}{C\+State\+Machine.\+h}}\end{DoxyCompactItemize}

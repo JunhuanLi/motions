@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['update',['update',['../classmotion_1_1CStateMachine.html#a8a944b6b5dcff9b614b434fabcd8955c',1,'motion::CStateMachine']]],
-  ['updatecurpose',['updateCurPose',['../classmotion_1_1CActionBase.html#aed9deac73a58d2f3272403140d927988',1,'motion::CActionBase']]]
+  ['motionabsd',['motionAbsd',['../motionUtils_8h.html#a381cbbb66cca35594859425079103743',1,'motion']]]
 ];

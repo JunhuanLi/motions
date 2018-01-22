@@ -1,0 +1,362 @@
+\hypertarget{motionUtils_8h}{}\section{motion/misc/motion\+Utils.h File Reference}
+\label{motionUtils_8h}\index{motion/misc/motion\+Utils.\+h@{motion/misc/motion\+Utils.\+h}}
+
+
+Shared methods.  
+
+
+{\ttfamily \#include \char`\"{}motion\+Enums.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+Motion\+Pose2\+D.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+Motion\+Vector2\+D.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$cstdio$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{motionUtils_8h_a261e91fd2f2bfc4cbfd4e7fedffe1175}{motion\+::normalize\+Theta}} (double theta, double range=180)
+\item 
+double \mbox{\hyperlink{motionUtils_8h_a3c5c86fe84b4bfc790a71c67d2f8f4c1}{motion\+::deg2\+Rad}} (double ang\+Deg)
+\item 
+double \mbox{\hyperlink{motionUtils_8h_a861da2082167f1c1e3b50cf9a4c537e5}{motion\+::rad2\+Deg}} (double ang\+Rad)
+\item 
+double \mbox{\hyperlink{motionUtils_8h_a381cbbb66cca35594859425079103743}{motion\+::motion\+Absd}} (double val)
+\item 
+E\+Rotate\+Side \mbox{\hyperlink{motionUtils_8h_acff621aaba9b8d6866d88dd1c143e6f7}{motion\+::get\+Rot\+Side}} (double ang\+Deg)
+\item 
+T\+Motion\+Vector2D \mbox{\hyperlink{motionUtils_8h_a9ad264939824ef35f8ee4cb3100a8a18}{motion\+::phi2\+Vec}} (double ang\+Rad)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const double \mbox{\hyperlink{motionUtils_8h_acf78e8bc1ae99da359f26d454c598362}{motion\+::\+Pi}} = 3.\+14159
+\item 
+\mbox{\Hypertarget{motionUtils_8h_aea92c749c3d8f2b0cfdd31dc24749301}\label{motionUtils_8h_aea92c749c3d8f2b0cfdd31dc24749301}} 
+const double {\bfseries motion\+::half\+Pi} = Pi / 2
+\item 
+\mbox{\Hypertarget{motionUtils_8h_ab546589d4002710ed0ea9f28933187a8}\label{motionUtils_8h_ab546589d4002710ed0ea9f28933187a8}} 
+const double {\bfseries motion\+::two\+Pi} = 2 $\ast$ Pi
+\item 
+\mbox{\Hypertarget{motionUtils_8h_a19b5fc2efd2abe1e490bbd49a6db322e}\label{motionUtils_8h_a19b5fc2efd2abe1e490bbd49a6db322e}} 
+const double {\bfseries motion\+::deg2\+Rad\+Ratio} = Pi / 180
+\item 
+\mbox{\Hypertarget{motionUtils_8h_ad7391c8e496297c1830c1ac8e34df09e}\label{motionUtils_8h_ad7391c8e496297c1830c1ac8e34df09e}} 
+const double {\bfseries motion\+::rad2\+Deg\+Ratio} = 180 / Pi
+\item 
+const double \mbox{\hyperlink{motionUtils_8h_ac22c90e544f526586d098e2222358264}{motion\+::ang\+Accuracy}} = 0.\+01
+\item 
+const double \mbox{\hyperlink{motionUtils_8h_a2ae78c26075193f51621685102ae1290}{motion\+::start\+Up\+Ang\+Deg}} = 3
+\item 
+const double \mbox{\hyperlink{motionUtils_8h_a61a0412267411cf7927f59087884dac4}{motion\+::slight\+Tune\+Ang\+Deg}} = 1
+\item 
+const double \mbox{\hyperlink{motionUtils_8h_aa6bad4783392d87d2858c00802de933e}{motion\+::loc\+Accuracy}} = 0.\+1
+\item 
+const double \mbox{\hyperlink{motionUtils_8h_a1c3581a4d605132f0ff74aef1791d221}{motion\+::jump\+Threshold}} = 350
+\item 
+const double \mbox{\hyperlink{motionUtils_8h_a74cef680dc2a52dc7d6513576ccd105a}{motion\+::infrared\+Ray\+Angle}} = 0
+\item 
+const double \mbox{\hyperlink{motionUtils_8h_a4a9beac5e616249489757b8690b666ae}{motion\+::win\+Len}} = 5
+\item 
+const double \mbox{\hyperlink{motionUtils_8h_a95ee18fdf0dc0ece924ca7514bae505c}{motion\+::wall\+FolV}} = 0.\+3
+\item 
+const double \mbox{\hyperlink{motionUtils_8h_a61d4cabd714999b9b7846dcb53713db7}{motion\+::wall\+FolW}} = deg2\+Rad(60)
+\item 
+const double \mbox{\hyperlink{motionUtils_8h_a0fcf4a0894e0f5774d432234a122c5c0}{motion\+::wall\+Fol\+Side\+Dist}} = 0.\+2
+\item 
+const double \mbox{\hyperlink{motionUtils_8h_ac006ee7fd455dde7bc8c14efff3387a4}{motion\+::obs\+Stop\+Dist}} = wall\+Fol\+Side\+Dist
+\item 
+const double \mbox{\hyperlink{motionUtils_8h_a319b3e57015a3ee5fd8069081ac5f17c}{motion\+::wall\+Fol\+Resume\+Dist}} = 1
+\item 
+const double \mbox{\hyperlink{motionUtils_8h_a7101a00af35afb10e7a72790c3702446}{motion\+::wall\+Fol\+Resume\+A\+N\+D\+Angle}} = 90
+\item 
+const double \mbox{\hyperlink{motionUtils_8h_a76b695d54f72ae93c7800e32a6435020}{motion\+::wall\+Fol\+ObsW}} = deg2\+Rad(60)
+\item 
+const double \mbox{\hyperlink{motionUtils_8h_ac094c99785d593375e044bc81e209382}{motion\+::wall\+Fol\+ObsR}} = 0.\+0
+\item 
+const double \mbox{\hyperlink{motionUtils_8h_ae803c659c50525cc29754fa7104d16ec}{motion\+::wall\+Fol\+RidgeW}} = deg2\+Rad(30)
+\item 
+const double \mbox{\hyperlink{motionUtils_8h_a29bf17cdf11acdc151e62f3f46528fb3}{motion\+::wall\+Fol\+RidgeR}} = 0.\+01
+\item 
+const double \mbox{\hyperlink{motionUtils_8h_a9e4bfa088437b8844cffc7f7daa6bbc3}{motion\+::decel\+Ratio}} = 0.\+5
+\item 
+const double \mbox{\hyperlink{motionUtils_8h_a6c11addbd9af3af0103f5f2d73d48384}{motion\+::obs\+Dece\+Dist}} = obs\+Stop\+Dist $\ast$ 1.\+5
+\item 
+const double \mbox{\hyperlink{motionUtils_8h_ab440ddfd3c37179ff37e56a4c4db1177}{motion\+::dist\+Err\+Tolerance}} = wall\+Fol\+Side\+Dist $\ast$ 0.\+1
+\item 
+const double \mbox{\hyperlink{motionUtils_8h_a6395c90bfe3decc034d3eacfb08f6dba}{motion\+::max\+Allowed\+Side\+Dist}} = wall\+Fol\+Side\+Dist $\ast$ 2
+\item 
+const double \mbox{\hyperlink{motionUtils_8h_acd6712069a22c11d82c4a5bec1e08fe8}{motion\+::point\+TracW}} = deg2\+Rad(40)
+\item 
+const double \mbox{\hyperlink{motionUtils_8h_aa9f04f1697638b62d7c14805daefa89b}{motion\+::point\+TracV}} = 1
+\item 
+const double \mbox{\hyperlink{motionUtils_8h_afddf3de7a8336b123e35301ce73b0d31}{motion\+::point\+Trac\+ArcW}} = deg2\+Rad(20)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Shared methods. 
+
+Copyright (C), 1996-\/2017, T\+O\+P\+B\+A\+ND. Co., Ltd. ~\newline
+All right reserved.
+
+\begin{DoxyAuthor}{Author}
+Junhuan Li ~\newline
+
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+v1.\+0 ~\newline
+
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+18/01/17 
+\end{DoxyDate}
+\begin{DoxyNote}{Note}
+
+\begin{DoxyEnumerate}
+\item --- ~\newline
+History\+: Create this file ~\newline
+$<$author$>$ $<$time$>$ $<$version$>$ $<$desc$>$ ~\newline
+Junhuan Li 18/01/17 1.\+0 create file 
+\end{DoxyEnumerate}
+\end{DoxyNote}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{motionUtils_8h_file_a3c5c86fe84b4bfc790a71c67d2f8f4c1}\label{motionUtils_8h_file_a3c5c86fe84b4bfc790a71c67d2f8f4c1}} 
+\index{motion\+Utils.\+h@{motion\+Utils.\+h}!deg2\+Rad@{deg2\+Rad}}
+\index{deg2\+Rad@{deg2\+Rad}!motion\+Utils.\+h@{motion\+Utils.\+h}}
+\subsubsection{\texorpdfstring{deg2\+Rad()}{deg2Rad()}}
+{\footnotesize\ttfamily double motion\+::deg2\+Rad (\begin{DoxyParamCaption}\item[{double}]{ang\+Deg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Translate angle in degree to angle in rad. 
+\begin{DoxyParams}{Parameters}
+{\em ang\+Deg} & Angle in degree \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ang\+Deg in rad 
+\end{DoxyReturn}
+\mbox{\Hypertarget{motionUtils_8h_file_acff621aaba9b8d6866d88dd1c143e6f7}\label{motionUtils_8h_file_acff621aaba9b8d6866d88dd1c143e6f7}} 
+\index{motion\+Utils.\+h@{motion\+Utils.\+h}!get\+Rot\+Side@{get\+Rot\+Side}}
+\index{get\+Rot\+Side@{get\+Rot\+Side}!motion\+Utils.\+h@{motion\+Utils.\+h}}
+\subsubsection{\texorpdfstring{get\+Rot\+Side()}{getRotSide()}}
+{\footnotesize\ttfamily E\+Rotate\+Side motion\+::get\+Rot\+Side (\begin{DoxyParamCaption}\item[{double}]{ang\+Deg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get rotation side. 
+\begin{DoxyParams}{Parameters}
+{\em ang\+Deg} & Angle in degree \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+M\+O\+T\+I\+O\+N\+C\+CW if ang\+Deg is positive 
+\end{DoxyReturn}
+\mbox{\Hypertarget{motionUtils_8h_file_a381cbbb66cca35594859425079103743}\label{motionUtils_8h_file_a381cbbb66cca35594859425079103743}} 
+\index{motion\+Utils.\+h@{motion\+Utils.\+h}!motion\+Absd@{motion\+Absd}}
+\index{motion\+Absd@{motion\+Absd}!motion\+Utils.\+h@{motion\+Utils.\+h}}
+\subsubsection{\texorpdfstring{motion\+Absd()}{motionAbsd()}}
+{\footnotesize\ttfamily double motion\+::motion\+Absd (\begin{DoxyParamCaption}\item[{double}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the absolute value of a variable. 
+\begin{DoxyParams}{Parameters}
+{\em val} & A variable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The absolute value of this variable 
+\end{DoxyReturn}
+\mbox{\Hypertarget{motionUtils_8h_file_a261e91fd2f2bfc4cbfd4e7fedffe1175}\label{motionUtils_8h_file_a261e91fd2f2bfc4cbfd4e7fedffe1175}} 
+\index{motion\+Utils.\+h@{motion\+Utils.\+h}!normalize\+Theta@{normalize\+Theta}}
+\index{normalize\+Theta@{normalize\+Theta}!motion\+Utils.\+h@{motion\+Utils.\+h}}
+\subsubsection{\texorpdfstring{normalize\+Theta()}{normalizeTheta()}}
+{\footnotesize\ttfamily double motion\+::normalize\+Theta (\begin{DoxyParamCaption}\item[{double}]{theta,  }\item[{double}]{range = {\ttfamily 180} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Normalize the give theta to the given range. Generally the range is 180 degree or Pi, then this function will correspondingly normal the theta value into -\/180$\sim$180 or -\/\+Pi$\sim$\+Pi. 
+\begin{DoxyParams}{Parameters}
+{\em theta} & Angle need normalize. \\
+\hline
+{\em range} & Target range with default value 180 degree. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Normalized angle.
+\end{DoxyReturn}
+Functions \mbox{\Hypertarget{motionUtils_8h_file_a9ad264939824ef35f8ee4cb3100a8a18}\label{motionUtils_8h_file_a9ad264939824ef35f8ee4cb3100a8a18}} 
+\index{motion\+Utils.\+h@{motion\+Utils.\+h}!phi2\+Vec@{phi2\+Vec}}
+\index{phi2\+Vec@{phi2\+Vec}!motion\+Utils.\+h@{motion\+Utils.\+h}}
+\subsubsection{\texorpdfstring{phi2\+Vec()}{phi2Vec()}}
+{\footnotesize\ttfamily T\+Motion\+Vector2D motion\+::phi2\+Vec (\begin{DoxyParamCaption}\item[{double}]{ang\+Rad }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Transfer a angle to a vector. 
+\begin{DoxyParams}{Parameters}
+{\em ang\+Rad} & Angle in rad \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector 
+\end{DoxyReturn}
+\mbox{\Hypertarget{motionUtils_8h_file_a861da2082167f1c1e3b50cf9a4c537e5}\label{motionUtils_8h_file_a861da2082167f1c1e3b50cf9a4c537e5}} 
+\index{motion\+Utils.\+h@{motion\+Utils.\+h}!rad2\+Deg@{rad2\+Deg}}
+\index{rad2\+Deg@{rad2\+Deg}!motion\+Utils.\+h@{motion\+Utils.\+h}}
+\subsubsection{\texorpdfstring{rad2\+Deg()}{rad2Deg()}}
+{\footnotesize\ttfamily double motion\+::rad2\+Deg (\begin{DoxyParamCaption}\item[{double}]{ang\+Rad }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Translate angle in rad to angle in degree. 
+\begin{DoxyParams}{Parameters}
+{\em ang\+Rad} & Angle in rad \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ang\+Rad in degree 
+\end{DoxyReturn}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{motionUtils_8h_file_ac22c90e544f526586d098e2222358264}\label{motionUtils_8h_file_ac22c90e544f526586d098e2222358264}} 
+\index{motion\+Utils.\+h@{motion\+Utils.\+h}!ang\+Accuracy@{ang\+Accuracy}}
+\index{ang\+Accuracy@{ang\+Accuracy}!motion\+Utils.\+h@{motion\+Utils.\+h}}
+\subsubsection{\texorpdfstring{ang\+Accuracy}{angAccuracy}}
+{\footnotesize\ttfamily const double motion\+::ang\+Accuracy = 0.\+01}
+
+Angle accuracy in degree. \mbox{\Hypertarget{motionUtils_8h_file_a9e4bfa088437b8844cffc7f7daa6bbc3}\label{motionUtils_8h_file_a9e4bfa088437b8844cffc7f7daa6bbc3}} 
+\index{motion\+Utils.\+h@{motion\+Utils.\+h}!decel\+Ratio@{decel\+Ratio}}
+\index{decel\+Ratio@{decel\+Ratio}!motion\+Utils.\+h@{motion\+Utils.\+h}}
+\subsubsection{\texorpdfstring{decel\+Ratio}{decelRatio}}
+{\footnotesize\ttfamily const double motion\+::decel\+Ratio = 0.\+5}
+
+Deceleration ratio(0$\sim$1). \mbox{\Hypertarget{motionUtils_8h_file_ab440ddfd3c37179ff37e56a4c4db1177}\label{motionUtils_8h_file_ab440ddfd3c37179ff37e56a4c4db1177}} 
+\index{motion\+Utils.\+h@{motion\+Utils.\+h}!dist\+Err\+Tolerance@{dist\+Err\+Tolerance}}
+\index{dist\+Err\+Tolerance@{dist\+Err\+Tolerance}!motion\+Utils.\+h@{motion\+Utils.\+h}}
+\subsubsection{\texorpdfstring{dist\+Err\+Tolerance}{distErrTolerance}}
+{\footnotesize\ttfamily const double motion\+::dist\+Err\+Tolerance = wall\+Fol\+Side\+Dist $\ast$ 0.\+1}
+
+Wall following error tolerance. \mbox{\Hypertarget{motionUtils_8h_file_a74cef680dc2a52dc7d6513576ccd105a}\label{motionUtils_8h_file_a74cef680dc2a52dc7d6513576ccd105a}} 
+\index{motion\+Utils.\+h@{motion\+Utils.\+h}!infrared\+Ray\+Angle@{infrared\+Ray\+Angle}}
+\index{infrared\+Ray\+Angle@{infrared\+Ray\+Angle}!motion\+Utils.\+h@{motion\+Utils.\+h}}
+\subsubsection{\texorpdfstring{infrared\+Ray\+Angle}{infraredRayAngle}}
+{\footnotesize\ttfamily const double motion\+::infrared\+Ray\+Angle = 0}
+
+Wall Following parameters. Angle between infrared ray and the direction which prependicular to the robot heading direction. It\textquotesingle{}s a positive number between 0$\sim$90 degree \mbox{\Hypertarget{motionUtils_8h_file_a1c3581a4d605132f0ff74aef1791d221}\label{motionUtils_8h_file_a1c3581a4d605132f0ff74aef1791d221}} 
+\index{motion\+Utils.\+h@{motion\+Utils.\+h}!jump\+Threshold@{jump\+Threshold}}
+\index{jump\+Threshold@{jump\+Threshold}!motion\+Utils.\+h@{motion\+Utils.\+h}}
+\subsubsection{\texorpdfstring{jump\+Threshold}{jumpThreshold}}
+{\footnotesize\ttfamily const double motion\+::jump\+Threshold = 350}
+
+Used to assert whether there is a jump between -\/180$\sim$180. \mbox{\Hypertarget{motionUtils_8h_file_aa6bad4783392d87d2858c00802de933e}\label{motionUtils_8h_file_aa6bad4783392d87d2858c00802de933e}} 
+\index{motion\+Utils.\+h@{motion\+Utils.\+h}!loc\+Accuracy@{loc\+Accuracy}}
+\index{loc\+Accuracy@{loc\+Accuracy}!motion\+Utils.\+h@{motion\+Utils.\+h}}
+\subsubsection{\texorpdfstring{loc\+Accuracy}{locAccuracy}}
+{\footnotesize\ttfamily const double motion\+::loc\+Accuracy = 0.\+1}
+
+Location accuracy in meter. \mbox{\Hypertarget{motionUtils_8h_file_a6395c90bfe3decc034d3eacfb08f6dba}\label{motionUtils_8h_file_a6395c90bfe3decc034d3eacfb08f6dba}} 
+\index{motion\+Utils.\+h@{motion\+Utils.\+h}!max\+Allowed\+Side\+Dist@{max\+Allowed\+Side\+Dist}}
+\index{max\+Allowed\+Side\+Dist@{max\+Allowed\+Side\+Dist}!motion\+Utils.\+h@{motion\+Utils.\+h}}
+\subsubsection{\texorpdfstring{max\+Allowed\+Side\+Dist}{maxAllowedSideDist}}
+{\footnotesize\ttfamily const double motion\+::max\+Allowed\+Side\+Dist = wall\+Fol\+Side\+Dist $\ast$ 2}
+
+Maximum allowed side distance. If larger than this value, it means edge reached. \mbox{\Hypertarget{motionUtils_8h_file_a6c11addbd9af3af0103f5f2d73d48384}\label{motionUtils_8h_file_a6c11addbd9af3af0103f5f2d73d48384}} 
+\index{motion\+Utils.\+h@{motion\+Utils.\+h}!obs\+Dece\+Dist@{obs\+Dece\+Dist}}
+\index{obs\+Dece\+Dist@{obs\+Dece\+Dist}!motion\+Utils.\+h@{motion\+Utils.\+h}}
+\subsubsection{\texorpdfstring{obs\+Dece\+Dist}{obsDeceDist}}
+{\footnotesize\ttfamily const double motion\+::obs\+Dece\+Dist = obs\+Stop\+Dist $\ast$ 1.\+5}
+
+The distance that robot need to start decelerate. \mbox{\Hypertarget{motionUtils_8h_file_ac006ee7fd455dde7bc8c14efff3387a4}\label{motionUtils_8h_file_ac006ee7fd455dde7bc8c14efff3387a4}} 
+\index{motion\+Utils.\+h@{motion\+Utils.\+h}!obs\+Stop\+Dist@{obs\+Stop\+Dist}}
+\index{obs\+Stop\+Dist@{obs\+Stop\+Dist}!motion\+Utils.\+h@{motion\+Utils.\+h}}
+\subsubsection{\texorpdfstring{obs\+Stop\+Dist}{obsStopDist}}
+{\footnotesize\ttfamily const double motion\+::obs\+Stop\+Dist = wall\+Fol\+Side\+Dist}
+
+The distance that robot need to stop. \mbox{\Hypertarget{motionUtils_8h_file_acf78e8bc1ae99da359f26d454c598362}\label{motionUtils_8h_file_acf78e8bc1ae99da359f26d454c598362}} 
+\index{motion\+Utils.\+h@{motion\+Utils.\+h}!Pi@{Pi}}
+\index{Pi@{Pi}!motion\+Utils.\+h@{motion\+Utils.\+h}}
+\subsubsection{\texorpdfstring{Pi}{Pi}}
+{\footnotesize\ttfamily const double motion\+::\+Pi = 3.\+14159}
+
+Micros Constants \mbox{\Hypertarget{motionUtils_8h_file_afddf3de7a8336b123e35301ce73b0d31}\label{motionUtils_8h_file_afddf3de7a8336b123e35301ce73b0d31}} 
+\index{motion\+Utils.\+h@{motion\+Utils.\+h}!point\+Trac\+ArcW@{point\+Trac\+ArcW}}
+\index{point\+Trac\+ArcW@{point\+Trac\+ArcW}!motion\+Utils.\+h@{motion\+Utils.\+h}}
+\subsubsection{\texorpdfstring{point\+Trac\+ArcW}{pointTracArcW}}
+{\footnotesize\ttfamily const double motion\+::point\+Trac\+ArcW = deg2\+Rad(20)}
+
+Point Tracking arc angular velocity. \mbox{\Hypertarget{motionUtils_8h_file_aa9f04f1697638b62d7c14805daefa89b}\label{motionUtils_8h_file_aa9f04f1697638b62d7c14805daefa89b}} 
+\index{motion\+Utils.\+h@{motion\+Utils.\+h}!point\+TracV@{point\+TracV}}
+\index{point\+TracV@{point\+TracV}!motion\+Utils.\+h@{motion\+Utils.\+h}}
+\subsubsection{\texorpdfstring{point\+TracV}{pointTracV}}
+{\footnotesize\ttfamily const double motion\+::point\+TracV = 1}
+
+Point Tracking linear velocity. \mbox{\Hypertarget{motionUtils_8h_file_acd6712069a22c11d82c4a5bec1e08fe8}\label{motionUtils_8h_file_acd6712069a22c11d82c4a5bec1e08fe8}} 
+\index{motion\+Utils.\+h@{motion\+Utils.\+h}!point\+TracW@{point\+TracW}}
+\index{point\+TracW@{point\+TracW}!motion\+Utils.\+h@{motion\+Utils.\+h}}
+\subsubsection{\texorpdfstring{point\+TracW}{pointTracW}}
+{\footnotesize\ttfamily const double motion\+::point\+TracW = deg2\+Rad(40)}
+
+Point Tracker parameters. Point Tracking rotation velocity. \mbox{\Hypertarget{motionUtils_8h_file_a61a0412267411cf7927f59087884dac4}\label{motionUtils_8h_file_a61a0412267411cf7927f59087884dac4}} 
+\index{motion\+Utils.\+h@{motion\+Utils.\+h}!slight\+Tune\+Ang\+Deg@{slight\+Tune\+Ang\+Deg}}
+\index{slight\+Tune\+Ang\+Deg@{slight\+Tune\+Ang\+Deg}!motion\+Utils.\+h@{motion\+Utils.\+h}}
+\subsubsection{\texorpdfstring{slight\+Tune\+Ang\+Deg}{slightTuneAngDeg}}
+{\footnotesize\ttfamily const double motion\+::slight\+Tune\+Ang\+Deg = 1}
+
+Slight tune angle range. \mbox{\Hypertarget{motionUtils_8h_file_a2ae78c26075193f51621685102ae1290}\label{motionUtils_8h_file_a2ae78c26075193f51621685102ae1290}} 
+\index{motion\+Utils.\+h@{motion\+Utils.\+h}!start\+Up\+Ang\+Deg@{start\+Up\+Ang\+Deg}}
+\index{start\+Up\+Ang\+Deg@{start\+Up\+Ang\+Deg}!motion\+Utils.\+h@{motion\+Utils.\+h}}
+\subsubsection{\texorpdfstring{start\+Up\+Ang\+Deg}{startUpAngDeg}}
+{\footnotesize\ttfamily const double motion\+::start\+Up\+Ang\+Deg = 3}
+
+Start up angle range. \mbox{\Hypertarget{motionUtils_8h_file_ac094c99785d593375e044bc81e209382}\label{motionUtils_8h_file_ac094c99785d593375e044bc81e209382}} 
+\index{motion\+Utils.\+h@{motion\+Utils.\+h}!wall\+Fol\+ObsR@{wall\+Fol\+ObsR}}
+\index{wall\+Fol\+ObsR@{wall\+Fol\+ObsR}!motion\+Utils.\+h@{motion\+Utils.\+h}}
+\subsubsection{\texorpdfstring{wall\+Fol\+ObsR}{wallFolObsR}}
+{\footnotesize\ttfamily const double motion\+::wall\+Fol\+ObsR = 0.\+0}
+
+Rotation radius when obstacles detected. \mbox{\Hypertarget{motionUtils_8h_file_a76b695d54f72ae93c7800e32a6435020}\label{motionUtils_8h_file_a76b695d54f72ae93c7800e32a6435020}} 
+\index{motion\+Utils.\+h@{motion\+Utils.\+h}!wall\+Fol\+ObsW@{wall\+Fol\+ObsW}}
+\index{wall\+Fol\+ObsW@{wall\+Fol\+ObsW}!motion\+Utils.\+h@{motion\+Utils.\+h}}
+\subsubsection{\texorpdfstring{wall\+Fol\+ObsW}{wallFolObsW}}
+{\footnotesize\ttfamily const double motion\+::wall\+Fol\+ObsW = deg2\+Rad(60)}
+
+Angular velocity when obstacles detected. \mbox{\Hypertarget{motionUtils_8h_file_a7101a00af35afb10e7a72790c3702446}\label{motionUtils_8h_file_a7101a00af35afb10e7a72790c3702446}} 
+\index{motion\+Utils.\+h@{motion\+Utils.\+h}!wall\+Fol\+Resume\+A\+N\+D\+Angle@{wall\+Fol\+Resume\+A\+N\+D\+Angle}}
+\index{wall\+Fol\+Resume\+A\+N\+D\+Angle@{wall\+Fol\+Resume\+A\+N\+D\+Angle}!motion\+Utils.\+h@{motion\+Utils.\+h}}
+\subsubsection{\texorpdfstring{wall\+Fol\+Resume\+A\+N\+D\+Angle}{wallFolResumeANDAngle}}
+{\footnotesize\ttfamily const double motion\+::wall\+Fol\+Resume\+A\+N\+D\+Angle = 90}
+
+Resume-\/wall-\/following-\/mode angle(degree). \mbox{\Hypertarget{motionUtils_8h_file_a319b3e57015a3ee5fd8069081ac5f17c}\label{motionUtils_8h_file_a319b3e57015a3ee5fd8069081ac5f17c}} 
+\index{motion\+Utils.\+h@{motion\+Utils.\+h}!wall\+Fol\+Resume\+Dist@{wall\+Fol\+Resume\+Dist}}
+\index{wall\+Fol\+Resume\+Dist@{wall\+Fol\+Resume\+Dist}!motion\+Utils.\+h@{motion\+Utils.\+h}}
+\subsubsection{\texorpdfstring{wall\+Fol\+Resume\+Dist}{wallFolResumeDist}}
+{\footnotesize\ttfamily const double motion\+::wall\+Fol\+Resume\+Dist = 1}
+
+Resume-\/wall-\/following-\/mode distance. \mbox{\Hypertarget{motionUtils_8h_file_a29bf17cdf11acdc151e62f3f46528fb3}\label{motionUtils_8h_file_a29bf17cdf11acdc151e62f3f46528fb3}} 
+\index{motion\+Utils.\+h@{motion\+Utils.\+h}!wall\+Fol\+RidgeR@{wall\+Fol\+RidgeR}}
+\index{wall\+Fol\+RidgeR@{wall\+Fol\+RidgeR}!motion\+Utils.\+h@{motion\+Utils.\+h}}
+\subsubsection{\texorpdfstring{wall\+Fol\+RidgeR}{wallFolRidgeR}}
+{\footnotesize\ttfamily const double motion\+::wall\+Fol\+RidgeR = 0.\+01}
+
+Rotation radius when edges detected. \mbox{\Hypertarget{motionUtils_8h_file_ae803c659c50525cc29754fa7104d16ec}\label{motionUtils_8h_file_ae803c659c50525cc29754fa7104d16ec}} 
+\index{motion\+Utils.\+h@{motion\+Utils.\+h}!wall\+Fol\+RidgeW@{wall\+Fol\+RidgeW}}
+\index{wall\+Fol\+RidgeW@{wall\+Fol\+RidgeW}!motion\+Utils.\+h@{motion\+Utils.\+h}}
+\subsubsection{\texorpdfstring{wall\+Fol\+RidgeW}{wallFolRidgeW}}
+{\footnotesize\ttfamily const double motion\+::wall\+Fol\+RidgeW = deg2\+Rad(30)}
+
+Angular velocity when edges detected. \mbox{\Hypertarget{motionUtils_8h_file_a0fcf4a0894e0f5774d432234a122c5c0}\label{motionUtils_8h_file_a0fcf4a0894e0f5774d432234a122c5c0}} 
+\index{motion\+Utils.\+h@{motion\+Utils.\+h}!wall\+Fol\+Side\+Dist@{wall\+Fol\+Side\+Dist}}
+\index{wall\+Fol\+Side\+Dist@{wall\+Fol\+Side\+Dist}!motion\+Utils.\+h@{motion\+Utils.\+h}}
+\subsubsection{\texorpdfstring{wall\+Fol\+Side\+Dist}{wallFolSideDist}}
+{\footnotesize\ttfamily const double motion\+::wall\+Fol\+Side\+Dist = 0.\+2}
+
+The side distance that robot need to keep. \mbox{\Hypertarget{motionUtils_8h_file_a95ee18fdf0dc0ece924ca7514bae505c}\label{motionUtils_8h_file_a95ee18fdf0dc0ece924ca7514bae505c}} 
+\index{motion\+Utils.\+h@{motion\+Utils.\+h}!wall\+FolV@{wall\+FolV}}
+\index{wall\+FolV@{wall\+FolV}!motion\+Utils.\+h@{motion\+Utils.\+h}}
+\subsubsection{\texorpdfstring{wall\+FolV}{wallFolV}}
+{\footnotesize\ttfamily const double motion\+::wall\+FolV = 0.\+3}
+
+Linear velocity(m/s) in following wall. \mbox{\Hypertarget{motionUtils_8h_file_a61d4cabd714999b9b7846dcb53713db7}\label{motionUtils_8h_file_a61d4cabd714999b9b7846dcb53713db7}} 
+\index{motion\+Utils.\+h@{motion\+Utils.\+h}!wall\+FolW@{wall\+FolW}}
+\index{wall\+FolW@{wall\+FolW}!motion\+Utils.\+h@{motion\+Utils.\+h}}
+\subsubsection{\texorpdfstring{wall\+FolW}{wallFolW}}
+{\footnotesize\ttfamily const double motion\+::wall\+FolW = deg2\+Rad(60)}
+
+Angular velocity(rad/s) when deviated in following wall. \mbox{\Hypertarget{motionUtils_8h_file_a4a9beac5e616249489757b8690b666ae}\label{motionUtils_8h_file_a4a9beac5e616249489757b8690b666ae}} 
+\index{motion\+Utils.\+h@{motion\+Utils.\+h}!win\+Len@{win\+Len}}
+\index{win\+Len@{win\+Len}!motion\+Utils.\+h@{motion\+Utils.\+h}}
+\subsubsection{\texorpdfstring{win\+Len}{winLen}}
+{\footnotesize\ttfamily const double motion\+::win\+Len = 5}
+
+The length of window that pick part of laser data. 

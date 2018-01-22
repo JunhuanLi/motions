@@ -1,3 +1,18 @@
+/**
+  * Copyright (C), 1996-2017, TOPBAND. Co., Ltd. \n
+  * All right reserved.
+  *
+  * @file CMotionPointTracker.cpp
+  * @author Junhuan Li       
+  * @version v1.0      
+  * @date 18/01/17
+  * @brief Motion point tracker
+  * @note 
+  * 1. --- \n
+  * History: Create this file \n
+  * <author>       <time>   <version >      <desc> \n
+  * Junhuan Li    18/01/17     1.0         create file
+  */
 #include "CMotionPointTracker.h"
 #include "motionUtils.h"
 #include "CActionArc.h"
@@ -10,6 +25,7 @@ CMotionPointTracker::CMotionPointTracker(void)
 {
     m_pStateMachine = new CStateMachine<CMotionPointTracker>(this);
     m_pStateMachine->setCurrentState(CPTIdle::getInstance());
+    ptController = TMotionPIDCon(ptPID_P, ptPID_I, ptPID_D);
 }
 
 CMotionPointTracker* CMotionPointTracker::getInstance(void)
@@ -41,11 +57,11 @@ void CMotionPointTracker::LinearPT(void)
 
     switch(getlptState())
     {
-        /** Rotate to the target direction. */
+        /// Rotate to the target direction.
         case NOT_TRACKING:
             turn2TargPoint();
             break;
-        /** Forward with fixed v and calculated distance. */
+        /// Forward with fixed v and calculated distance.
         case ROTATION_FINISHED:
             trackPoint();
             break;
@@ -53,8 +69,7 @@ void CMotionPointTracker::LinearPT(void)
         case TRACKING_FINISHED:
             mtn->setSubMotionState(PT_FINISHED);
             getFSM()->changeState(CPTIdle::getInstance());
-            ///Replaced by changeState(someInstance) later.
-            ///todo
+            ///todo exceptions
             break;
 
         default:
@@ -84,7 +99,7 @@ void CMotionPointTracker::ArcPT(void)
         case ARC_FAILED:
             mtn->setSubMotionState(PT_FAILED);
             printf("[ljh] PT rotation arc failed.\n");
-            ///todo
+            ///todo exceptions
             break;
 
         default:
@@ -111,7 +126,7 @@ void CMotionPointTracker::turn2TargPoint(void)
         case ARC_FAILED:
             mtn->setSubMotionState(PT_FAILED);
             printf("[ljh] LPT rotation in place failed.\n");
-            ///todo
+            ///todo exceptions
             break;
 
         default:
@@ -137,7 +152,7 @@ void CMotionPointTracker::trackPoint(void)
         case FORWARD_FAILED:
             mtn->setSubMotionState(PT_FAILED);
             printf("[ljh] LPT forward failed.\n");
-            ///todo
+            ///todo exceptions
             break;
 
         default:

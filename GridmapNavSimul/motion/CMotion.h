@@ -1,3 +1,18 @@
+/**
+  * Copyright (C), 1996-2017, TOPBAND. Co., Ltd. \n
+  * All right reserved.
+  *
+  * @file CMotion.h
+  * @author Junhuan Li       
+  * @version v1.0      
+  * @date 18/01/17
+  * @brief Motion (owner of any motion)
+  * @note 
+  * 1. --- \n
+  * History: Create this file \n
+  * <author>       <time>   <version >      <desc> \n
+  * Junhuan Li    18/01/17     1.0         create file
+  */
 #ifndef CMOTION_H_
 #define CMOTION_H_
 
@@ -9,7 +24,16 @@
 #define mtn motion::CMotion::getInstance()
 
 namespace motion
-{
+{   
+   /** 
+    * Motion \n
+    *
+    * example: \n
+    *
+    * //to update motion
+    * mtn->update(); \n
+    *
+    */
     class CMotion : public CActionBase
     {
     public:

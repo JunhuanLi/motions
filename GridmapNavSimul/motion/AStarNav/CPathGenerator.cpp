@@ -1,3 +1,18 @@
+/**
+  * Copyright (C), 1996-2017, TOPBAND. Co., Ltd. \n
+  * All right reserved.
+  *
+  * @file CPathGenerator.cpp
+  * @author Junhuan Li       
+  * @version v1.0      
+  * @date 18/01/17
+  * @brief Path generator
+  * @note 
+  * 1. --- \n
+  * History: Create this file \n
+  * <author>       <time>   <version >      <desc> \n
+  * Junhuan Li    18/01/17     1.0         create file
+  */
 #include "CPathGenerator.h"
 #include "CMotionNode.h"
 #include <vector>
@@ -16,8 +31,8 @@ CPathGenerator::CPathGenerator(void)
 }
 
 list<TMotionPoint*> CPathGenerator::calcPath(TMotionPoint* start, 
-									  TMotionPoint* target,
-									  bool isIgnoreCorner)
+									  		 TMotionPoint* target,
+									  		 bool isIgnoreCorner)
 {
 	openList.push_back(start);
 	while(!openList.empty())
@@ -32,12 +47,12 @@ list<TMotionPoint*> CPathGenerator::calcPath(TMotionPoint* start,
 
 			if(isExist(openList,curPnt))
 			{
-				//重新计算G，如果更小则替换父节点为当前结点，重新计算GF，否则什么都不做
+				/// Calculate G, if the new one is smaller, update current point's G and F
 				foundPoint(tmpStartPoint, curPnt);
 			}
 			else
 			{
-				//添加到openList里，并且计算FGH
+				/// Insert it into openList and calculate GHF
 				notFoundPoint(tmpStartPoint, target, curPnt);
 			}
 		}
@@ -47,6 +62,11 @@ list<TMotionPoint*> CPathGenerator::calcPath(TMotionPoint* start,
 
 	list<TMotionPoint*> path;
 	TMotionPoint* pnt = isExist(openList, target);
+	if(pnt == nullptr)
+	{
+		cout<<"Path not found.\n"<<endl;
+		return path;
+	}
 	while(pnt->X != start->X || pnt->Y != start->Y)
 	{
 		path.push_front(pnt);
@@ -109,10 +129,10 @@ bool CPathGenerator::canReach(TMotionPoint* tmpStartPoint, int x, int y, bool is
 {
 	if(!canReach(x, y) || isExist(closeList, &TMotionPoint(x, y)))
 		return false;
-	/** 非 1 并且不在closeList*/
+	/// Not 1 and not in closeList.
 	else
 	{
-		/** x y在正上、下、左、右*/
+		/// Point(x y) is right up, down, left or right of center point.
 		if(abs(tmpStartPoint->X - x) + abs(tmpStartPoint->Y - y) == 1)
 			return true;
 		else

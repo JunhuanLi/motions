@@ -73,6 +73,8 @@ $(function() {
 <div class="title">motion::CMotionWallFollowing Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="CMotionWallFollowing_8h_source.html">CMotionWallFollowing.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for motion::CMotionWallFollowing:</div>
 <div class="dyncontent">
@@ -80,65 +82,142 @@ Inheritance diagram for motion::CMotionWallFollowing:</div>
   <img src="classmotion_1_1CMotionWallFollowing.png" usemap="#motion::CMotionWallFollowing_map" alt=""/>
   <map id="motion::CMotionWallFollowing_map" name="motion::CMotionWallFollowing_map">
 <area href="classmotion_1_1CActionBase.html" alt="motion::CActionBase" shape="rect" coords="0,0,179,24"/>
+<area href="classmotion_1_1CState.html" alt="motion::CState&lt; CMotion &gt;" shape="rect" coords="189,0,368,24"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a13696ff11374c7564808cc17ddafa941"><td class="memItemLeft" align="right" valign="top"><a id="a13696ff11374c7564808cc17ddafa941"></a>
-EWallFolStateType&#160;</td><td class="memItemRight" valign="bottom"><b>getWFState</b> (void)</td></tr>
-<tr class="separator:a13696ff11374c7564808cc17ddafa941"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abfeb34abd4d51b73ae78c06b848291df"><td class="memItemLeft" align="right" valign="top"><a id="abfeb34abd4d51b73ae78c06b848291df"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setWFState</b> (EWallFolStateType state)</td></tr>
-<tr class="separator:abfeb34abd4d51b73ae78c06b848291df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab7795a6549c0573f4aedfdec0c5a3cb3"><td class="memItemLeft" align="right" valign="top"><a id="ab7795a6549c0573f4aedfdec0c5a3cb3"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>getSideDist</b> (void)</td></tr>
-<tr class="separator:ab7795a6549c0573f4aedfdec0c5a3cb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af40335dae19ff508b90067259cecdf2c"><td class="memItemLeft" align="right" valign="top"><a id="af40335dae19ff508b90067259cecdf2c"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>getAheadDist</b> (void)</td></tr>
-<tr class="separator:af40335dae19ff508b90067259cecdf2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba9a2fc075a0241af6ed9caf7bbbdb1d"><td class="memItemLeft" align="right" valign="top">EWallFolStateType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmotion_1_1CMotionWallFollowing.html#aba9a2fc075a0241af6ed9caf7bbbdb1d">leftFollow</a> (mrpt::obs::CObservation2DRangeScan *scan, double v, double dist)</td></tr>
-<tr class="separator:aba9a2fc075a0241af6ed9caf7bbbdb1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5aa008f88629f10b7d44e528476ba03d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmotion_1_1CMotionWallFollowing.html#a5aa008f88629f10b7d44e528476ba03d">calcAheadDist</a> (mrpt::obs::CObservation2DRangeScan *scan, size_t winLength)</td></tr>
-<tr class="separator:a5aa008f88629f10b7d44e528476ba03d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afac9dc0c411ecc1effcea072964512e6"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmotion_1_1CMotionWallFollowing.html#afac9dc0c411ecc1effcea072964512e6">calcRightDist</a> (mrpt::obs::CObservation2DRangeScan *scan, size_t winLength)</td></tr>
-<tr class="separator:afac9dc0c411ecc1effcea072964512e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad42584f648abe8826d2c23dad8128484"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmotion_1_1CMotionWallFollowing.html#ad42584f648abe8826d2c23dad8128484">enter</a> (<a class="el" href="classmotion_1_1CMotion.html">CMotion</a> *mt)</td></tr>
+<tr class="separator:ad42584f648abe8826d2c23dad8128484"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a765cfe604941a06056131feb01fea66d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmotion_1_1CMotionWallFollowing.html#a765cfe604941a06056131feb01fea66d">execute</a> (<a class="el" href="classmotion_1_1CMotion.html">CMotion</a> *mt)</td></tr>
+<tr class="separator:a765cfe604941a06056131feb01fea66d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24be76c786b3a4bd476cc9b3c8955c26"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmotion_1_1CMotionWallFollowing.html#a24be76c786b3a4bd476cc9b3c8955c26">exit</a> (<a class="el" href="classmotion_1_1CMotion.html">CMotion</a> *mt)</td></tr>
+<tr class="separator:a24be76c786b3a4bd476cc9b3c8955c26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab85ceaa8803a0850acdc951bd9ebec74"><td class="memItemLeft" align="right" valign="top"><a id="ab85ceaa8803a0850acdc951bd9ebec74"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>reset</b> (void)</td></tr>
+<tr class="separator:ab85ceaa8803a0850acdc951bd9ebec74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ab894226ca05974580ec97ececbda5d"><td class="memItemLeft" align="right" valign="top"><a id="a0ab894226ca05974580ec97ececbda5d"></a>
+<a class="el" href="classmotion_1_1CStateMachine.html">CStateMachine</a>&lt; <a class="el" href="classmotion_1_1CMotionWallFollowing.html">CMotionWallFollowing</a> &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>getFSM</b> (void) const</td></tr>
+<tr class="separator:a0ab894226ca05974580ec97ececbda5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b29295eff775104bb16c110c3f8b81a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmotion_1_1CMotionWallFollowing.html#a1b29295eff775104bb16c110c3f8b81a">tuneVelocity</a> (void)</td></tr>
+<tr class="separator:a1b29295eff775104bb16c110c3f8b81a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8a39e0176c9e6127b8267b1a7a891ac"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmotion_1_1CMotionWallFollowing.html#ad8a39e0176c9e6127b8267b1a7a891ac">calcRemAngle</a> (void)</td></tr>
+<tr class="separator:ad8a39e0176c9e6127b8267b1a7a891ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fcea1525cdd043f8c0dd8621e3ba09e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmotion_1_1CMotionWallFollowing.html#a4fcea1525cdd043f8c0dd8621e3ba09e">distReached</a> (void)</td></tr>
+<tr class="separator:a4fcea1525cdd043f8c0dd8621e3ba09e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa84fb18a4cea89ad726c18d4f308e4d7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmotion_1_1CMotionWallFollowing.html#aa84fb18a4cea89ad726c18d4f308e4d7">angNDistReached</a> (void)</td></tr>
+<tr class="separator:aa84fb18a4cea89ad726c18d4f308e4d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classmotion_1_1CActionBase"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classmotion_1_1CActionBase')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classmotion_1_1CActionBase.html">motion::CActionBase</a></td></tr>
 <tr class="memitem:ab64789ff634b40a7c88771186deb02b3 inherit pub_methods_classmotion_1_1CActionBase"><td class="memItemLeft" align="right" valign="top"><a id="ab64789ff634b40a7c88771186deb02b3"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>resetBase</b> (void)</td></tr>
 <tr class="separator:ab64789ff634b40a7c88771186deb02b3 inherit pub_methods_classmotion_1_1CActionBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad8f7083a38f4c2068be4f1f3ff63d9b4 inherit pub_methods_classmotion_1_1CActionBase"><td class="memItemLeft" align="right" valign="top"><a id="ad8f7083a38f4c2068be4f1f3ff63d9b4"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>getLinearVelocity</b> (void)</td></tr>
-<tr class="separator:ad8f7083a38f4c2068be4f1f3ff63d9b4 inherit pub_methods_classmotion_1_1CActionBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b0cf24115b28a95a27ee1613b4ca638 inherit pub_methods_classmotion_1_1CActionBase"><td class="memItemLeft" align="right" valign="top"><a id="a1b0cf24115b28a95a27ee1613b4ca638"></a>
+<tr class="memitem:a56290a85c15b62718137f4a79a0e5d24 inherit pub_methods_classmotion_1_1CActionBase"><td class="memItemLeft" align="right" valign="top"><a id="a56290a85c15b62718137f4a79a0e5d24"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>getAheadDist</b> (void) const</td></tr>
+<tr class="separator:a56290a85c15b62718137f4a79a0e5d24 inherit pub_methods_classmotion_1_1CActionBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adee7bb394fc82f936af57e997ccc1f7f inherit pub_methods_classmotion_1_1CActionBase"><td class="memItemLeft" align="right" valign="top"><a id="adee7bb394fc82f936af57e997ccc1f7f"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>getSideDist</b> (void) const</td></tr>
+<tr class="separator:adee7bb394fc82f936af57e997ccc1f7f inherit pub_methods_classmotion_1_1CActionBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7cac53d714c3688609f5bfb026c6c4f inherit pub_methods_classmotion_1_1CActionBase"><td class="memItemLeft" align="right" valign="top"><a id="ab7cac53d714c3688609f5bfb026c6c4f"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>getLinearVelocity</b> (void) const</td></tr>
+<tr class="separator:ab7cac53d714c3688609f5bfb026c6c4f inherit pub_methods_classmotion_1_1CActionBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba9b4953364ac77f49e98ea6f59a3aad inherit pub_methods_classmotion_1_1CActionBase"><td class="memItemLeft" align="right" valign="top"><a id="aba9b4953364ac77f49e98ea6f59a3aad"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setVelocity</b> (double v, double w)</td></tr>
-<tr class="separator:a1b0cf24115b28a95a27ee1613b4ca638 inherit pub_methods_classmotion_1_1CActionBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:aba9b4953364ac77f49e98ea6f59a3aad inherit pub_methods_classmotion_1_1CActionBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab83e2ccbad3a796da9c8013467f89a5d inherit pub_methods_classmotion_1_1CActionBase"><td class="memItemLeft" align="right" valign="top"><a id="ab83e2ccbad3a796da9c8013467f89a5d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setMotion</b> (<a class="el" href="motionEnums_8h.html#a907f80786f402332d43f4646dc1450bc">EMotion</a> mot)</td></tr>
+<tr class="separator:ab83e2ccbad3a796da9c8013467f89a5d inherit pub_methods_classmotion_1_1CActionBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97b30f5e328649e00b8c3889ef6fce4a inherit pub_methods_classmotion_1_1CActionBase"><td class="memItemLeft" align="right" valign="top"><a id="a97b30f5e328649e00b8c3889ef6fce4a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setSubMotion</b> (<a class="el" href="motionEnums_8h.html#a23be5ef75af9219a8bf688fd9716d72c">ESubMotion</a> submot)</td></tr>
+<tr class="separator:a97b30f5e328649e00b8c3889ef6fce4a inherit pub_methods_classmotion_1_1CActionBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82ea8bab8f8a6ccfe0f4cf4addc47d33 inherit pub_methods_classmotion_1_1CActionBase"><td class="memItemLeft" align="right" valign="top"><a id="a82ea8bab8f8a6ccfe0f4cf4addc47d33"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setSubMotionState</b> (<a class="el" href="motionEnums_8h.html#a272f94c6143b9acf7ac44f165be53948">ESubMotionState</a> submotstate)</td></tr>
+<tr class="separator:a82ea8bab8f8a6ccfe0f4cf4addc47d33 inherit pub_methods_classmotion_1_1CActionBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5ea8ef039688efb9da75e552bfff955 inherit pub_methods_classmotion_1_1CActionBase"><td class="memItemLeft" align="right" valign="top"><a id="aa5ea8ef039688efb9da75e552bfff955"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setAction</b> (<a class="el" href="motionEnums_8h.html#aa7486027d362655230b958efe6985a7f">EAction</a> act) const</td></tr>
+<tr class="separator:aa5ea8ef039688efb9da75e552bfff955 inherit pub_methods_classmotion_1_1CActionBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37cf7cf8e21e5df22d1ae5326e92db63 inherit pub_methods_classmotion_1_1CActionBase"><td class="memItemLeft" align="right" valign="top"><a id="a37cf7cf8e21e5df22d1ae5326e92db63"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setActionState</b> (<a class="el" href="motionEnums_8h.html#ac80e838bea11b75469bfc14b1de921a3">EActionState</a> actsta)</td></tr>
+<tr class="separator:a37cf7cf8e21e5df22d1ae5326e92db63 inherit pub_methods_classmotion_1_1CActionBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c30abb08480e7b0cbd8a2d1bd2289a9 inherit pub_methods_classmotion_1_1CActionBase"><td class="memItemLeft" align="right" valign="top"><a id="a9c30abb08480e7b0cbd8a2d1bd2289a9"></a>
+<a class="el" href="motionEnums_8h.html#a907f80786f402332d43f4646dc1450bc">EMotion</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getMotion</b> (void) const</td></tr>
+<tr class="separator:a9c30abb08480e7b0cbd8a2d1bd2289a9 inherit pub_methods_classmotion_1_1CActionBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade6e14ed3cdb446bc146c4188d845547 inherit pub_methods_classmotion_1_1CActionBase"><td class="memItemLeft" align="right" valign="top"><a id="ade6e14ed3cdb446bc146c4188d845547"></a>
+<a class="el" href="motionEnums_8h.html#a23be5ef75af9219a8bf688fd9716d72c">ESubMotion</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getSubMotion</b> (void) const</td></tr>
+<tr class="separator:ade6e14ed3cdb446bc146c4188d845547 inherit pub_methods_classmotion_1_1CActionBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51e0207c21bc6da29b0435dead1dd6cc inherit pub_methods_classmotion_1_1CActionBase"><td class="memItemLeft" align="right" valign="top"><a id="a51e0207c21bc6da29b0435dead1dd6cc"></a>
+<a class="el" href="motionEnums_8h.html#a272f94c6143b9acf7ac44f165be53948">ESubMotionState</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getSubMotionState</b> (void) const</td></tr>
+<tr class="separator:a51e0207c21bc6da29b0435dead1dd6cc inherit pub_methods_classmotion_1_1CActionBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14d5ba8c773b1abb71974777daa5e0da inherit pub_methods_classmotion_1_1CActionBase"><td class="memItemLeft" align="right" valign="top"><a id="a14d5ba8c773b1abb71974777daa5e0da"></a>
+<a class="el" href="motionEnums_8h.html#aa7486027d362655230b958efe6985a7f">EAction</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getAction</b> (void) const</td></tr>
+<tr class="separator:a14d5ba8c773b1abb71974777daa5e0da inherit pub_methods_classmotion_1_1CActionBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0210e352a49c47ad7a7a2d2d8145a63 inherit pub_methods_classmotion_1_1CActionBase"><td class="memItemLeft" align="right" valign="top"><a id="af0210e352a49c47ad7a7a2d2d8145a63"></a>
+<a class="el" href="motionEnums_8h.html#ac80e838bea11b75469bfc14b1de921a3">EActionState</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getActionState</b> (void) const</td></tr>
+<tr class="separator:af0210e352a49c47ad7a7a2d2d8145a63 inherit pub_methods_classmotion_1_1CActionBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c91610ed7b320cfc5ed13cfea9494b5 inherit pub_methods_classmotion_1_1CActionBase"><td class="memItemLeft" align="right" valign="top"><a id="a6c91610ed7b320cfc5ed13cfea9494b5"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>getAngularVelocity</b> (void)</td></tr>
 <tr class="separator:a6c91610ed7b320cfc5ed13cfea9494b5 inherit pub_methods_classmotion_1_1CActionBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5bfdf7bf03fd83920db673b15c64343c inherit pub_methods_classmotion_1_1CActionBase"><td class="memItemLeft" align="right" valign="top"><a id="a5bfdf7bf03fd83920db673b15c64343c"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>getPoseStored</b> (void)</td></tr>
-<tr class="separator:a5bfdf7bf03fd83920db673b15c64343c inherit pub_methods_classmotion_1_1CActionBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fcc833fc87392ea9f8990217c699990 inherit pub_methods_classmotion_1_1CActionBase"><td class="memItemLeft" align="right" valign="top"><a id="a7fcc833fc87392ea9f8990217c699990"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>getPoseStored</b> (void) const</td></tr>
+<tr class="separator:a7fcc833fc87392ea9f8990217c699990 inherit pub_methods_classmotion_1_1CActionBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e4ce35712fb80d112e93f4c0025a17a inherit pub_methods_classmotion_1_1CActionBase"><td class="memItemLeft" align="right" valign="top"><a id="a1e4ce35712fb80d112e93f4c0025a17a"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setPoseStored</b> (bool flag)</td></tr>
 <tr class="separator:a1e4ce35712fb80d112e93f4c0025a17a inherit pub_methods_classmotion_1_1CActionBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d1b28add4644d61e509ae37a13d2e1c inherit pub_methods_classmotion_1_1CActionBase"><td class="memItemLeft" align="right" valign="top"><a id="a9d1b28add4644d61e509ae37a13d2e1c"></a>
-<a class="el" href="structmotion_1_1TMotionPose2D.html">TMotionPose2D</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getStartPose</b> ()</td></tr>
-<tr class="separator:a9d1b28add4644d61e509ae37a13d2e1c inherit pub_methods_classmotion_1_1CActionBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83cc4165081911d639409978ab21c8d2 inherit pub_methods_classmotion_1_1CActionBase"><td class="memItemLeft" align="right" valign="top"><a id="a83cc4165081911d639409978ab21c8d2"></a>
-<a class="el" href="structmotion_1_1TMotionPose2D.html">TMotionPose2D</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getCurPose</b> ()</td></tr>
-<tr class="separator:a83cc4165081911d639409978ab21c8d2 inherit pub_methods_classmotion_1_1CActionBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac576f7b9fffaa9b682b78e3737d73e36 inherit pub_methods_classmotion_1_1CActionBase"><td class="memItemLeft" align="right" valign="top"><a id="ac576f7b9fffaa9b682b78e3737d73e36"></a>
+<a class="el" href="structmotion_1_1TMotionPose2D.html">TMotionPose2D</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getStartPose</b> (void) const</td></tr>
+<tr class="separator:ac576f7b9fffaa9b682b78e3737d73e36 inherit pub_methods_classmotion_1_1CActionBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c58bcd69d90d6c89b1a6eef002c6565 inherit pub_methods_classmotion_1_1CActionBase"><td class="memItemLeft" align="right" valign="top"><a id="a0c58bcd69d90d6c89b1a6eef002c6565"></a>
+<a class="el" href="structmotion_1_1TMotionPose2D.html">TMotionPose2D</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getCurPose</b> (void) const</td></tr>
+<tr class="separator:a0c58bcd69d90d6c89b1a6eef002c6565 inherit pub_methods_classmotion_1_1CActionBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5fab5515a22960387aec3e3edd3dc6d8 inherit pub_methods_classmotion_1_1CActionBase"><td class="memItemLeft" align="right" valign="top"><a id="a5fab5515a22960387aec3e3edd3dc6d8"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>getTimeNeeded</b> (void)</td></tr>
 <tr class="separator:a5fab5515a22960387aec3e3edd3dc6d8 inherit pub_methods_classmotion_1_1CActionBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed9deac73a58d2f3272403140d927988 inherit pub_methods_classmotion_1_1CActionBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmotion_1_1CActionBase.html#aed9deac73a58d2f3272403140d927988">updateCurPose</a> (mrpt::kinematics::CVehicleSimul_DiffDriven *robot)</td></tr>
-<tr class="separator:aed9deac73a58d2f3272403140d927988 inherit pub_methods_classmotion_1_1CActionBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8f8a1e485bd85508dc8819938d0a9a1 inherit pub_methods_classmotion_1_1CActionBase"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmotion_1_1TMotionPose2D.html">TMotionPose2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmotion_1_1CActionBase.html#aa8f8a1e485bd85508dc8819938d0a9a1">loc2Glob</a> (double x, double y, double phiRad)</td></tr>
-<tr class="separator:aa8f8a1e485bd85508dc8819938d0a9a1 inherit pub_methods_classmotion_1_1CActionBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa00772ca5a67bce272f0872bcc34baa6 inherit pub_methods_classmotion_1_1CActionBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmotion_1_1CActionBase.html#aa00772ca5a67bce272f0872bcc34baa6">setMotionParams</a> (<a class="el" href="structmotion_1_1TMotionParams.html">TMotionParams</a> param)</td></tr>
+<tr class="separator:aa00772ca5a67bce272f0872bcc34baa6 inherit pub_methods_classmotion_1_1CActionBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a579a415b15c4fb52fd85e6c87784b3f9 inherit pub_methods_classmotion_1_1CActionBase"><td class="memItemLeft" align="right" valign="top"><a id="a579a415b15c4fb52fd85e6c87784b3f9"></a>
+<a class="el" href="structmotion_1_1TMotionParams.html">TMotionParams</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getMotionParams</b> (void)</td></tr>
+<tr class="separator:a579a415b15c4fb52fd85e6c87784b3f9 inherit pub_methods_classmotion_1_1CActionBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1f558f309fab3a0f480e627ad11fdcc inherit pub_methods_classmotion_1_1CActionBase"><td class="memItemLeft" align="right" valign="top"><a id="ad1f558f309fab3a0f480e627ad11fdcc"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setPrePhi</b> (double pp)</td></tr>
+<tr class="separator:ad1f558f309fab3a0f480e627ad11fdcc inherit pub_methods_classmotion_1_1CActionBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6efc8e152e80cc56e6f48b2c3fce901 inherit pub_methods_classmotion_1_1CActionBase"><td class="memItemLeft" align="right" valign="top"><a id="ad6efc8e152e80cc56e6f48b2c3fce901"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>getPrePhi</b> (void) const</td></tr>
+<tr class="separator:ad6efc8e152e80cc56e6f48b2c3fce901 inherit pub_methods_classmotion_1_1CActionBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a934dc54034551a3781a5a193bc67268f inherit pub_methods_classmotion_1_1CActionBase"><td class="memItemLeft" align="right" valign="top"><a id="a934dc54034551a3781a5a193bc67268f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setJumpCount</b> (int jc)</td></tr>
+<tr class="separator:a934dc54034551a3781a5a193bc67268f inherit pub_methods_classmotion_1_1CActionBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe65cb32174b7c3a84623a1da8293594 inherit pub_methods_classmotion_1_1CActionBase"><td class="memItemLeft" align="right" valign="top"><a id="afe65cb32174b7c3a84623a1da8293594"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>getJumpCount</b> (void) const</td></tr>
+<tr class="separator:afe65cb32174b7c3a84623a1da8293594 inherit pub_methods_classmotion_1_1CActionBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2c6d7fc26e2bf35184eb8062b121522 inherit pub_methods_classmotion_1_1CActionBase"><td class="memItemLeft" align="right" valign="top"><a id="af2c6d7fc26e2bf35184eb8062b121522"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setJumpDir</b> (<a class="el" href="motionEnums_8h.html#a03a5344cd29a761a4b7dcaf1df3c3c85">ERotateSide</a> rs)</td></tr>
+<tr class="separator:af2c6d7fc26e2bf35184eb8062b121522 inherit pub_methods_classmotion_1_1CActionBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44b1d1fa8bedfa59916d9c4c31b22117 inherit pub_methods_classmotion_1_1CActionBase"><td class="memItemLeft" align="right" valign="top"><a id="a44b1d1fa8bedfa59916d9c4c31b22117"></a>
+<a class="el" href="motionEnums_8h.html#a03a5344cd29a761a4b7dcaf1df3c3c85">ERotateSide</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getJumpDir</b> (void) const</td></tr>
+<tr class="separator:a44b1d1fa8bedfa59916d9c4c31b22117 inherit pub_methods_classmotion_1_1CActionBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a90c80a9029798aac8b2fd388d8f784 inherit pub_methods_classmotion_1_1CActionBase"><td class="memItemLeft" align="right" valign="top"><a id="a1a90c80a9029798aac8b2fd388d8f784"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setPositive</b> (<a class="el" href="motionEnums_8h.html#a03a5344cd29a761a4b7dcaf1df3c3c85">ERotateSide</a> rs)</td></tr>
+<tr class="separator:a1a90c80a9029798aac8b2fd388d8f784 inherit pub_methods_classmotion_1_1CActionBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c84487dba7d2996e9d35376b7a45c79 inherit pub_methods_classmotion_1_1CActionBase"><td class="memItemLeft" align="right" valign="top"><a id="a5c84487dba7d2996e9d35376b7a45c79"></a>
+<a class="el" href="motionEnums_8h.html#a03a5344cd29a761a4b7dcaf1df3c3c85">ERotateSide</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getPositive</b> (void) const</td></tr>
+<tr class="separator:a5c84487dba7d2996e9d35376b7a45c79 inherit pub_methods_classmotion_1_1CActionBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a595c2b53e4daf353c7855302f626c694 inherit pub_methods_classmotion_1_1CActionBase"><td class="memItemLeft" align="right" valign="top"><a id="a595c2b53e4daf353c7855302f626c694"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setJumpCount</b> (bool ps)</td></tr>
+<tr class="separator:a595c2b53e4daf353c7855302f626c694 inherit pub_methods_classmotion_1_1CActionBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb60bce8bcb7410ba5596906d64490b0 inherit pub_methods_classmotion_1_1CActionBase"><td class="memItemLeft" align="right" valign="top"><a id="adb60bce8bcb7410ba5596906d64490b0"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>getPositiveSet</b> (void) const</td></tr>
+<tr class="separator:adb60bce8bcb7410ba5596906d64490b0 inherit pub_methods_classmotion_1_1CActionBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48d2c07fa908bf6ed57e3219a017b25e inherit pub_methods_classmotion_1_1CActionBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmotion_1_1CActionBase.html#a48d2c07fa908bf6ed57e3219a017b25e">captureJump</a> (void)</td></tr>
+<tr class="separator:a48d2c07fa908bf6ed57e3219a017b25e inherit pub_methods_classmotion_1_1CActionBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fd00b2fca445758e6cbf4d5a92a5082 inherit pub_methods_classmotion_1_1CActionBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmotion_1_1CActionBase.html#a5fd00b2fca445758e6cbf4d5a92a5082">updateCurPose</a> (mrpt::kinematics::CVehicleSimul_DiffDriven *robot)</td></tr>
+<tr class="separator:a5fd00b2fca445758e6cbf4d5a92a5082 inherit pub_methods_classmotion_1_1CActionBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7706bd708dc987b1da17bfa6d33a70c inherit pub_methods_classmotion_1_1CActionBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmotion_1_1CActionBase.html#ac7706bd708dc987b1da17bfa6d33a70c">updateDist</a> (mrpt::obs::CObservation2DRangeScan *scan, size_t winLength)</td></tr>
+<tr class="separator:ac7706bd708dc987b1da17bfa6d33a70c inherit pub_methods_classmotion_1_1CActionBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef651b6dae673bb2eba9245aa509c40d inherit pub_methods_classmotion_1_1CActionBase"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmotion_1_1TMotionPose2D.html">TMotionPose2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmotion_1_1CActionBase.html#aef651b6dae673bb2eba9245aa509c40d">frameRot</a> (double x, double y, double phiRad)</td></tr>
+<tr class="separator:aef651b6dae673bb2eba9245aa509c40d inherit pub_methods_classmotion_1_1CActionBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af660bbf31c33b1932a1a5b9219334211 inherit pub_methods_classmotion_1_1CActionBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmotion_1_1CActionBase.html#af660bbf31c33b1932a1a5b9219334211">storeStartPose</a> (void)</td></tr>
 <tr class="separator:af660bbf31c33b1932a1a5b9219334211 inherit pub_methods_classmotion_1_1CActionBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a90058a23162d40496c60ed44578c2f69 inherit pub_methods_classmotion_1_1CActionBase"><td class="memItemLeft" align="right" valign="top"><a id="a90058a23162d40496c60ed44578c2f69"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>calcTimeNeeded</b> (double velocity, double displacement)</td></tr>
+<tr class="memitem:a90058a23162d40496c60ed44578c2f69 inherit pub_methods_classmotion_1_1CActionBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmotion_1_1CActionBase.html#a90058a23162d40496c60ed44578c2f69">calcTimeNeeded</a> (double velocity, double displacement)</td></tr>
 <tr class="separator:a90058a23162d40496c60ed44578c2f69 inherit pub_methods_classmotion_1_1CActionBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
@@ -147,127 +226,184 @@ Static Public Member Functions</h2></td></tr>
 static <a class="el" href="classmotion_1_1CMotionWallFollowing.html">CMotionWallFollowing</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getInstance</b> (void)</td></tr>
 <tr class="separator:a8758349202ccb49d5b0927066b4201cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a5aa008f88629f10b7d44e528476ba03d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5aa008f88629f10b7d44e528476ba03d">&#9670;&nbsp;</a></span>calcAheadDist()</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Wall following mode. Need the following linear velocity and the desired follow distance as input. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="aa84fb18a4cea89ad726c18d4f308e4d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa84fb18a4cea89ad726c18d4f308e4d7">&#9670;&nbsp;</a></span>angNDistReached()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double CMotionWallFollowing::calcAheadDist </td>
+          <td class="memname">bool CMotionWallFollowing::angNDistReached </td>
           <td>(</td>
-          <td class="paramtype">mrpt::obs::CObservation2DRangeScan *&#160;</td>
-          <td class="paramname"><em>scan</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>winLength</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Calculate the distance between robot and wall in the heading direction. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">scan</td><td>Pointer that points to the laser object. </td></tr>
-    <tr><td class="paramname">winLength</td><td>How many data points needed to calculate the distance. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A smoothed distance. </dd></dl>
+<p>The resume angle and distance satisfied or not. </p><dl class="section return"><dt>Returns</dt><dd>true if angle condition is satisfied and side distance is larger than obsStopDist. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classmotion_1_1CMotionWallFollowing.html#a4fcea1525cdd043f8c0dd8621e3ba09e">distReached</a> </dd>
+<dd>
+obsStopDist </dd></dl>
 
 </div>
 </div>
-<a id="afac9dc0c411ecc1effcea072964512e6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afac9dc0c411ecc1effcea072964512e6">&#9670;&nbsp;</a></span>calcRightDist()</h2>
+<a id="ad8a39e0176c9e6127b8267b1a7a891ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8a39e0176c9e6127b8267b1a7a891ac">&#9670;&nbsp;</a></span>calcRemAngle()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double CMotionWallFollowing::calcRightDist </td>
+          <td class="memname">double CMotionWallFollowing::calcRemAngle </td>
           <td>(</td>
-          <td class="paramtype">mrpt::obs::CObservation2DRangeScan *&#160;</td>
-          <td class="paramname"><em>scan</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>winLength</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Calculate the distance between robot and wall on right side. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">scan</td><td>Pointer that points to the laser object. </td></tr>
-    <tr><td class="paramname">winLength</td><td>How many data points needed to calculate the distance. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>An smoothed distance.</dd></dl>
-<p>Delete later </p>
+<p>Calculate remaining angle, when this angle approached 0, it means the angle condition of angNDistReached is satisfied. </p><dl class="section return"><dt>Returns</dt><dd>Remaining angle. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classmotion_1_1CMotionWallFollowing.html#aa84fb18a4cea89ad726c18d4f308e4d7">angNDistReached</a> </dd></dl>
+<p>return motionAbsd(rad2Deg(m_endPhi - getCurPose().phi)); </p>
 
 </div>
 </div>
-<a id="aba9a2fc075a0241af6ed9caf7bbbdb1d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aba9a2fc075a0241af6ed9caf7bbbdb1d">&#9670;&nbsp;</a></span>leftFollow()</h2>
+<a id="a4fcea1525cdd043f8c0dd8621e3ba09e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fcea1525cdd043f8c0dd8621e3ba09e">&#9670;&nbsp;</a></span>distReached()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">EWallFolStateType CMotionWallFollowing::leftFollow </td>
+          <td class="memname">bool CMotionWallFollowing::distReached </td>
           <td>(</td>
-          <td class="paramtype">mrpt::obs::CObservation2DRangeScan *&#160;</td>
-          <td class="paramname"><em>scan</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>v</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>dist</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Wall following mode. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">scan</td><td>Pointer that points to the laser object. </td></tr>
-    <tr><td class="paramname">v</td><td>Linear velocity(m/s). </td></tr>
-    <tr><td class="paramname">dist</td><td>The distance between robot side and wall. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The current state. </dd></dl>
-<p>if timeout return FAILED </p>
+<p>The resume distance satisfied or not. </p><dl class="section return"><dt>Returns</dt><dd>true if ahead distance is larger than wallFolResumeDist. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classmotion_1_1CMotionWallFollowing.html#aa84fb18a4cea89ad726c18d4f308e4d7">angNDistReached</a> </dd>
+<dd>
+wallFolResumeDist </dd></dl>
+
+</div>
+</div>
+<a id="ad42584f648abe8826d2c23dad8128484"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad42584f648abe8826d2c23dad8128484">&#9670;&nbsp;</a></span>enter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CMotionWallFollowing::enter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmotion_1_1CMotion.html">CMotion</a> *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>This will execute when the state is entered. </p>
+<p>setMotion(WALL_FOLLOWING); </p>
+
+<p>Implements <a class="el" href="classmotion_1_1CState.html#a53d5fcfec223b58ccdd364a8430fd23c">motion::CState&lt; CMotion &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a765cfe604941a06056131feb01fea66d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a765cfe604941a06056131feb01fea66d">&#9670;&nbsp;</a></span>execute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CMotionWallFollowing::execute </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmotion_1_1CMotion.html">CMotion</a> *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>This is the states normal update function. </p>
+
+<p>Implements <a class="el" href="classmotion_1_1CState.html#a71dc72d345b15bf3b5b5bff596a71f33">motion::CState&lt; CMotion &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a24be76c786b3a4bd476cc9b3c8955c26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24be76c786b3a4bd476cc9b3c8955c26">&#9670;&nbsp;</a></span>exit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CMotionWallFollowing::exit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmotion_1_1CMotion.html">CMotion</a> *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>This will execute when the state is exited. </p>
+
+<p>Implements <a class="el" href="classmotion_1_1CState.html#a353db064c159d66b82bf257b35e7c016">motion::CState&lt; CMotion &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a1b29295eff775104bb16c110c3f8b81a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b29295eff775104bb16c110c3f8b81a">&#9670;&nbsp;</a></span>tuneVelocity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double CMotionWallFollowing::tuneVelocity </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Tune the velocity according to the distance from robot to wall. </p><dl class="section return"><dt>Returns</dt><dd>The scale that velocity should be Tuned. It's a ratio between 0 and 1. </dd></dl>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>motion/<a class="el" href="CMotionWallFollowing_8h_source.html">CMotionWallFollowing.h</a></li>
-<li>motion/CMotionWallFollowing.cpp</li>
+<li>motion/<a class="el" href="CMotionWallFollowing_8cpp.html">CMotionWallFollowing.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

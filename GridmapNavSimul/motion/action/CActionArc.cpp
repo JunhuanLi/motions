@@ -1,3 +1,18 @@
+/**
+  * Copyright (C), 1996-2017, TOPBAND. Co., Ltd. \n
+  * All right reserved.
+  *
+  * @file CActionArc.cpp
+  * @author Junhuan Li       
+  * @version v1.0      
+  * @date 18/01/17
+  * @brief Arc action
+  * @note 
+  * 1. --- \n
+  * History: Create this file \n
+  * <author>       <time>   <version >      <desc> \n
+  * Junhuan Li    18/01/17     1.0         create file
+  */
 #include "CActionArc.h"
 
 using namespace motion;
@@ -12,9 +27,7 @@ void CActionArc::arc(double w, double angDeg, double radius)
 {
     static mrpt::utils::CTicTac	s_tictac;
 
-    /** how to avoid multiple tasks? */
-
-    /** Store current information and calculate information needed*/
+    /// Store current information and calculate information needed.
     if(!getPoseStored())
     {
         reset();
@@ -30,11 +43,11 @@ void CActionArc::arc(double w, double angDeg, double radius)
         s_tictac.Tic();  /// Start the timer
     }
 
-    /** If start up is enabled, update if the vehicle get started everytime. */
+    /// If start up is enabled, update if the vehicle get started everytime.
     if(getStartUp())
         updateStartUp();
 
-    /** Timeout check.*/
+    /// Timeout check.
     if(s_tictac.Tac() > getTimeNeeded() + 1)
     {
         ///throw exceptions
@@ -45,7 +58,7 @@ void CActionArc::arc(double w, double angDeg, double radius)
         return;
     }
 
-    /** Finish condition check.*/
+    /// Finish condition check.
     if(calcRem() <= slightTuneAngDeg && !m_slightTuneOn)
     {
         m_slightTuneOn = true;
@@ -73,7 +86,6 @@ void CActionArc::arc(double w, double angDeg, double radius)
     }
     else
     {
-        ///w = m_controller.pid(calcRem());
         if(!m_slightTuneOn)
         {
             setVelocity(motionAbsd(m_linVel), motionAbsd(w) * getRotSide(angDeg));
@@ -116,7 +128,7 @@ double CActionArc::calcRem(void)
     ///printf("[ljh] curphi: %.3f, startPhi: %.3f\n", m_myCurPhi, getStartPose().phi);
     m_angRem = m_commandAngDeg - rad2Deg(m_phiRotated);
     ///printf("[ljh] comang: %.3f, rotdang: %.3f\n", m_commandAngDeg, rad2Deg(m_phiRotated));
-    printf("[ljh] remain angle: %.3f\n", m_angRem);
+    ///printf("[ljh] remain angle: %.3f\n", m_angRem);
     return motionAbsd(m_angRem);
     ///return motionAbsd(rad2Deg(m_endPose.phi - getCurPose().phi));
  }

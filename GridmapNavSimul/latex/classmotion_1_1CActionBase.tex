@@ -1,9 +1,13 @@
 \hypertarget{classmotion_1_1CActionBase}{}\section{motion\+:\+:C\+Action\+Base Class Reference}
 \label{classmotion_1_1CActionBase}\index{motion\+::\+C\+Action\+Base@{motion\+::\+C\+Action\+Base}}
+
+
+{\ttfamily \#include $<$C\+Action\+Base.\+h$>$}
+
 Inheritance diagram for motion\+:\+:C\+Action\+Base\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=1.497326cm]{classmotion_1_1CActionBase}
+\includegraphics[height=0.855615cm]{classmotion_1_1CActionBase}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -12,63 +16,199 @@ Inheritance diagram for motion\+:\+:C\+Action\+Base\+:\begin{figure}[H]
 \mbox{\Hypertarget{classmotion_1_1CActionBase_ab64789ff634b40a7c88771186deb02b3}\label{classmotion_1_1CActionBase_ab64789ff634b40a7c88771186deb02b3}} 
 void {\bfseries reset\+Base} (void)
 \item 
-\mbox{\Hypertarget{classmotion_1_1CActionBase_ad8f7083a38f4c2068be4f1f3ff63d9b4}\label{classmotion_1_1CActionBase_ad8f7083a38f4c2068be4f1f3ff63d9b4}} 
-double {\bfseries get\+Linear\+Velocity} (void)
+\mbox{\Hypertarget{classmotion_1_1CActionBase_a56290a85c15b62718137f4a79a0e5d24}\label{classmotion_1_1CActionBase_a56290a85c15b62718137f4a79a0e5d24}} 
+double {\bfseries get\+Ahead\+Dist} (void) const
 \item 
-\mbox{\Hypertarget{classmotion_1_1CActionBase_a1b0cf24115b28a95a27ee1613b4ca638}\label{classmotion_1_1CActionBase_a1b0cf24115b28a95a27ee1613b4ca638}} 
+\mbox{\Hypertarget{classmotion_1_1CActionBase_adee7bb394fc82f936af57e997ccc1f7f}\label{classmotion_1_1CActionBase_adee7bb394fc82f936af57e997ccc1f7f}} 
+double {\bfseries get\+Side\+Dist} (void) const
+\item 
+\mbox{\Hypertarget{classmotion_1_1CActionBase_ab7cac53d714c3688609f5bfb026c6c4f}\label{classmotion_1_1CActionBase_ab7cac53d714c3688609f5bfb026c6c4f}} 
+double {\bfseries get\+Linear\+Velocity} (void) const
+\item 
+\mbox{\Hypertarget{classmotion_1_1CActionBase_aba9b4953364ac77f49e98ea6f59a3aad}\label{classmotion_1_1CActionBase_aba9b4953364ac77f49e98ea6f59a3aad}} 
 void {\bfseries set\+Velocity} (double v, double w)
+\item 
+\mbox{\Hypertarget{classmotion_1_1CActionBase_ab83e2ccbad3a796da9c8013467f89a5d}\label{classmotion_1_1CActionBase_ab83e2ccbad3a796da9c8013467f89a5d}} 
+void {\bfseries set\+Motion} (\mbox{\hyperlink{motionEnums_8h_a907f80786f402332d43f4646dc1450bc}{E\+Motion}} mot)
+\item 
+\mbox{\Hypertarget{classmotion_1_1CActionBase_a97b30f5e328649e00b8c3889ef6fce4a}\label{classmotion_1_1CActionBase_a97b30f5e328649e00b8c3889ef6fce4a}} 
+void {\bfseries set\+Sub\+Motion} (\mbox{\hyperlink{motionEnums_8h_a23be5ef75af9219a8bf688fd9716d72c}{E\+Sub\+Motion}} submot)
+\item 
+\mbox{\Hypertarget{classmotion_1_1CActionBase_a82ea8bab8f8a6ccfe0f4cf4addc47d33}\label{classmotion_1_1CActionBase_a82ea8bab8f8a6ccfe0f4cf4addc47d33}} 
+void {\bfseries set\+Sub\+Motion\+State} (\mbox{\hyperlink{motionEnums_8h_a272f94c6143b9acf7ac44f165be53948}{E\+Sub\+Motion\+State}} submotstate)
+\item 
+\mbox{\Hypertarget{classmotion_1_1CActionBase_aa5ea8ef039688efb9da75e552bfff955}\label{classmotion_1_1CActionBase_aa5ea8ef039688efb9da75e552bfff955}} 
+void {\bfseries set\+Action} (\mbox{\hyperlink{motionEnums_8h_aa7486027d362655230b958efe6985a7f}{E\+Action}} act) const
+\item 
+\mbox{\Hypertarget{classmotion_1_1CActionBase_a37cf7cf8e21e5df22d1ae5326e92db63}\label{classmotion_1_1CActionBase_a37cf7cf8e21e5df22d1ae5326e92db63}} 
+void {\bfseries set\+Action\+State} (\mbox{\hyperlink{motionEnums_8h_ac80e838bea11b75469bfc14b1de921a3}{E\+Action\+State}} actsta)
+\item 
+\mbox{\Hypertarget{classmotion_1_1CActionBase_a9c30abb08480e7b0cbd8a2d1bd2289a9}\label{classmotion_1_1CActionBase_a9c30abb08480e7b0cbd8a2d1bd2289a9}} 
+\mbox{\hyperlink{motionEnums_8h_a907f80786f402332d43f4646dc1450bc}{E\+Motion}} {\bfseries get\+Motion} (void) const
+\item 
+\mbox{\Hypertarget{classmotion_1_1CActionBase_ade6e14ed3cdb446bc146c4188d845547}\label{classmotion_1_1CActionBase_ade6e14ed3cdb446bc146c4188d845547}} 
+\mbox{\hyperlink{motionEnums_8h_a23be5ef75af9219a8bf688fd9716d72c}{E\+Sub\+Motion}} {\bfseries get\+Sub\+Motion} (void) const
+\item 
+\mbox{\Hypertarget{classmotion_1_1CActionBase_a51e0207c21bc6da29b0435dead1dd6cc}\label{classmotion_1_1CActionBase_a51e0207c21bc6da29b0435dead1dd6cc}} 
+\mbox{\hyperlink{motionEnums_8h_a272f94c6143b9acf7ac44f165be53948}{E\+Sub\+Motion\+State}} {\bfseries get\+Sub\+Motion\+State} (void) const
+\item 
+\mbox{\Hypertarget{classmotion_1_1CActionBase_a14d5ba8c773b1abb71974777daa5e0da}\label{classmotion_1_1CActionBase_a14d5ba8c773b1abb71974777daa5e0da}} 
+\mbox{\hyperlink{motionEnums_8h_aa7486027d362655230b958efe6985a7f}{E\+Action}} {\bfseries get\+Action} (void) const
+\item 
+\mbox{\Hypertarget{classmotion_1_1CActionBase_af0210e352a49c47ad7a7a2d2d8145a63}\label{classmotion_1_1CActionBase_af0210e352a49c47ad7a7a2d2d8145a63}} 
+\mbox{\hyperlink{motionEnums_8h_ac80e838bea11b75469bfc14b1de921a3}{E\+Action\+State}} {\bfseries get\+Action\+State} (void) const
 \item 
 \mbox{\Hypertarget{classmotion_1_1CActionBase_a6c91610ed7b320cfc5ed13cfea9494b5}\label{classmotion_1_1CActionBase_a6c91610ed7b320cfc5ed13cfea9494b5}} 
 double {\bfseries get\+Angular\+Velocity} (void)
 \item 
-\mbox{\Hypertarget{classmotion_1_1CActionBase_a5bfdf7bf03fd83920db673b15c64343c}\label{classmotion_1_1CActionBase_a5bfdf7bf03fd83920db673b15c64343c}} 
-bool {\bfseries get\+Pose\+Stored} (void)
+\mbox{\Hypertarget{classmotion_1_1CActionBase_a7fcc833fc87392ea9f8990217c699990}\label{classmotion_1_1CActionBase_a7fcc833fc87392ea9f8990217c699990}} 
+bool {\bfseries get\+Pose\+Stored} (void) const
 \item 
 \mbox{\Hypertarget{classmotion_1_1CActionBase_a1e4ce35712fb80d112e93f4c0025a17a}\label{classmotion_1_1CActionBase_a1e4ce35712fb80d112e93f4c0025a17a}} 
 void {\bfseries set\+Pose\+Stored} (bool flag)
 \item 
-\mbox{\Hypertarget{classmotion_1_1CActionBase_a9d1b28add4644d61e509ae37a13d2e1c}\label{classmotion_1_1CActionBase_a9d1b28add4644d61e509ae37a13d2e1c}} 
-\mbox{\hyperlink{structmotion_1_1TMotionPose2D}{T\+Motion\+Pose2D}} {\bfseries get\+Start\+Pose} ()
+\mbox{\Hypertarget{classmotion_1_1CActionBase_ac576f7b9fffaa9b682b78e3737d73e36}\label{classmotion_1_1CActionBase_ac576f7b9fffaa9b682b78e3737d73e36}} 
+\mbox{\hyperlink{structmotion_1_1TMotionPose2D}{T\+Motion\+Pose2D}} {\bfseries get\+Start\+Pose} (void) const
 \item 
-\mbox{\Hypertarget{classmotion_1_1CActionBase_a83cc4165081911d639409978ab21c8d2}\label{classmotion_1_1CActionBase_a83cc4165081911d639409978ab21c8d2}} 
-\mbox{\hyperlink{structmotion_1_1TMotionPose2D}{T\+Motion\+Pose2D}} {\bfseries get\+Cur\+Pose} ()
+\mbox{\Hypertarget{classmotion_1_1CActionBase_a0c58bcd69d90d6c89b1a6eef002c6565}\label{classmotion_1_1CActionBase_a0c58bcd69d90d6c89b1a6eef002c6565}} 
+\mbox{\hyperlink{structmotion_1_1TMotionPose2D}{T\+Motion\+Pose2D}} {\bfseries get\+Cur\+Pose} (void) const
 \item 
 \mbox{\Hypertarget{classmotion_1_1CActionBase_a5fab5515a22960387aec3e3edd3dc6d8}\label{classmotion_1_1CActionBase_a5fab5515a22960387aec3e3edd3dc6d8}} 
 double {\bfseries get\+Time\+Needed} (void)
 \item 
-void \mbox{\hyperlink{classmotion_1_1CActionBase_aed9deac73a58d2f3272403140d927988}{update\+Cur\+Pose}} (mrpt\+::kinematics\+::\+C\+Vehicle\+Simul\+\_\+\+Diff\+Driven $\ast$robot)
+void \mbox{\hyperlink{classmotion_1_1CActionBase_aa00772ca5a67bce272f0872bcc34baa6}{set\+Motion\+Params}} (\mbox{\hyperlink{structmotion_1_1TMotionParams}{T\+Motion\+Params}} param)
 \item 
-\mbox{\hyperlink{structmotion_1_1TMotionPose2D}{T\+Motion\+Pose2D}} \mbox{\hyperlink{classmotion_1_1CActionBase_aa8f8a1e485bd85508dc8819938d0a9a1}{loc2\+Glob}} (double x, double y, double phi\+Rad)
+\mbox{\Hypertarget{classmotion_1_1CActionBase_a579a415b15c4fb52fd85e6c87784b3f9}\label{classmotion_1_1CActionBase_a579a415b15c4fb52fd85e6c87784b3f9}} 
+\mbox{\hyperlink{structmotion_1_1TMotionParams}{T\+Motion\+Params}} {\bfseries get\+Motion\+Params} (void)
+\item 
+\mbox{\Hypertarget{classmotion_1_1CActionBase_ad1f558f309fab3a0f480e627ad11fdcc}\label{classmotion_1_1CActionBase_ad1f558f309fab3a0f480e627ad11fdcc}} 
+void {\bfseries set\+Pre\+Phi} (double pp)
+\item 
+\mbox{\Hypertarget{classmotion_1_1CActionBase_ad6efc8e152e80cc56e6f48b2c3fce901}\label{classmotion_1_1CActionBase_ad6efc8e152e80cc56e6f48b2c3fce901}} 
+double {\bfseries get\+Pre\+Phi} (void) const
+\item 
+\mbox{\Hypertarget{classmotion_1_1CActionBase_a934dc54034551a3781a5a193bc67268f}\label{classmotion_1_1CActionBase_a934dc54034551a3781a5a193bc67268f}} 
+void {\bfseries set\+Jump\+Count} (int jc)
+\item 
+\mbox{\Hypertarget{classmotion_1_1CActionBase_afe65cb32174b7c3a84623a1da8293594}\label{classmotion_1_1CActionBase_afe65cb32174b7c3a84623a1da8293594}} 
+int {\bfseries get\+Jump\+Count} (void) const
+\item 
+\mbox{\Hypertarget{classmotion_1_1CActionBase_af2c6d7fc26e2bf35184eb8062b121522}\label{classmotion_1_1CActionBase_af2c6d7fc26e2bf35184eb8062b121522}} 
+void {\bfseries set\+Jump\+Dir} (\mbox{\hyperlink{motionEnums_8h_a03a5344cd29a761a4b7dcaf1df3c3c85}{E\+Rotate\+Side}} rs)
+\item 
+\mbox{\Hypertarget{classmotion_1_1CActionBase_a44b1d1fa8bedfa59916d9c4c31b22117}\label{classmotion_1_1CActionBase_a44b1d1fa8bedfa59916d9c4c31b22117}} 
+\mbox{\hyperlink{motionEnums_8h_a03a5344cd29a761a4b7dcaf1df3c3c85}{E\+Rotate\+Side}} {\bfseries get\+Jump\+Dir} (void) const
+\item 
+\mbox{\Hypertarget{classmotion_1_1CActionBase_a1a90c80a9029798aac8b2fd388d8f784}\label{classmotion_1_1CActionBase_a1a90c80a9029798aac8b2fd388d8f784}} 
+void {\bfseries set\+Positive} (\mbox{\hyperlink{motionEnums_8h_a03a5344cd29a761a4b7dcaf1df3c3c85}{E\+Rotate\+Side}} rs)
+\item 
+\mbox{\Hypertarget{classmotion_1_1CActionBase_a5c84487dba7d2996e9d35376b7a45c79}\label{classmotion_1_1CActionBase_a5c84487dba7d2996e9d35376b7a45c79}} 
+\mbox{\hyperlink{motionEnums_8h_a03a5344cd29a761a4b7dcaf1df3c3c85}{E\+Rotate\+Side}} {\bfseries get\+Positive} (void) const
+\item 
+\mbox{\Hypertarget{classmotion_1_1CActionBase_a595c2b53e4daf353c7855302f626c694}\label{classmotion_1_1CActionBase_a595c2b53e4daf353c7855302f626c694}} 
+void {\bfseries set\+Jump\+Count} (bool ps)
+\item 
+\mbox{\Hypertarget{classmotion_1_1CActionBase_adb60bce8bcb7410ba5596906d64490b0}\label{classmotion_1_1CActionBase_adb60bce8bcb7410ba5596906d64490b0}} 
+bool {\bfseries get\+Positive\+Set} (void) const
+\item 
+void \mbox{\hyperlink{classmotion_1_1CActionBase_a48d2c07fa908bf6ed57e3219a017b25e}{capture\+Jump}} (void)
+\item 
+void \mbox{\hyperlink{classmotion_1_1CActionBase_a5fd00b2fca445758e6cbf4d5a92a5082}{update\+Cur\+Pose}} (mrpt\+::kinematics\+::\+C\+Vehicle\+Simul\+\_\+\+Diff\+Driven $\ast$robot)
+\item 
+void \mbox{\hyperlink{classmotion_1_1CActionBase_ac7706bd708dc987b1da17bfa6d33a70c}{update\+Dist}} (mrpt\+::obs\+::\+C\+Observation2\+D\+Range\+Scan $\ast$scan, size\+\_\+t win\+Length)
+\item 
+\mbox{\hyperlink{structmotion_1_1TMotionPose2D}{T\+Motion\+Pose2D}} \mbox{\hyperlink{classmotion_1_1CActionBase_aef651b6dae673bb2eba9245aa509c40d}{frame\+Rot}} (double x, double y, double phi\+Rad)
 \item 
 void \mbox{\hyperlink{classmotion_1_1CActionBase_af660bbf31c33b1932a1a5b9219334211}{store\+Start\+Pose}} (void)
 \item 
-\mbox{\Hypertarget{classmotion_1_1CActionBase_a90058a23162d40496c60ed44578c2f69}\label{classmotion_1_1CActionBase_a90058a23162d40496c60ed44578c2f69}} 
-void {\bfseries calc\+Time\+Needed} (double velocity, double displacement)
+void \mbox{\hyperlink{classmotion_1_1CActionBase_a90058a23162d40496c60ed44578c2f69}{calc\+Time\+Needed}} (double velocity, double displacement)
 \end{DoxyCompactItemize}
 
 
-\subsection{Member Function Documentation}
-\mbox{\Hypertarget{classmotion_1_1CActionBase_aa8f8a1e485bd85508dc8819938d0a9a1}\label{classmotion_1_1CActionBase_aa8f8a1e485bd85508dc8819938d0a9a1}} 
-\index{motion\+::\+C\+Action\+Base@{motion\+::\+C\+Action\+Base}!loc2\+Glob@{loc2\+Glob}}
-\index{loc2\+Glob@{loc2\+Glob}!motion\+::\+C\+Action\+Base@{motion\+::\+C\+Action\+Base}}
-\subsubsection{\texorpdfstring{loc2\+Glob()}{loc2Glob()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structmotion_1_1TMotionPose2D}{T\+Motion\+Pose2D}} C\+Action\+Base\+::loc2\+Glob (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y,  }\item[{double}]{phi\+Rad }\end{DoxyParamCaption})}
+\subsection{Detailed Description}
+Base class ~\newline
 
-Rotation matrix\+: $\vert$ cos(0) sin(0) 0 $\vert$ R = $\vert$ -\/sin(0) cos(0) 0 $\vert$ $\vert$ 0 0 1 $\vert$\mbox{\Hypertarget{classmotion_1_1CActionBase_af660bbf31c33b1932a1a5b9219334211}\label{classmotion_1_1CActionBase_af660bbf31c33b1932a1a5b9219334211}} 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmotion_1_1CActionBase_a90058a23162d40496c60ed44578c2f69}\label{classmotion_1_1CActionBase_a90058a23162d40496c60ed44578c2f69}} 
+\index{motion\+::\+C\+Action\+Base@{motion\+::\+C\+Action\+Base}!calc\+Time\+Needed@{calc\+Time\+Needed}}
+\index{calc\+Time\+Needed@{calc\+Time\+Needed}!motion\+::\+C\+Action\+Base@{motion\+::\+C\+Action\+Base}}
+\subsubsection{\texorpdfstring{calc\+Time\+Needed()}{calcTimeNeeded()}}
+{\footnotesize\ttfamily void C\+Action\+Base\+::calc\+Time\+Needed (\begin{DoxyParamCaption}\item[{double}]{velocity,  }\item[{double}]{displacement }\end{DoxyParamCaption})}
+
+Calculate time needed . Used to calculate end pose and verify end pose conditions. \mbox{\Hypertarget{classmotion_1_1CActionBase_a48d2c07fa908bf6ed57e3219a017b25e}\label{classmotion_1_1CActionBase_a48d2c07fa908bf6ed57e3219a017b25e}} 
+\index{motion\+::\+C\+Action\+Base@{motion\+::\+C\+Action\+Base}!capture\+Jump@{capture\+Jump}}
+\index{capture\+Jump@{capture\+Jump}!motion\+::\+C\+Action\+Base@{motion\+::\+C\+Action\+Base}}
+\subsubsection{\texorpdfstring{capture\+Jump()}{captureJump()}}
+{\footnotesize\ttfamily void C\+Action\+Base\+::capture\+Jump (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Call this method in update\+Cur\+Pose to capture jumps -\/180-\/$>$180 and -\/180-\/$>$180 \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classmotion_1_1CActionBase_a5fd00b2fca445758e6cbf4d5a92a5082}{update\+Cur\+Pose}} 
+\end{DoxySeeAlso}
+printf(\char`\"{}$\ast$$\ast$jump is\+: \%.\+3f\textbackslash{}n\char`\"{}, jump\+Ang\+Deg);
+
+printf(\char`\"{}no jumps.\textbackslash{}n\char`\"{}); \mbox{\Hypertarget{classmotion_1_1CActionBase_aef651b6dae673bb2eba9245aa509c40d}\label{classmotion_1_1CActionBase_aef651b6dae673bb2eba9245aa509c40d}} 
+\index{motion\+::\+C\+Action\+Base@{motion\+::\+C\+Action\+Base}!frame\+Rot@{frame\+Rot}}
+\index{frame\+Rot@{frame\+Rot}!motion\+::\+C\+Action\+Base@{motion\+::\+C\+Action\+Base}}
+\subsubsection{\texorpdfstring{frame\+Rot()}{frameRot()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structmotion_1_1TMotionPose2D}{T\+Motion\+Pose2D}} C\+Action\+Base\+::frame\+Rot (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y,  }\item[{double}]{phi\+Rad }\end{DoxyParamCaption})}
+
+Frame rotation. This method transfers p0=(x0, y0) in frame 0 to p1=(x1, y1) in frame 1, with phi\+Rad angle difference between frame 0 and frame 1. 
+\begin{DoxyParams}{Parameters}
+{\em x} & p0\textquotesingle{}s X axis coordinates. \\
+\hline
+{\em y} & p0\textquotesingle{}s Y axis coordinates. \\
+\hline
+{\em phi\+Rad} & angle difference between frame 0 and frame 1 in rad. Positive means rotate counterc clockwise. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+p1 
+\end{DoxyReturn}
+Rotation matrix\+: $\vert$ cos(0) sin(0) 0 $\vert$ ~\newline
+ R = $\vert$ -\/sin(0) cos(0) 0 $\vert$ ~\newline
+ $\vert$ 0 0 1 $\vert$ ~\newline
+ \mbox{\Hypertarget{classmotion_1_1CActionBase_aa00772ca5a67bce272f0872bcc34baa6}\label{classmotion_1_1CActionBase_aa00772ca5a67bce272f0872bcc34baa6}} 
+\index{motion\+::\+C\+Action\+Base@{motion\+::\+C\+Action\+Base}!set\+Motion\+Params@{set\+Motion\+Params}}
+\index{set\+Motion\+Params@{set\+Motion\+Params}!motion\+::\+C\+Action\+Base@{motion\+::\+C\+Action\+Base}}
+\subsubsection{\texorpdfstring{set\+Motion\+Params()}{setMotionParams()}}
+{\footnotesize\ttfamily void C\+Action\+Base\+::set\+Motion\+Params (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmotion_1_1TMotionParams}{T\+Motion\+Params}}}]{param }\end{DoxyParamCaption})}
+
+N\+O\+T\+H\+I\+NG \mbox{\Hypertarget{classmotion_1_1CActionBase_af660bbf31c33b1932a1a5b9219334211}\label{classmotion_1_1CActionBase_af660bbf31c33b1932a1a5b9219334211}} 
 \index{motion\+::\+C\+Action\+Base@{motion\+::\+C\+Action\+Base}!store\+Start\+Pose@{store\+Start\+Pose}}
 \index{store\+Start\+Pose@{store\+Start\+Pose}!motion\+::\+C\+Action\+Base@{motion\+::\+C\+Action\+Base}}
 \subsubsection{\texorpdfstring{store\+Start\+Pose()}{storeStartPose()}}
 {\footnotesize\ttfamily void C\+Action\+Base\+::store\+Start\+Pose (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
-Set the pose-\/stored flag. \mbox{\Hypertarget{classmotion_1_1CActionBase_aed9deac73a58d2f3272403140d927988}\label{classmotion_1_1CActionBase_aed9deac73a58d2f3272403140d927988}} 
+Store start pose. Used to calculate end pose and verify end pose conditions. Set the pose-\/stored flag. \mbox{\Hypertarget{classmotion_1_1CActionBase_a5fd00b2fca445758e6cbf4d5a92a5082}\label{classmotion_1_1CActionBase_a5fd00b2fca445758e6cbf4d5a92a5082}} 
 \index{motion\+::\+C\+Action\+Base@{motion\+::\+C\+Action\+Base}!update\+Cur\+Pose@{update\+Cur\+Pose}}
 \index{update\+Cur\+Pose@{update\+Cur\+Pose}!motion\+::\+C\+Action\+Base@{motion\+::\+C\+Action\+Base}}
 \subsubsection{\texorpdfstring{update\+Cur\+Pose()}{updateCurPose()}}
-{\footnotesize\ttfamily void motion\+::\+C\+Action\+Base\+::update\+Cur\+Pose (\begin{DoxyParamCaption}\item[{mrpt\+::kinematics\+::\+C\+Vehicle\+Simul\+\_\+\+Diff\+Driven $\ast$}]{robot }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily void C\+Action\+Base\+::update\+Cur\+Pose (\begin{DoxyParamCaption}\item[{mrpt\+::kinematics\+::\+C\+Vehicle\+Simul\+\_\+\+Diff\+Driven $\ast$}]{robot }\end{DoxyParamCaption})}
 
-Remove later. 
+Remove later. \mbox{\Hypertarget{classmotion_1_1CActionBase_ac7706bd708dc987b1da17bfa6d33a70c}\label{classmotion_1_1CActionBase_ac7706bd708dc987b1da17bfa6d33a70c}} 
+\index{motion\+::\+C\+Action\+Base@{motion\+::\+C\+Action\+Base}!update\+Dist@{update\+Dist}}
+\index{update\+Dist@{update\+Dist}!motion\+::\+C\+Action\+Base@{motion\+::\+C\+Action\+Base}}
+\subsubsection{\texorpdfstring{update\+Dist()}{updateDist()}}
+{\footnotesize\ttfamily void C\+Action\+Base\+::update\+Dist (\begin{DoxyParamCaption}\item[{mrpt\+::obs\+::\+C\+Observation2\+D\+Range\+Scan $\ast$}]{scan,  }\item[{size\+\_\+t}]{win\+Length }\end{DoxyParamCaption})}
+
+Calculate the distance between robot and wall in the heading direction. And calculate the distance between robot and wall on right side. 
+\begin{DoxyParams}{Parameters}
+{\em scan} & Pointer that points to the laser object. \\
+\hline
+{\em win\+Length} & How many data points needed to calculate the distance. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Distance. 
+\end{DoxyReturn}
+Calculate side distance.
+
+printf(\char`\"{}side\+Dist\+: \%.\+3f\textbackslash{}n\char`\"{}, sm\+\_\+motion.\+side\+Dist);
+
+Calculate ahead distance. 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-motion/action/C\+Action\+Base.\+h\item 
-motion/action/C\+Action\+Base.\+cpp\end{DoxyCompactItemize}
+motion/action/\mbox{\hyperlink{CActionBase_8h}{C\+Action\+Base.\+h}}\item 
+motion/action/\mbox{\hyperlink{CActionBase_8cpp}{C\+Action\+Base.\+cpp}}\end{DoxyCompactItemize}

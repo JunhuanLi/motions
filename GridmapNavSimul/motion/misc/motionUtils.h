@@ -1,3 +1,18 @@
+/**
+  * Copyright (C), 1996-2017, TOPBAND. Co., Ltd. \n
+  * All right reserved.
+  *
+  * @file motionUtils.h
+  * @author Junhuan Li       
+  * @version v1.0      
+  * @date 18/01/17
+  * @brief Shared methods
+  * @note 
+  * 1. --- \n
+  * History: Create this file \n
+  * <author>       <time>   <version >      <desc> \n
+  * Junhuan Li    18/01/17     1.0         create file
+  */
 #ifndef MOTIONUTILS_H_
 #define MOTIONUTILS_H_
 
@@ -72,6 +87,12 @@ namespace motion
     const double obsDeceDist = obsStopDist * 1.5;  /**< The distance that robot need to start decelerate. */
     const double distErrTolerance = wallFolSideDist * 0.1;  /**< Wall following error tolerance. */
     const double maxAllowedSideDist = wallFolSideDist * 2;  /**< Maximum allowed side distance. If larger than this value, it means edge reached.*/
+    const double wfPID_P = 50.0;  /**< Wall following controller proportional constant. */
+    const double wfPID_I = 0.5;  /**< Wall following controller integral constant. */
+    const double wfPID_D = 1.0;  /**< Wall following controller derivative constant. */
+    const double ptPID_P = 1.0;  /**< Point tracking controller proportional constant. */
+    const double ptPID_I = 0.0;  /**< Point tracking controller integral constant. */
+    const double ptPID_D = 0.0;  /**< Point tracking controller derivative constant. */
 
     /** Point Tracker parameters. */
     const double pointTracW = deg2Rad(40);  /**< Point Tracking rotation velocity. */

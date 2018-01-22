@@ -1,0 +1,74 @@
+\hypertarget{classmotion_1_1CPTTracking}{}\section{motion\+:\+:C\+P\+T\+Tracking Class Reference}
+\label{classmotion_1_1CPTTracking}\index{motion\+::\+C\+P\+T\+Tracking@{motion\+::\+C\+P\+T\+Tracking}}
+
+
+{\ttfamily \#include $<$C\+P\+T\+Owned\+States.\+h$>$}
+
+Inheritance diagram for motion\+:\+:C\+P\+T\+Tracking\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classmotion_1_1CPTTracking}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classmotion_1_1CPTTracking_af2456aaf125ca9ba240463d1e259d4b9}{enter}} (\mbox{\hyperlink{classmotion_1_1CMotionPointTracker}{C\+Motion\+Point\+Tracker}} $\ast$pt)
+\item 
+virtual void \mbox{\hyperlink{classmotion_1_1CPTTracking_aa8f85da75436cc8d98c25318b0bea42d}{execute}} (\mbox{\hyperlink{classmotion_1_1CMotionPointTracker}{C\+Motion\+Point\+Tracker}} $\ast$pt)
+\item 
+virtual void \mbox{\hyperlink{classmotion_1_1CPTTracking_aa7a6294200e0dd2c0d53f852558d7d89}{exit}} (\mbox{\hyperlink{classmotion_1_1CMotionPointTracker}{C\+Motion\+Point\+Tracker}} $\ast$pt)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classmotion_1_1CPTTracking}{C\+P\+T\+Tracking}} $\ast$ \mbox{\hyperlink{classmotion_1_1CPTTracking_a46a7c1bd0b68ce1c273ae32a75d76506}{get\+Instance}} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Point Tracking State. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmotion_1_1CPTTracking_af2456aaf125ca9ba240463d1e259d4b9}\label{classmotion_1_1CPTTracking_af2456aaf125ca9ba240463d1e259d4b9}} 
+\index{motion\+::\+C\+P\+T\+Tracking@{motion\+::\+C\+P\+T\+Tracking}!enter@{enter}}
+\index{enter@{enter}!motion\+::\+C\+P\+T\+Tracking@{motion\+::\+C\+P\+T\+Tracking}}
+\subsubsection{\texorpdfstring{enter()}{enter()}}
+{\footnotesize\ttfamily void C\+P\+T\+Tracking\+::enter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmotion_1_1CMotionPointTracker}{C\+Motion\+Point\+Tracker}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This will execute when the state is entered. 
+
+Implements \mbox{\hyperlink{classmotion_1_1CState_a53d5fcfec223b58ccdd364a8430fd23c}{motion\+::\+C\+State$<$ C\+Motion\+Point\+Tracker $>$}}.
+
+\mbox{\Hypertarget{classmotion_1_1CPTTracking_aa8f85da75436cc8d98c25318b0bea42d}\label{classmotion_1_1CPTTracking_aa8f85da75436cc8d98c25318b0bea42d}} 
+\index{motion\+::\+C\+P\+T\+Tracking@{motion\+::\+C\+P\+T\+Tracking}!execute@{execute}}
+\index{execute@{execute}!motion\+::\+C\+P\+T\+Tracking@{motion\+::\+C\+P\+T\+Tracking}}
+\subsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void C\+P\+T\+Tracking\+::execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmotion_1_1CMotionPointTracker}{C\+Motion\+Point\+Tracker}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This is the states normal update function. todos\+: obs check, etc. 
+
+Implements \mbox{\hyperlink{classmotion_1_1CState_a71dc72d345b15bf3b5b5bff596a71f33}{motion\+::\+C\+State$<$ C\+Motion\+Point\+Tracker $>$}}.
+
+\mbox{\Hypertarget{classmotion_1_1CPTTracking_aa7a6294200e0dd2c0d53f852558d7d89}\label{classmotion_1_1CPTTracking_aa7a6294200e0dd2c0d53f852558d7d89}} 
+\index{motion\+::\+C\+P\+T\+Tracking@{motion\+::\+C\+P\+T\+Tracking}!exit@{exit}}
+\index{exit@{exit}!motion\+::\+C\+P\+T\+Tracking@{motion\+::\+C\+P\+T\+Tracking}}
+\subsubsection{\texorpdfstring{exit()}{exit()}}
+{\footnotesize\ttfamily void C\+P\+T\+Tracking\+::exit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmotion_1_1CMotionPointTracker}{C\+Motion\+Point\+Tracker}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This will execute when the state is exited. todo 
+
+Implements \mbox{\hyperlink{classmotion_1_1CState_a353db064c159d66b82bf257b35e7c016}{motion\+::\+C\+State$<$ C\+Motion\+Point\+Tracker $>$}}.
+
+\mbox{\Hypertarget{classmotion_1_1CPTTracking_a46a7c1bd0b68ce1c273ae32a75d76506}\label{classmotion_1_1CPTTracking_a46a7c1bd0b68ce1c273ae32a75d76506}} 
+\index{motion\+::\+C\+P\+T\+Tracking@{motion\+::\+C\+P\+T\+Tracking}!get\+Instance@{get\+Instance}}
+\index{get\+Instance@{get\+Instance}!motion\+::\+C\+P\+T\+Tracking@{motion\+::\+C\+P\+T\+Tracking}}
+\subsubsection{\texorpdfstring{get\+Instance()}{getInstance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classmotion_1_1CPTTracking}{C\+P\+T\+Tracking}} $\ast$ C\+P\+T\+Tracking\+::get\+Instance (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Point Tracker Methods. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+motion/\mbox{\hyperlink{CPTOwnedStates_8h}{C\+P\+T\+Owned\+States.\+h}}\item 
+motion/\mbox{\hyperlink{CPTOwnedStates_8cpp}{C\+P\+T\+Owned\+States.\+cpp}}\end{DoxyCompactItemize}

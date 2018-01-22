@@ -726,7 +726,7 @@ void gridmapSimulFrame::OntimRunTrigger(wxTimerEvent& event)
 
 		if(!edgeReached)
 		{
-            the_robot.movementCommand(1,0);
+            the_robot.movementCommand(1, 0);
 
             if(mtn->getAheadDist() <= obsStopDist)
             {
@@ -746,7 +746,6 @@ void gridmapSimulFrame::OntimRunTrigger(wxTimerEvent& event)
             the_robot.movementCommand(mtn->getLinearVelocity(), mtn->getAngularVelocity());
         }
         #endif
-
 
         #ifdef MOTION_PT_1
         static int state = 0;

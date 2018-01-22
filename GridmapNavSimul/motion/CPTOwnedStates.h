@@ -1,3 +1,18 @@
+/**
+  * Copyright (C), 1996-2017, TOPBAND. Co., Ltd. \n
+  * All right reserved.
+  *
+  * @file CPTOwnedStates.h
+  * @author Junhuan Li       
+  * @version v1.0      
+  * @date 18/01/17
+  * @brief Motion point tracker owned state(s)
+  * @note 
+  * 1. --- \n
+  * History: Create this file \n
+  * <author>       <time>   <version >      <desc> \n
+  * Junhuan Li    18/01/17     1.0         create file
+  */
 #ifndef CPTOWNEDSTATES_H_
 #define CPTOWNEDSTATES_H_
 
@@ -7,12 +22,15 @@
 #include "CMotion.h"
 #include "CMotionPointTracker.h"
 #include "CActionArc.h"
+#include "TMotionPIDCon.h"
 
 namespace motion
 {
     class CMotionPointTracker;
 
-    /** Point Tracking idle. */
+    /** Point Tracking idle state. 
+     * It will change to this state automatically when a point tracking task finished.
+     */
     class CPTIdle : public CState<CMotionPointTracker>
     {
     public:

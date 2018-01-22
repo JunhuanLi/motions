@@ -1,0 +1,81 @@
+\hypertarget{structmotion_1_1TMotionVector2D}{}\section{motion\+:\+:T\+Motion\+Vector2D Struct Reference}
+\label{structmotion_1_1TMotionVector2D}\index{motion\+::\+T\+Motion\+Vector2D@{motion\+::\+T\+Motion\+Vector2D}}
+
+
+{\ttfamily \#include $<$T\+Motion\+Vector2\+D.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structmotion_1_1TMotionVector2D_a1ffd55ebfaa46e7d200e5d3411be615d}\label{structmotion_1_1TMotionVector2D_a1ffd55ebfaa46e7d200e5d3411be615d}} 
+{\bfseries T\+Motion\+Vector2D} (double xx, double yy)
+\item 
+\mbox{\Hypertarget{structmotion_1_1TMotionVector2D_ad3d208eeb33e61a4e647bbfe64c336b5}\label{structmotion_1_1TMotionVector2D_ad3d208eeb33e61a4e647bbfe64c336b5}} 
+const \mbox{\hyperlink{structmotion_1_1TMotionVector2D}{T\+Motion\+Vector2D}} \& {\bfseries operator=} (const \mbox{\hyperlink{structmotion_1_1TMotionVector2D}{T\+Motion\+Vector2D}} \&rhs)
+\item 
+\mbox{\Hypertarget{structmotion_1_1TMotionVector2D_aa819132aada11b951c9671025da42d0e}\label{structmotion_1_1TMotionVector2D_aa819132aada11b951c9671025da42d0e}} 
+\mbox{\hyperlink{structmotion_1_1TMotionVector2D}{T\+Motion\+Vector2D}} {\bfseries operator+} (const \mbox{\hyperlink{structmotion_1_1TMotionVector2D}{T\+Motion\+Vector2D}} \&rhs)
+\item 
+\mbox{\Hypertarget{structmotion_1_1TMotionVector2D_a0e6bf24e26c67dee74b716e2e6b99dcd}\label{structmotion_1_1TMotionVector2D_a0e6bf24e26c67dee74b716e2e6b99dcd}} 
+\mbox{\hyperlink{structmotion_1_1TMotionVector2D}{T\+Motion\+Vector2D}} {\bfseries operator-\/} (const \mbox{\hyperlink{structmotion_1_1TMotionVector2D}{T\+Motion\+Vector2D}} \&rhs)
+\item 
+\mbox{\Hypertarget{structmotion_1_1TMotionVector2D_acb0fef67ede09f7ce41e53baefc9f024}\label{structmotion_1_1TMotionVector2D_acb0fef67ede09f7ce41e53baefc9f024}} 
+void {\bfseries reset} (void)
+\item 
+\mbox{\Hypertarget{structmotion_1_1TMotionVector2D_ad9cabba4167876711f68a513d2239526}\label{structmotion_1_1TMotionVector2D_ad9cabba4167876711f68a513d2239526}} 
+void {\bfseries norm\+Vec} (void)
+\item 
+double \mbox{\hyperlink{structmotion_1_1TMotionVector2D_a132bcb4fea81db58a825d28bb1ed5320}{dot\+Product}} (\mbox{\hyperlink{structmotion_1_1TMotionVector2D}{T\+Motion\+Vector2D}} vecX)
+\item 
+double \mbox{\hyperlink{structmotion_1_1TMotionVector2D_adba9d2291b5dfe245c9b1009bb4c0e64}{cross\+Product}} (\mbox{\hyperlink{structmotion_1_1TMotionVector2D}{T\+Motion\+Vector2D}} vecX)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structmotion_1_1TMotionVector2D_a07d1c2d9fe6d0ec6c2b64db64f6c9e48}\label{structmotion_1_1TMotionVector2D_a07d1c2d9fe6d0ec6c2b64db64f6c9e48}} 
+double {\bfseries x}
+\item 
+\mbox{\Hypertarget{structmotion_1_1TMotionVector2D_aeb04b131498d4c331819bfff3a60f80d}\label{structmotion_1_1TMotionVector2D_aeb04b131498d4c331819bfff3a60f80d}} 
+double {\bfseries y}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Motion vector ~\newline
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{structmotion_1_1TMotionVector2D_adba9d2291b5dfe245c9b1009bb4c0e64}\label{structmotion_1_1TMotionVector2D_adba9d2291b5dfe245c9b1009bb4c0e64}} 
+\index{motion\+::\+T\+Motion\+Vector2D@{motion\+::\+T\+Motion\+Vector2D}!cross\+Product@{cross\+Product}}
+\index{cross\+Product@{cross\+Product}!motion\+::\+T\+Motion\+Vector2D@{motion\+::\+T\+Motion\+Vector2D}}
+\subsubsection{\texorpdfstring{cross\+Product()}{crossProduct()}}
+{\footnotesize\ttfamily double motion\+::\+T\+Motion\+Vector2\+D\+::cross\+Product (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmotion_1_1TMotionVector2D}{T\+Motion\+Vector2D}}}]{vecX }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Calculate the cross product. 
+\begin{DoxyParams}{Parameters}
+{\em vecX} & A vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+cross product 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structmotion_1_1TMotionVector2D_a132bcb4fea81db58a825d28bb1ed5320}\label{structmotion_1_1TMotionVector2D_a132bcb4fea81db58a825d28bb1ed5320}} 
+\index{motion\+::\+T\+Motion\+Vector2D@{motion\+::\+T\+Motion\+Vector2D}!dot\+Product@{dot\+Product}}
+\index{dot\+Product@{dot\+Product}!motion\+::\+T\+Motion\+Vector2D@{motion\+::\+T\+Motion\+Vector2D}}
+\subsubsection{\texorpdfstring{dot\+Product()}{dotProduct()}}
+{\footnotesize\ttfamily double motion\+::\+T\+Motion\+Vector2\+D\+::dot\+Product (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmotion_1_1TMotionVector2D}{T\+Motion\+Vector2D}}}]{vecX }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Calculate the dot product. 
+\begin{DoxyParams}{Parameters}
+{\em vecX} & A vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+dot product 
+\end{DoxyReturn}
+double tmp = vec\+X.\+x$\ast$vecX.x + vec\+X.\+y$\ast$vecX.y; if( tmp != 1) printf(\char`\"{}\mbox{[}ljh\mbox{]} Normalise error occurred. \%.\+3f\textbackslash{}n\char`\"{}, tmp); ~\newline
+ printf(\char`\"{}dp\+: \%f\textbackslash{}n\char`\"{}, res); 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+motion/misc/\mbox{\hyperlink{TMotionVector2D_8h}{T\+Motion\+Vector2\+D.\+h}}\end{DoxyCompactItemize}

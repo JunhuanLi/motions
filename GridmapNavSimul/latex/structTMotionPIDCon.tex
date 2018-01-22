@@ -1,0 +1,105 @@
+\hypertarget{structTMotionPIDCon}{}\section{T\+Motion\+P\+I\+D\+Con Struct Reference}
+\label{structTMotionPIDCon}\index{T\+Motion\+P\+I\+D\+Con@{T\+Motion\+P\+I\+D\+Con}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structTMotionPIDCon_a89a9b1ec1b91eb7ea5b3dd9f3dd38d92}{T\+Motion\+P\+I\+D\+Con}} (double kp, double ki, double kd=0)
+\item 
+double \mbox{\hyperlink{structTMotionPIDCon_a138ff107e0fece2fd74a1fed606261ae}{pid}} (double err)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{structTMotionPIDCon_ac8a816dbcf1f644c140dbd2f7b8df58d}{m\+\_\+kP}}
+\item 
+double \mbox{\hyperlink{structTMotionPIDCon_ac8192a3af9ef9f350128f34c276ce493}{m\+\_\+kI}}
+\item 
+double \mbox{\hyperlink{structTMotionPIDCon_a07e1da9c56d8153c6c576bb8b533a80d}{m\+\_\+kD}}
+\item 
+double \mbox{\hyperlink{structTMotionPIDCon_ac048b1ed8486f28e941648bc0518695a}{m\+\_\+il}}
+\item 
+double \mbox{\hyperlink{structTMotionPIDCon_a51de95c7d07b1bf075d5e5834671506a}{m\+\_\+output}}
+\item 
+double \mbox{\hyperlink{structTMotionPIDCon_ad7b4b7d9804f5130511442b8f1543d09}{m\+\_\+inte\+Err}}
+\item 
+double \mbox{\hyperlink{structTMotionPIDCon_a70da1dcf5bae866184f047980ef4eae2}{m\+\_\+delta\+Err}}
+\item 
+double \mbox{\hyperlink{structTMotionPIDCon_a319c2f863bb3965d8caaa008e2e1bd87}{m\+\_\+pre\+Err}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structTMotionPIDCon_a89a9b1ec1b91eb7ea5b3dd9f3dd38d92}\label{structTMotionPIDCon_a89a9b1ec1b91eb7ea5b3dd9f3dd38d92}} 
+\index{T\+Motion\+P\+I\+D\+Con@{T\+Motion\+P\+I\+D\+Con}!T\+Motion\+P\+I\+D\+Con@{T\+Motion\+P\+I\+D\+Con}}
+\index{T\+Motion\+P\+I\+D\+Con@{T\+Motion\+P\+I\+D\+Con}!T\+Motion\+P\+I\+D\+Con@{T\+Motion\+P\+I\+D\+Con}}
+\subsubsection{\texorpdfstring{T\+Motion\+P\+I\+D\+Con()}{TMotionPIDCon()}}
+{\footnotesize\ttfamily T\+Motion\+P\+I\+D\+Con\+::\+T\+Motion\+P\+I\+D\+Con (\begin{DoxyParamCaption}\item[{double}]{kp,  }\item[{double}]{ki,  }\item[{double}]{kd = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{structTMotionPIDCon_a138ff107e0fece2fd74a1fed606261ae}\label{structTMotionPIDCon_a138ff107e0fece2fd74a1fed606261ae}} 
+\index{T\+Motion\+P\+I\+D\+Con@{T\+Motion\+P\+I\+D\+Con}!pid@{pid}}
+\index{pid@{pid}!T\+Motion\+P\+I\+D\+Con@{T\+Motion\+P\+I\+D\+Con}}
+\subsubsection{\texorpdfstring{pid()}{pid()}}
+{\footnotesize\ttfamily double T\+Motion\+P\+I\+D\+Con\+::pid (\begin{DoxyParamCaption}\item[{double}]{err }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Controller if(m\+\_\+inte\+Err $>$= m\+\_\+il) \{ m\+\_\+inte\+Err = m\+\_\+il; \} 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structTMotionPIDCon_a70da1dcf5bae866184f047980ef4eae2}\label{structTMotionPIDCon_a70da1dcf5bae866184f047980ef4eae2}} 
+\index{T\+Motion\+P\+I\+D\+Con@{T\+Motion\+P\+I\+D\+Con}!m\+\_\+delta\+Err@{m\+\_\+delta\+Err}}
+\index{m\+\_\+delta\+Err@{m\+\_\+delta\+Err}!T\+Motion\+P\+I\+D\+Con@{T\+Motion\+P\+I\+D\+Con}}
+\subsubsection{\texorpdfstring{m\+\_\+delta\+Err}{m\_deltaErr}}
+{\footnotesize\ttfamily double T\+Motion\+P\+I\+D\+Con\+::m\+\_\+delta\+Err}
+
+Delta error. \mbox{\Hypertarget{structTMotionPIDCon_ac048b1ed8486f28e941648bc0518695a}\label{structTMotionPIDCon_ac048b1ed8486f28e941648bc0518695a}} 
+\index{T\+Motion\+P\+I\+D\+Con@{T\+Motion\+P\+I\+D\+Con}!m\+\_\+il@{m\+\_\+il}}
+\index{m\+\_\+il@{m\+\_\+il}!T\+Motion\+P\+I\+D\+Con@{T\+Motion\+P\+I\+D\+Con}}
+\subsubsection{\texorpdfstring{m\+\_\+il}{m\_il}}
+{\footnotesize\ttfamily double T\+Motion\+P\+I\+D\+Con\+::m\+\_\+il}
+
+Integral limit. \mbox{\Hypertarget{structTMotionPIDCon_ad7b4b7d9804f5130511442b8f1543d09}\label{structTMotionPIDCon_ad7b4b7d9804f5130511442b8f1543d09}} 
+\index{T\+Motion\+P\+I\+D\+Con@{T\+Motion\+P\+I\+D\+Con}!m\+\_\+inte\+Err@{m\+\_\+inte\+Err}}
+\index{m\+\_\+inte\+Err@{m\+\_\+inte\+Err}!T\+Motion\+P\+I\+D\+Con@{T\+Motion\+P\+I\+D\+Con}}
+\subsubsection{\texorpdfstring{m\+\_\+inte\+Err}{m\_inteErr}}
+{\footnotesize\ttfamily double T\+Motion\+P\+I\+D\+Con\+::m\+\_\+inte\+Err}
+
+Integral error. \mbox{\Hypertarget{structTMotionPIDCon_a07e1da9c56d8153c6c576bb8b533a80d}\label{structTMotionPIDCon_a07e1da9c56d8153c6c576bb8b533a80d}} 
+\index{T\+Motion\+P\+I\+D\+Con@{T\+Motion\+P\+I\+D\+Con}!m\+\_\+kD@{m\+\_\+kD}}
+\index{m\+\_\+kD@{m\+\_\+kD}!T\+Motion\+P\+I\+D\+Con@{T\+Motion\+P\+I\+D\+Con}}
+\subsubsection{\texorpdfstring{m\+\_\+kD}{m\_kD}}
+{\footnotesize\ttfamily double T\+Motion\+P\+I\+D\+Con\+::m\+\_\+kD}
+
+Derivative constant. \mbox{\Hypertarget{structTMotionPIDCon_ac8192a3af9ef9f350128f34c276ce493}\label{structTMotionPIDCon_ac8192a3af9ef9f350128f34c276ce493}} 
+\index{T\+Motion\+P\+I\+D\+Con@{T\+Motion\+P\+I\+D\+Con}!m\+\_\+kI@{m\+\_\+kI}}
+\index{m\+\_\+kI@{m\+\_\+kI}!T\+Motion\+P\+I\+D\+Con@{T\+Motion\+P\+I\+D\+Con}}
+\subsubsection{\texorpdfstring{m\+\_\+kI}{m\_kI}}
+{\footnotesize\ttfamily double T\+Motion\+P\+I\+D\+Con\+::m\+\_\+kI}
+
+Integral constant. \mbox{\Hypertarget{structTMotionPIDCon_ac8a816dbcf1f644c140dbd2f7b8df58d}\label{structTMotionPIDCon_ac8a816dbcf1f644c140dbd2f7b8df58d}} 
+\index{T\+Motion\+P\+I\+D\+Con@{T\+Motion\+P\+I\+D\+Con}!m\+\_\+kP@{m\+\_\+kP}}
+\index{m\+\_\+kP@{m\+\_\+kP}!T\+Motion\+P\+I\+D\+Con@{T\+Motion\+P\+I\+D\+Con}}
+\subsubsection{\texorpdfstring{m\+\_\+kP}{m\_kP}}
+{\footnotesize\ttfamily double T\+Motion\+P\+I\+D\+Con\+::m\+\_\+kP}
+
+Proportional constant. \mbox{\Hypertarget{structTMotionPIDCon_a51de95c7d07b1bf075d5e5834671506a}\label{structTMotionPIDCon_a51de95c7d07b1bf075d5e5834671506a}} 
+\index{T\+Motion\+P\+I\+D\+Con@{T\+Motion\+P\+I\+D\+Con}!m\+\_\+output@{m\+\_\+output}}
+\index{m\+\_\+output@{m\+\_\+output}!T\+Motion\+P\+I\+D\+Con@{T\+Motion\+P\+I\+D\+Con}}
+\subsubsection{\texorpdfstring{m\+\_\+output}{m\_output}}
+{\footnotesize\ttfamily double T\+Motion\+P\+I\+D\+Con\+::m\+\_\+output}
+
+Control output. \mbox{\Hypertarget{structTMotionPIDCon_a319c2f863bb3965d8caaa008e2e1bd87}\label{structTMotionPIDCon_a319c2f863bb3965d8caaa008e2e1bd87}} 
+\index{T\+Motion\+P\+I\+D\+Con@{T\+Motion\+P\+I\+D\+Con}!m\+\_\+pre\+Err@{m\+\_\+pre\+Err}}
+\index{m\+\_\+pre\+Err@{m\+\_\+pre\+Err}!T\+Motion\+P\+I\+D\+Con@{T\+Motion\+P\+I\+D\+Con}}
+\subsubsection{\texorpdfstring{m\+\_\+pre\+Err}{m\_preErr}}
+{\footnotesize\ttfamily double T\+Motion\+P\+I\+D\+Con\+::m\+\_\+pre\+Err}
+
+Previous error used to calculate \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{structTMotionPIDCon_a70da1dcf5bae866184f047980ef4eae2}{m\+\_\+delta\+Err}}. 
+\end{DoxySeeAlso}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+motion/misc/\mbox{\hyperlink{TMotionPIDCon_8h}{T\+Motion\+P\+I\+D\+Con.\+h}}\end{DoxyCompactItemize}

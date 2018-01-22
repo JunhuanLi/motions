@@ -1,0 +1,74 @@
+\hypertarget{classmotion_1_1CWFObsAvoid}{}\section{motion\+:\+:C\+W\+F\+Obs\+Avoid Class Reference}
+\label{classmotion_1_1CWFObsAvoid}\index{motion\+::\+C\+W\+F\+Obs\+Avoid@{motion\+::\+C\+W\+F\+Obs\+Avoid}}
+
+
+{\ttfamily \#include $<$C\+W\+F\+Owned\+States.\+h$>$}
+
+Inheritance diagram for motion\+:\+:C\+W\+F\+Obs\+Avoid\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classmotion_1_1CWFObsAvoid}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classmotion_1_1CWFObsAvoid_aee2e80e821ecd29528f048c99813b63a}{enter}} (\mbox{\hyperlink{classmotion_1_1CMotionWallFollowing}{C\+Motion\+Wall\+Following}} $\ast$wf)
+\item 
+virtual void \mbox{\hyperlink{classmotion_1_1CWFObsAvoid_a458771fccc326a8b02e4f947cdbb7f3b}{execute}} (\mbox{\hyperlink{classmotion_1_1CMotionWallFollowing}{C\+Motion\+Wall\+Following}} $\ast$wf)
+\item 
+virtual void \mbox{\hyperlink{classmotion_1_1CWFObsAvoid_af95e36cbc64c2c47fdf5d6ad5dde90a8}{exit}} (\mbox{\hyperlink{classmotion_1_1CMotionWallFollowing}{C\+Motion\+Wall\+Following}} $\ast$wf)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classmotion_1_1CWFObsAvoid}{C\+W\+F\+Obs\+Avoid}} $\ast$ \mbox{\hyperlink{classmotion_1_1CWFObsAvoid_a67a97a1719b8d637a9cf154bd8977171}{get\+Instance}} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Obstacle Avoidance State. When the ahead distance is small enough, sub-\/motion will change to this state. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmotion_1_1CWFObsAvoid_aee2e80e821ecd29528f048c99813b63a}\label{classmotion_1_1CWFObsAvoid_aee2e80e821ecd29528f048c99813b63a}} 
+\index{motion\+::\+C\+W\+F\+Obs\+Avoid@{motion\+::\+C\+W\+F\+Obs\+Avoid}!enter@{enter}}
+\index{enter@{enter}!motion\+::\+C\+W\+F\+Obs\+Avoid@{motion\+::\+C\+W\+F\+Obs\+Avoid}}
+\subsubsection{\texorpdfstring{enter()}{enter()}}
+{\footnotesize\ttfamily void C\+W\+F\+Obs\+Avoid\+::enter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmotion_1_1CMotionWallFollowing}{C\+Motion\+Wall\+Following}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This will execute when the state is entered. 
+
+Implements \mbox{\hyperlink{classmotion_1_1CState_a53d5fcfec223b58ccdd364a8430fd23c}{motion\+::\+C\+State$<$ C\+Motion\+Wall\+Following $>$}}.
+
+\mbox{\Hypertarget{classmotion_1_1CWFObsAvoid_a458771fccc326a8b02e4f947cdbb7f3b}\label{classmotion_1_1CWFObsAvoid_a458771fccc326a8b02e4f947cdbb7f3b}} 
+\index{motion\+::\+C\+W\+F\+Obs\+Avoid@{motion\+::\+C\+W\+F\+Obs\+Avoid}!execute@{execute}}
+\index{execute@{execute}!motion\+::\+C\+W\+F\+Obs\+Avoid@{motion\+::\+C\+W\+F\+Obs\+Avoid}}
+\subsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void C\+W\+F\+Obs\+Avoid\+::execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmotion_1_1CMotionWallFollowing}{C\+Motion\+Wall\+Following}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This is the states normal update function. todo 
+
+Implements \mbox{\hyperlink{classmotion_1_1CState_a71dc72d345b15bf3b5b5bff596a71f33}{motion\+::\+C\+State$<$ C\+Motion\+Wall\+Following $>$}}.
+
+\mbox{\Hypertarget{classmotion_1_1CWFObsAvoid_af95e36cbc64c2c47fdf5d6ad5dde90a8}\label{classmotion_1_1CWFObsAvoid_af95e36cbc64c2c47fdf5d6ad5dde90a8}} 
+\index{motion\+::\+C\+W\+F\+Obs\+Avoid@{motion\+::\+C\+W\+F\+Obs\+Avoid}!exit@{exit}}
+\index{exit@{exit}!motion\+::\+C\+W\+F\+Obs\+Avoid@{motion\+::\+C\+W\+F\+Obs\+Avoid}}
+\subsubsection{\texorpdfstring{exit()}{exit()}}
+{\footnotesize\ttfamily void C\+W\+F\+Obs\+Avoid\+::exit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmotion_1_1CMotionWallFollowing}{C\+Motion\+Wall\+Following}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This will execute when the state is exited. 
+
+Implements \mbox{\hyperlink{classmotion_1_1CState_a353db064c159d66b82bf257b35e7c016}{motion\+::\+C\+State$<$ C\+Motion\+Wall\+Following $>$}}.
+
+\mbox{\Hypertarget{classmotion_1_1CWFObsAvoid_a67a97a1719b8d637a9cf154bd8977171}\label{classmotion_1_1CWFObsAvoid_a67a97a1719b8d637a9cf154bd8977171}} 
+\index{motion\+::\+C\+W\+F\+Obs\+Avoid@{motion\+::\+C\+W\+F\+Obs\+Avoid}!get\+Instance@{get\+Instance}}
+\index{get\+Instance@{get\+Instance}!motion\+::\+C\+W\+F\+Obs\+Avoid@{motion\+::\+C\+W\+F\+Obs\+Avoid}}
+\subsubsection{\texorpdfstring{get\+Instance()}{getInstance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classmotion_1_1CWFObsAvoid}{C\+W\+F\+Obs\+Avoid}} $\ast$ C\+W\+F\+Obs\+Avoid\+::get\+Instance (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Obstacle Avoidance Methods. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+motion/\mbox{\hyperlink{CWFOwnedStates_8h}{C\+W\+F\+Owned\+States.\+h}}\item 
+motion/\mbox{\hyperlink{CWFOwnedStates_8cpp}{C\+W\+F\+Owned\+States.\+cpp}}\end{DoxyCompactItemize}

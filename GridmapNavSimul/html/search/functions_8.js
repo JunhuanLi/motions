@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['setcurrentstate',['setCurrentState',['../classmotion_1_1CStateMachine.html#a57407660e1054b7b6e912efc3afb9495',1,'motion::CStateMachine']]],
-  ['storestartpose',['storeStartPose',['../classmotion_1_1CActionBase.html#af660bbf31c33b1932a1a5b9219334211',1,'motion::CActionBase']]]
+  ['linearpt',['LinearPT',['../classmotion_1_1CMotionPointTracker.html#a79e987afad15936fb09e7e2705aff01e',1,'motion::CMotionPointTracker']]]
 ];

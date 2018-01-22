@@ -1,5 +1,9 @@
 \hypertarget{classmotion_1_1CActionBackward}{}\section{motion\+:\+:C\+Action\+Backward Class Reference}
 \label{classmotion_1_1CActionBackward}\index{motion\+::\+C\+Action\+Backward@{motion\+::\+C\+Action\+Backward}}
+
+
+{\ttfamily \#include $<$C\+Action\+Backward.\+h$>$}
+
 Inheritance diagram for motion\+:\+:C\+Action\+Backward\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -11,12 +15,6 @@ Inheritance diagram for motion\+:\+:C\+Action\+Backward\+:\begin{figure}[H]
 \item 
 void \mbox{\hyperlink{classmotion_1_1CActionBackward_a609f364c24b4ceebda81c0b591692d2a}{reset}} (void)
 \item 
-\mbox{\Hypertarget{classmotion_1_1CActionBackward_a4afcf9dbebf653ac200dead6912ce9e3}\label{classmotion_1_1CActionBackward_a4afcf9dbebf653ac200dead6912ce9e3}} 
-E\+Steering\+State\+Type {\bfseries get\+State} (void)
-\item 
-\mbox{\Hypertarget{classmotion_1_1CActionBackward_a8cf85f6123f690a0e3a7edc5f49990d1}\label{classmotion_1_1CActionBackward_a8cf85f6123f690a0e3a7edc5f49990d1}} 
-void {\bfseries set\+State} (E\+Steering\+State\+Type state)
-\item 
 void \mbox{\hyperlink{classmotion_1_1CActionBackward_ab05c93abef4815a4a9f38afeddbb8c2a}{backward}} (double v, double distance)
 \end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
@@ -27,6 +25,16 @@ static \mbox{\hyperlink{classmotion_1_1CActionBackward}{C\+Action\+Backward}} $\
 \end{DoxyCompactItemize}
 
 
+\subsection{Detailed Description}
+Backward ~\newline
+ example\+: ~\newline
+ \#include \mbox{\hyperlink{CActionBackward_8h}{C\+Action\+Backward.\+h}} ~\newline
+ bkw-\/$>$backward(1, 90); ~\newline
+if(bkw-\/$>$get\+Action\+State()==B\+A\+C\+K\+W\+A\+R\+D\+\_\+\+F\+I\+N\+I\+S\+H\+ED) ~\newline
+\{ ~\newline
+ printf(\char`\"{}\+Backing task finished. Please command the next order.\textbackslash{}n\char`\"{}); ~\newline
+\} 
+
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{classmotion_1_1CActionBackward_ab05c93abef4815a4a9f38afeddbb8c2a}\label{classmotion_1_1CActionBackward_ab05c93abef4815a4a9f38afeddbb8c2a}} 
 \index{motion\+::\+C\+Action\+Backward@{motion\+::\+C\+Action\+Backward}!backward@{backward}}
@@ -36,12 +44,19 @@ static \mbox{\hyperlink{classmotion_1_1CActionBackward}{C\+Action\+Backward}} $\
 
 Move the robot backward straightly. 
 \begin{DoxyParams}{Parameters}
-{\em v} & is the backward linear velocity. \\
+{\em v} & The backward linear velocity. \\
 \hline
-{\em distance} & is the desired distance we want the robot backward. \\
+{\em distance} & The desired distance we want the robot backward. \\
 \hline
 \end{DoxyParams}
-start the timer \mbox{\Hypertarget{classmotion_1_1CActionBackward_a609f364c24b4ceebda81c0b591692d2a}\label{classmotion_1_1CActionBackward_a609f364c24b4ceebda81c0b591692d2a}} 
+Store current information and calculate information needed
+
+start the timer
+
+Timeout check.
+
+throw exceptions assert(!\char`\"{}\+Time out when backwarding.\char`\"{}); ~\newline
+ Finish condition check. \mbox{\Hypertarget{classmotion_1_1CActionBackward_a609f364c24b4ceebda81c0b591692d2a}\label{classmotion_1_1CActionBackward_a609f364c24b4ceebda81c0b591692d2a}} 
 \index{motion\+::\+C\+Action\+Backward@{motion\+::\+C\+Action\+Backward}!reset@{reset}}
 \index{reset@{reset}!motion\+::\+C\+Action\+Backward@{motion\+::\+C\+Action\+Backward}}
 \subsubsection{\texorpdfstring{reset()}{reset()}}
@@ -51,5 +66,5 @@ $<$ Reset base private variables.
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-motion/action/C\+Action\+Backward.\+h\item 
-motion/action/C\+Action\+Backward.\+cpp\end{DoxyCompactItemize}
+motion/action/\mbox{\hyperlink{CActionBackward_8h}{C\+Action\+Backward.\+h}}\item 
+motion/action/\mbox{\hyperlink{CActionBackward_8cpp}{C\+Action\+Backward.\+cpp}}\end{DoxyCompactItemize}

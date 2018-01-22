@@ -1,3 +1,18 @@
+/**
+  * Copyright (C), 1996-2017, TOPBAND. Co., Ltd. \n
+  * All right reserved.
+  *
+  * @file CMotionPointTracker.h
+  * @author Junhuan Li       
+  * @version v1.0      
+  * @date 18/01/17
+  * @brief Motion point tracker
+  * @note 
+  * 1. --- \n
+  * History: Create this file \n
+  * <author>       <time>   <version >      <desc> \n
+  * Junhuan Li    18/01/17     1.0         create file
+  */
 #ifndef CMOTIONPOINTTRACKER_H_
 #define CMOTIONPOINTTRACKER_H_
 
@@ -13,7 +28,10 @@
 namespace motion
 {
     class CMotion;
-
+    /** Point tracking mode.
+     * need the target point and tracking mode as input.
+     * @see EPTMode
+     */
     class CMotionPointTracker : public CActionBase, public CState<CMotion>
     {
     public:
@@ -30,6 +48,7 @@ namespace motion
         ELinearPTState getlptState(void) const { return m_lptState; }
         void setlptState(ELinearPTState s) { m_lptState = s; }
         CStateMachine<CMotionPointTracker>* getFSM(void) const { return m_pStateMachine; }
+        TMotionPIDCon getPTController(void) const { return ptController; }
 
         /** Calculate \sa m_angle. */
         void calcPhi(void);
@@ -52,6 +71,7 @@ namespace motion
         CMotionPointTracker& operator=(CMotionPointTracker&);
 
         CStateMachine<CMotionPointTracker>* m_pStateMachine;  /**< State machine of point tracking. */
+        TMotionPIDCon ptController;  /**< Point tracking controller.*/
 
         ELinearPTState m_lptState;  /**< Linear point tracking state.*/
         int m_arcSide;  /**< The arc side.*/

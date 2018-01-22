@@ -1,3 +1,18 @@
+/**
+  * Copyright (C), 1996-2017, TOPBAND. Co., Ltd. \n
+  * All right reserved.
+  *
+  * @file CActionArc.h
+  * @author Junhuan Li       
+  * @version v1.0      
+  * @date 18/01/17
+  * @brief Arc action
+  * @note 
+  * 1. --- \n
+  * History: Create this file \n
+  * <author>       <time>   <version >      <desc> \n
+  * Junhuan Li    18/01/17     1.0         create file
+  */
 #ifndef CACTIONARC_H_
 #define CACTIONARC_H_
 
@@ -12,6 +27,20 @@
 
 namespace motion
 {
+   /** 
+    * Make arc \n
+    *
+    * example: \n
+    *
+    * #include CActionArc.h \n
+    *
+    * mkturns->arc(1, 90, 0.5); \n
+    * if(mkturns->getActionState()==ARC_FINISHED) \n
+    * { \n
+    *     printf("Arc task finished. Please command the next order.\n"); \n
+    * }
+    *
+    */
     class CActionArc : public CActionBase
     {
     public:
@@ -92,7 +121,6 @@ namespace motion
         double m_angRem;  /**< Angle remaining which is equal to \sa m_commandAngDeg - rad2Deg(\sa m_phiRotated). */
         bool m_slightTuneOn;  /**< Slightly tune period on mark. */
         bool m_slightTuneFinished;  /**< Slightly tune period finished mark. */
-        ///TMotionPIDCon m_controller;
     };
 
 }

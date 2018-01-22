@@ -1,0 +1,150 @@
+\hypertarget{classmotion_1_1CMotionPointTracker}{}\section{motion\+:\+:C\+Motion\+Point\+Tracker Class Reference}
+\label{classmotion_1_1CMotionPointTracker}\index{motion\+::\+C\+Motion\+Point\+Tracker@{motion\+::\+C\+Motion\+Point\+Tracker}}
+
+
+{\ttfamily \#include $<$C\+Motion\+Point\+Tracker.\+h$>$}
+
+Inheritance diagram for motion\+:\+:C\+Motion\+Point\+Tracker\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classmotion_1_1CMotionPointTracker}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classmotion_1_1CMotionPointTracker_a77975b88cc198d7115910dd0e738f925}{enter}} (\mbox{\hyperlink{classmotion_1_1CMotion}{C\+Motion}} $\ast$mt)
+\item 
+virtual void \mbox{\hyperlink{classmotion_1_1CMotionPointTracker_a2513b0d052536d307db674af8ee8a3e6}{execute}} (\mbox{\hyperlink{classmotion_1_1CMotion}{C\+Motion}} $\ast$mt)
+\item 
+virtual void \mbox{\hyperlink{classmotion_1_1CMotionPointTracker_ae40c6dc8e2883a6293b2ea5994b0e3d1}{exit}} (\mbox{\hyperlink{classmotion_1_1CMotion}{C\+Motion}} $\ast$mt)
+\item 
+\mbox{\Hypertarget{classmotion_1_1CMotionPointTracker_a6a3e63319c5059316543779904495599}\label{classmotion_1_1CMotionPointTracker_a6a3e63319c5059316543779904495599}} 
+void {\bfseries reset} (void)
+\item 
+\mbox{\Hypertarget{classmotion_1_1CMotionPointTracker_a2532e7afbf434af45d8cfa75551fde47}\label{classmotion_1_1CMotionPointTracker_a2532e7afbf434af45d8cfa75551fde47}} 
+int {\bfseries arc\+Side} (void)
+\item 
+\mbox{\Hypertarget{classmotion_1_1CMotionPointTracker_add639f835d6ac5c35c84d0768a574c7c}\label{classmotion_1_1CMotionPointTracker_add639f835d6ac5c35c84d0768a574c7c}} 
+double {\bfseries get\+Dist} (void) const
+\item 
+\mbox{\Hypertarget{classmotion_1_1CMotionPointTracker_a5b074c876ffd5432449ebaecc47fcc57}\label{classmotion_1_1CMotionPointTracker_a5b074c876ffd5432449ebaecc47fcc57}} 
+\mbox{\hyperlink{motionEnums_8h_a5a442990f649a5e91cbd8205f16dabfc}{E\+Linear\+P\+T\+State}} {\bfseries getlpt\+State} (void) const
+\item 
+\mbox{\Hypertarget{classmotion_1_1CMotionPointTracker_a94eb508c2a7f071d467b6ab91809dc8e}\label{classmotion_1_1CMotionPointTracker_a94eb508c2a7f071d467b6ab91809dc8e}} 
+void {\bfseries setlpt\+State} (\mbox{\hyperlink{motionEnums_8h_a5a442990f649a5e91cbd8205f16dabfc}{E\+Linear\+P\+T\+State}} s)
+\item 
+\mbox{\Hypertarget{classmotion_1_1CMotionPointTracker_ab5044793c84311aa4d8bd5edd2e60d35}\label{classmotion_1_1CMotionPointTracker_ab5044793c84311aa4d8bd5edd2e60d35}} 
+\mbox{\hyperlink{classmotion_1_1CStateMachine}{C\+State\+Machine}}$<$ \mbox{\hyperlink{classmotion_1_1CMotionPointTracker}{C\+Motion\+Point\+Tracker}} $>$ $\ast$ {\bfseries get\+F\+SM} (void) const
+\item 
+void \mbox{\hyperlink{classmotion_1_1CMotionPointTracker_ab8567bd6ad6c796d47e72cb633ee93d3}{calc\+Phi}} (void)
+\item 
+void \mbox{\hyperlink{classmotion_1_1CMotionPointTracker_abeaaec052308d9f7cab9d1fbb8db90c3}{calc\+Dist}} (void)
+\item 
+void \mbox{\hyperlink{classmotion_1_1CMotionPointTracker_a587b38d9065c24f76005adde9a21fb75}{turn2\+Targ\+Point}} (void)
+\item 
+void \mbox{\hyperlink{classmotion_1_1CMotionPointTracker_abde667e158fa615c6e761ac3167c9359}{track\+Point}} (void)
+\item 
+void \mbox{\hyperlink{classmotion_1_1CMotionPointTracker_a93fee9fef4b855533249ba19e428c306}{Arc\+PT}} (void)
+\item 
+void \mbox{\hyperlink{classmotion_1_1CMotionPointTracker_a79e987afad15936fb09e7e2705aff01e}{Linear\+PT}} (void)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classmotion_1_1CMotionPointTracker_aaf797081d88b83b3af9acd23143fa7f5}\label{classmotion_1_1CMotionPointTracker_aaf797081d88b83b3af9acd23143fa7f5}} 
+static \mbox{\hyperlink{classmotion_1_1CMotionPointTracker}{C\+Motion\+Point\+Tracker}} $\ast$ {\bfseries get\+Instance} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Point tracking mode. need the target point and tracking mode as input. \begin{DoxySeeAlso}{See also}
+E\+P\+T\+Mode 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmotion_1_1CMotionPointTracker_a93fee9fef4b855533249ba19e428c306}\label{classmotion_1_1CMotionPointTracker_a93fee9fef4b855533249ba19e428c306}} 
+\index{motion\+::\+C\+Motion\+Point\+Tracker@{motion\+::\+C\+Motion\+Point\+Tracker}!Arc\+PT@{Arc\+PT}}
+\index{Arc\+PT@{Arc\+PT}!motion\+::\+C\+Motion\+Point\+Tracker@{motion\+::\+C\+Motion\+Point\+Tracker}}
+\subsubsection{\texorpdfstring{Arc\+P\+T()}{ArcPT()}}
+{\footnotesize\ttfamily void C\+Motion\+Point\+Tracker\+::\+Arc\+PT (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Arc point tracking method. todo \mbox{\Hypertarget{classmotion_1_1CMotionPointTracker_abeaaec052308d9f7cab9d1fbb8db90c3}\label{classmotion_1_1CMotionPointTracker_abeaaec052308d9f7cab9d1fbb8db90c3}} 
+\index{motion\+::\+C\+Motion\+Point\+Tracker@{motion\+::\+C\+Motion\+Point\+Tracker}!calc\+Dist@{calc\+Dist}}
+\index{calc\+Dist@{calc\+Dist}!motion\+::\+C\+Motion\+Point\+Tracker@{motion\+::\+C\+Motion\+Point\+Tracker}}
+\subsubsection{\texorpdfstring{calc\+Dist()}{calcDist()}}
+{\footnotesize\ttfamily void C\+Motion\+Point\+Tracker\+::calc\+Dist (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Calculate \begin{DoxySeeAlso}{See also}
+m\+\_\+dist. 
+\end{DoxySeeAlso}
+printf(\char`\"{}\mbox{[}ljh\mbox{]} dist is\+: \%.\+3f\textbackslash{}n\char`\"{}, m\+\_\+dist); \mbox{\Hypertarget{classmotion_1_1CMotionPointTracker_ab8567bd6ad6c796d47e72cb633ee93d3}\label{classmotion_1_1CMotionPointTracker_ab8567bd6ad6c796d47e72cb633ee93d3}} 
+\index{motion\+::\+C\+Motion\+Point\+Tracker@{motion\+::\+C\+Motion\+Point\+Tracker}!calc\+Phi@{calc\+Phi}}
+\index{calc\+Phi@{calc\+Phi}!motion\+::\+C\+Motion\+Point\+Tracker@{motion\+::\+C\+Motion\+Point\+Tracker}}
+\subsubsection{\texorpdfstring{calc\+Phi()}{calcPhi()}}
+{\footnotesize\ttfamily void C\+Motion\+Point\+Tracker\+::calc\+Phi (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Calculate \begin{DoxySeeAlso}{See also}
+m\+\_\+angle. 
+\end{DoxySeeAlso}
+double t\+Target\+Phi = atan2(vec\+Y, vec\+X); double t\+Angle\+Diff = get\+Cur\+Pose().phi -\/ t\+Target\+Phi; double t\+Nor\+Abs = motion\+Absd(normalize\+Theta(t\+Angle\+Diff)); ~\newline
+~\newline
+ printf(\char`\"{}angle is\+: \%.\+3f\textbackslash{}n\char`\"{}, angle); printf(\char`\"{}cphi\+: \%.\+3f\textbackslash{}n\char`\"{},get\+Cur\+Pose().phi); ~\newline
+ printf(\char`\"{}tvect x\+: \%.\+3f, tvect y\+:\%.\+3f\textbackslash{}n\char`\"{}, vecX, vecY); printf(\char`\"{}cp\+: \%.\+3f\textbackslash{}n\char`\"{}, cross\+Prod); \mbox{\Hypertarget{classmotion_1_1CMotionPointTracker_a77975b88cc198d7115910dd0e738f925}\label{classmotion_1_1CMotionPointTracker_a77975b88cc198d7115910dd0e738f925}} 
+\index{motion\+::\+C\+Motion\+Point\+Tracker@{motion\+::\+C\+Motion\+Point\+Tracker}!enter@{enter}}
+\index{enter@{enter}!motion\+::\+C\+Motion\+Point\+Tracker@{motion\+::\+C\+Motion\+Point\+Tracker}}
+\subsubsection{\texorpdfstring{enter()}{enter()}}
+{\footnotesize\ttfamily void C\+Motion\+Point\+Tracker\+::enter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmotion_1_1CMotion}{C\+Motion}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This will execute when the state is entered. 
+
+Implements \mbox{\hyperlink{classmotion_1_1CState_a53d5fcfec223b58ccdd364a8430fd23c}{motion\+::\+C\+State$<$ C\+Motion $>$}}.
+
+\mbox{\Hypertarget{classmotion_1_1CMotionPointTracker_a2513b0d052536d307db674af8ee8a3e6}\label{classmotion_1_1CMotionPointTracker_a2513b0d052536d307db674af8ee8a3e6}} 
+\index{motion\+::\+C\+Motion\+Point\+Tracker@{motion\+::\+C\+Motion\+Point\+Tracker}!execute@{execute}}
+\index{execute@{execute}!motion\+::\+C\+Motion\+Point\+Tracker@{motion\+::\+C\+Motion\+Point\+Tracker}}
+\subsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void C\+Motion\+Point\+Tracker\+::execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmotion_1_1CMotion}{C\+Motion}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This is the states normal update function. 
+
+Implements \mbox{\hyperlink{classmotion_1_1CState_a71dc72d345b15bf3b5b5bff596a71f33}{motion\+::\+C\+State$<$ C\+Motion $>$}}.
+
+\mbox{\Hypertarget{classmotion_1_1CMotionPointTracker_ae40c6dc8e2883a6293b2ea5994b0e3d1}\label{classmotion_1_1CMotionPointTracker_ae40c6dc8e2883a6293b2ea5994b0e3d1}} 
+\index{motion\+::\+C\+Motion\+Point\+Tracker@{motion\+::\+C\+Motion\+Point\+Tracker}!exit@{exit}}
+\index{exit@{exit}!motion\+::\+C\+Motion\+Point\+Tracker@{motion\+::\+C\+Motion\+Point\+Tracker}}
+\subsubsection{\texorpdfstring{exit()}{exit()}}
+{\footnotesize\ttfamily void C\+Motion\+Point\+Tracker\+::exit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmotion_1_1CMotion}{C\+Motion}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This will execute when the state is exited. 
+
+Implements \mbox{\hyperlink{classmotion_1_1CState_a353db064c159d66b82bf257b35e7c016}{motion\+::\+C\+State$<$ C\+Motion $>$}}.
+
+\mbox{\Hypertarget{classmotion_1_1CMotionPointTracker_a79e987afad15936fb09e7e2705aff01e}\label{classmotion_1_1CMotionPointTracker_a79e987afad15936fb09e7e2705aff01e}} 
+\index{motion\+::\+C\+Motion\+Point\+Tracker@{motion\+::\+C\+Motion\+Point\+Tracker}!Linear\+PT@{Linear\+PT}}
+\index{Linear\+PT@{Linear\+PT}!motion\+::\+C\+Motion\+Point\+Tracker@{motion\+::\+C\+Motion\+Point\+Tracker}}
+\subsubsection{\texorpdfstring{Linear\+P\+T()}{LinearPT()}}
+{\footnotesize\ttfamily void C\+Motion\+Point\+Tracker\+::\+Linear\+PT (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Linear point tracking method. Rotate to the target direction. ~\newline
+~\newline
+ Forward with fixed v and calculated distance. ~\newline
+ Replaced by change\+State(some\+Instance) later. todo \mbox{\Hypertarget{classmotion_1_1CMotionPointTracker_abde667e158fa615c6e761ac3167c9359}\label{classmotion_1_1CMotionPointTracker_abde667e158fa615c6e761ac3167c9359}} 
+\index{motion\+::\+C\+Motion\+Point\+Tracker@{motion\+::\+C\+Motion\+Point\+Tracker}!track\+Point@{track\+Point}}
+\index{track\+Point@{track\+Point}!motion\+::\+C\+Motion\+Point\+Tracker@{motion\+::\+C\+Motion\+Point\+Tracker}}
+\subsubsection{\texorpdfstring{track\+Point()}{trackPoint()}}
+{\footnotesize\ttfamily void C\+Motion\+Point\+Tracker\+::track\+Point (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Make the robot translate to the next point. todo \mbox{\Hypertarget{classmotion_1_1CMotionPointTracker_a587b38d9065c24f76005adde9a21fb75}\label{classmotion_1_1CMotionPointTracker_a587b38d9065c24f76005adde9a21fb75}} 
+\index{motion\+::\+C\+Motion\+Point\+Tracker@{motion\+::\+C\+Motion\+Point\+Tracker}!turn2\+Targ\+Point@{turn2\+Targ\+Point}}
+\index{turn2\+Targ\+Point@{turn2\+Targ\+Point}!motion\+::\+C\+Motion\+Point\+Tracker@{motion\+::\+C\+Motion\+Point\+Tracker}}
+\subsubsection{\texorpdfstring{turn2\+Targ\+Point()}{turn2TargPoint()}}
+{\footnotesize\ttfamily void C\+Motion\+Point\+Tracker\+::turn2\+Targ\+Point (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Make the robot turn to the next point. todo 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+motion/\mbox{\hyperlink{CMotionPointTracker_8h}{C\+Motion\+Point\+Tracker.\+h}}\item 
+motion/\mbox{\hyperlink{CMotionPointTracker_8cpp}{C\+Motion\+Point\+Tracker.\+cpp}}\end{DoxyCompactItemize}

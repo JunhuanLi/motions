@@ -1,5 +1,9 @@
 \hypertarget{classmotion_1_1CMotionWallFollowing}{}\section{motion\+:\+:C\+Motion\+Wall\+Following Class Reference}
 \label{classmotion_1_1CMotionWallFollowing}\index{motion\+::\+C\+Motion\+Wall\+Following@{motion\+::\+C\+Motion\+Wall\+Following}}
+
+
+{\ttfamily \#include $<$C\+Motion\+Wall\+Following.\+h$>$}
+
 Inheritance diagram for motion\+:\+:C\+Motion\+Wall\+Following\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,23 +13,25 @@ Inheritance diagram for motion\+:\+:C\+Motion\+Wall\+Following\+:\begin{figure}[
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classmotion_1_1CMotionWallFollowing_a13696ff11374c7564808cc17ddafa941}\label{classmotion_1_1CMotionWallFollowing_a13696ff11374c7564808cc17ddafa941}} 
-E\+Wall\+Fol\+State\+Type {\bfseries get\+W\+F\+State} (void)
+virtual void \mbox{\hyperlink{classmotion_1_1CMotionWallFollowing_ad42584f648abe8826d2c23dad8128484}{enter}} (\mbox{\hyperlink{classmotion_1_1CMotion}{C\+Motion}} $\ast$mt)
 \item 
-\mbox{\Hypertarget{classmotion_1_1CMotionWallFollowing_abfeb34abd4d51b73ae78c06b848291df}\label{classmotion_1_1CMotionWallFollowing_abfeb34abd4d51b73ae78c06b848291df}} 
-void {\bfseries set\+W\+F\+State} (E\+Wall\+Fol\+State\+Type state)
+virtual void \mbox{\hyperlink{classmotion_1_1CMotionWallFollowing_a765cfe604941a06056131feb01fea66d}{execute}} (\mbox{\hyperlink{classmotion_1_1CMotion}{C\+Motion}} $\ast$mt)
 \item 
-\mbox{\Hypertarget{classmotion_1_1CMotionWallFollowing_ab7795a6549c0573f4aedfdec0c5a3cb3}\label{classmotion_1_1CMotionWallFollowing_ab7795a6549c0573f4aedfdec0c5a3cb3}} 
-double {\bfseries get\+Side\+Dist} (void)
+virtual void \mbox{\hyperlink{classmotion_1_1CMotionWallFollowing_a24be76c786b3a4bd476cc9b3c8955c26}{exit}} (\mbox{\hyperlink{classmotion_1_1CMotion}{C\+Motion}} $\ast$mt)
 \item 
-\mbox{\Hypertarget{classmotion_1_1CMotionWallFollowing_af40335dae19ff508b90067259cecdf2c}\label{classmotion_1_1CMotionWallFollowing_af40335dae19ff508b90067259cecdf2c}} 
-double {\bfseries get\+Ahead\+Dist} (void)
+\mbox{\Hypertarget{classmotion_1_1CMotionWallFollowing_ab85ceaa8803a0850acdc951bd9ebec74}\label{classmotion_1_1CMotionWallFollowing_ab85ceaa8803a0850acdc951bd9ebec74}} 
+void {\bfseries reset} (void)
 \item 
-E\+Wall\+Fol\+State\+Type \mbox{\hyperlink{classmotion_1_1CMotionWallFollowing_aba9a2fc075a0241af6ed9caf7bbbdb1d}{left\+Follow}} (mrpt\+::obs\+::\+C\+Observation2\+D\+Range\+Scan $\ast$scan, double v, double dist)
+\mbox{\Hypertarget{classmotion_1_1CMotionWallFollowing_a0ab894226ca05974580ec97ececbda5d}\label{classmotion_1_1CMotionWallFollowing_a0ab894226ca05974580ec97ececbda5d}} 
+\mbox{\hyperlink{classmotion_1_1CStateMachine}{C\+State\+Machine}}$<$ \mbox{\hyperlink{classmotion_1_1CMotionWallFollowing}{C\+Motion\+Wall\+Following}} $>$ $\ast$ {\bfseries get\+F\+SM} (void) const
 \item 
-double \mbox{\hyperlink{classmotion_1_1CMotionWallFollowing_a5aa008f88629f10b7d44e528476ba03d}{calc\+Ahead\+Dist}} (mrpt\+::obs\+::\+C\+Observation2\+D\+Range\+Scan $\ast$scan, size\+\_\+t win\+Length)
+double \mbox{\hyperlink{classmotion_1_1CMotionWallFollowing_a1b29295eff775104bb16c110c3f8b81a}{tune\+Velocity}} (void)
 \item 
-double \mbox{\hyperlink{classmotion_1_1CMotionWallFollowing_afac9dc0c411ecc1effcea072964512e6}{calc\+Right\+Dist}} (mrpt\+::obs\+::\+C\+Observation2\+D\+Range\+Scan $\ast$scan, size\+\_\+t win\+Length)
+double \mbox{\hyperlink{classmotion_1_1CMotionWallFollowing_ad8a39e0176c9e6127b8267b1a7a891ac}{calc\+Rem\+Angle}} (void)
+\item 
+bool \mbox{\hyperlink{classmotion_1_1CMotionWallFollowing_a4fcea1525cdd043f8c0dd8621e3ba09e}{dist\+Reached}} (void)
+\item 
+bool \mbox{\hyperlink{classmotion_1_1CMotionWallFollowing_aa84fb18a4cea89ad726c18d4f308e4d7}{ang\+N\+Dist\+Reached}} (void)
 \end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -35,60 +41,92 @@ static \mbox{\hyperlink{classmotion_1_1CMotionWallFollowing}{C\+Motion\+Wall\+Fo
 \end{DoxyCompactItemize}
 
 
+\subsection{Detailed Description}
+Wall following mode. Need the following linear velocity and the desired follow distance as input. 
+
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{classmotion_1_1CMotionWallFollowing_a5aa008f88629f10b7d44e528476ba03d}\label{classmotion_1_1CMotionWallFollowing_a5aa008f88629f10b7d44e528476ba03d}} 
-\index{motion\+::\+C\+Motion\+Wall\+Following@{motion\+::\+C\+Motion\+Wall\+Following}!calc\+Ahead\+Dist@{calc\+Ahead\+Dist}}
-\index{calc\+Ahead\+Dist@{calc\+Ahead\+Dist}!motion\+::\+C\+Motion\+Wall\+Following@{motion\+::\+C\+Motion\+Wall\+Following}}
-\subsubsection{\texorpdfstring{calc\+Ahead\+Dist()}{calcAheadDist()}}
-{\footnotesize\ttfamily double C\+Motion\+Wall\+Following\+::calc\+Ahead\+Dist (\begin{DoxyParamCaption}\item[{mrpt\+::obs\+::\+C\+Observation2\+D\+Range\+Scan $\ast$}]{scan,  }\item[{size\+\_\+t}]{win\+Length }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{classmotion_1_1CMotionWallFollowing_aa84fb18a4cea89ad726c18d4f308e4d7}\label{classmotion_1_1CMotionWallFollowing_aa84fb18a4cea89ad726c18d4f308e4d7}} 
+\index{motion\+::\+C\+Motion\+Wall\+Following@{motion\+::\+C\+Motion\+Wall\+Following}!ang\+N\+Dist\+Reached@{ang\+N\+Dist\+Reached}}
+\index{ang\+N\+Dist\+Reached@{ang\+N\+Dist\+Reached}!motion\+::\+C\+Motion\+Wall\+Following@{motion\+::\+C\+Motion\+Wall\+Following}}
+\subsubsection{\texorpdfstring{ang\+N\+Dist\+Reached()}{angNDistReached()}}
+{\footnotesize\ttfamily bool C\+Motion\+Wall\+Following\+::ang\+N\+Dist\+Reached (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
-Calculate the distance between robot and wall in the heading direction. 
-\begin{DoxyParams}{Parameters}
-{\em scan} & Pointer that points to the laser object. \\
-\hline
-{\em win\+Length} & How many data points needed to calculate the distance. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-A smoothed distance. 
+The resume angle and distance satisfied or not. \begin{DoxyReturn}{Returns}
+true if angle condition is satisfied and side distance is larger than obs\+Stop\+Dist. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classmotion_1_1CMotionWallFollowing_afac9dc0c411ecc1effcea072964512e6}\label{classmotion_1_1CMotionWallFollowing_afac9dc0c411ecc1effcea072964512e6}} 
-\index{motion\+::\+C\+Motion\+Wall\+Following@{motion\+::\+C\+Motion\+Wall\+Following}!calc\+Right\+Dist@{calc\+Right\+Dist}}
-\index{calc\+Right\+Dist@{calc\+Right\+Dist}!motion\+::\+C\+Motion\+Wall\+Following@{motion\+::\+C\+Motion\+Wall\+Following}}
-\subsubsection{\texorpdfstring{calc\+Right\+Dist()}{calcRightDist()}}
-{\footnotesize\ttfamily double C\+Motion\+Wall\+Following\+::calc\+Right\+Dist (\begin{DoxyParamCaption}\item[{mrpt\+::obs\+::\+C\+Observation2\+D\+Range\+Scan $\ast$}]{scan,  }\item[{size\+\_\+t}]{win\+Length }\end{DoxyParamCaption})}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classmotion_1_1CMotionWallFollowing_a4fcea1525cdd043f8c0dd8621e3ba09e}{dist\+Reached}} 
 
-Calculate the distance between robot and wall on right side. 
-\begin{DoxyParams}{Parameters}
-{\em scan} & Pointer that points to the laser object. \\
-\hline
-{\em win\+Length} & How many data points needed to calculate the distance. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-An smoothed distance.
-\end{DoxyReturn}
-Delete later \mbox{\Hypertarget{classmotion_1_1CMotionWallFollowing_aba9a2fc075a0241af6ed9caf7bbbdb1d}\label{classmotion_1_1CMotionWallFollowing_aba9a2fc075a0241af6ed9caf7bbbdb1d}} 
-\index{motion\+::\+C\+Motion\+Wall\+Following@{motion\+::\+C\+Motion\+Wall\+Following}!left\+Follow@{left\+Follow}}
-\index{left\+Follow@{left\+Follow}!motion\+::\+C\+Motion\+Wall\+Following@{motion\+::\+C\+Motion\+Wall\+Following}}
-\subsubsection{\texorpdfstring{left\+Follow()}{leftFollow()}}
-{\footnotesize\ttfamily E\+Wall\+Fol\+State\+Type C\+Motion\+Wall\+Following\+::left\+Follow (\begin{DoxyParamCaption}\item[{mrpt\+::obs\+::\+C\+Observation2\+D\+Range\+Scan $\ast$}]{scan,  }\item[{double}]{v,  }\item[{double}]{dist }\end{DoxyParamCaption})}
+obs\+Stop\+Dist 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classmotion_1_1CMotionWallFollowing_ad8a39e0176c9e6127b8267b1a7a891ac}\label{classmotion_1_1CMotionWallFollowing_ad8a39e0176c9e6127b8267b1a7a891ac}} 
+\index{motion\+::\+C\+Motion\+Wall\+Following@{motion\+::\+C\+Motion\+Wall\+Following}!calc\+Rem\+Angle@{calc\+Rem\+Angle}}
+\index{calc\+Rem\+Angle@{calc\+Rem\+Angle}!motion\+::\+C\+Motion\+Wall\+Following@{motion\+::\+C\+Motion\+Wall\+Following}}
+\subsubsection{\texorpdfstring{calc\+Rem\+Angle()}{calcRemAngle()}}
+{\footnotesize\ttfamily double C\+Motion\+Wall\+Following\+::calc\+Rem\+Angle (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
-Wall following mode. 
-\begin{DoxyParams}{Parameters}
-{\em scan} & Pointer that points to the laser object. \\
-\hline
-{\em v} & Linear velocity(m/s). \\
-\hline
-{\em dist} & The distance between robot side and wall. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-The current state. 
+Calculate remaining angle, when this angle approached 0, it means the angle condition of ang\+N\+Dist\+Reached is satisfied. \begin{DoxyReturn}{Returns}
+Remaining angle. 
 \end{DoxyReturn}
-if timeout return F\+A\+I\+L\+ED 
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classmotion_1_1CMotionWallFollowing_aa84fb18a4cea89ad726c18d4f308e4d7}{ang\+N\+Dist\+Reached}} 
+\end{DoxySeeAlso}
+return motion\+Absd(rad2\+Deg(m\+\_\+end\+Phi -\/ get\+Cur\+Pose().phi)); \mbox{\Hypertarget{classmotion_1_1CMotionWallFollowing_a4fcea1525cdd043f8c0dd8621e3ba09e}\label{classmotion_1_1CMotionWallFollowing_a4fcea1525cdd043f8c0dd8621e3ba09e}} 
+\index{motion\+::\+C\+Motion\+Wall\+Following@{motion\+::\+C\+Motion\+Wall\+Following}!dist\+Reached@{dist\+Reached}}
+\index{dist\+Reached@{dist\+Reached}!motion\+::\+C\+Motion\+Wall\+Following@{motion\+::\+C\+Motion\+Wall\+Following}}
+\subsubsection{\texorpdfstring{dist\+Reached()}{distReached()}}
+{\footnotesize\ttfamily bool C\+Motion\+Wall\+Following\+::dist\+Reached (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+The resume distance satisfied or not. \begin{DoxyReturn}{Returns}
+true if ahead distance is larger than wall\+Fol\+Resume\+Dist. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classmotion_1_1CMotionWallFollowing_aa84fb18a4cea89ad726c18d4f308e4d7}{ang\+N\+Dist\+Reached}} 
+
+wall\+Fol\+Resume\+Dist 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classmotion_1_1CMotionWallFollowing_ad42584f648abe8826d2c23dad8128484}\label{classmotion_1_1CMotionWallFollowing_ad42584f648abe8826d2c23dad8128484}} 
+\index{motion\+::\+C\+Motion\+Wall\+Following@{motion\+::\+C\+Motion\+Wall\+Following}!enter@{enter}}
+\index{enter@{enter}!motion\+::\+C\+Motion\+Wall\+Following@{motion\+::\+C\+Motion\+Wall\+Following}}
+\subsubsection{\texorpdfstring{enter()}{enter()}}
+{\footnotesize\ttfamily void C\+Motion\+Wall\+Following\+::enter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmotion_1_1CMotion}{C\+Motion}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This will execute when the state is entered. set\+Motion(\+W\+A\+L\+L\+\_\+\+F\+O\+L\+L\+O\+W\+I\+N\+G); 
+
+Implements \mbox{\hyperlink{classmotion_1_1CState_a53d5fcfec223b58ccdd364a8430fd23c}{motion\+::\+C\+State$<$ C\+Motion $>$}}.
+
+\mbox{\Hypertarget{classmotion_1_1CMotionWallFollowing_a765cfe604941a06056131feb01fea66d}\label{classmotion_1_1CMotionWallFollowing_a765cfe604941a06056131feb01fea66d}} 
+\index{motion\+::\+C\+Motion\+Wall\+Following@{motion\+::\+C\+Motion\+Wall\+Following}!execute@{execute}}
+\index{execute@{execute}!motion\+::\+C\+Motion\+Wall\+Following@{motion\+::\+C\+Motion\+Wall\+Following}}
+\subsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void C\+Motion\+Wall\+Following\+::execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmotion_1_1CMotion}{C\+Motion}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This is the states normal update function. 
+
+Implements \mbox{\hyperlink{classmotion_1_1CState_a71dc72d345b15bf3b5b5bff596a71f33}{motion\+::\+C\+State$<$ C\+Motion $>$}}.
+
+\mbox{\Hypertarget{classmotion_1_1CMotionWallFollowing_a24be76c786b3a4bd476cc9b3c8955c26}\label{classmotion_1_1CMotionWallFollowing_a24be76c786b3a4bd476cc9b3c8955c26}} 
+\index{motion\+::\+C\+Motion\+Wall\+Following@{motion\+::\+C\+Motion\+Wall\+Following}!exit@{exit}}
+\index{exit@{exit}!motion\+::\+C\+Motion\+Wall\+Following@{motion\+::\+C\+Motion\+Wall\+Following}}
+\subsubsection{\texorpdfstring{exit()}{exit()}}
+{\footnotesize\ttfamily void C\+Motion\+Wall\+Following\+::exit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmotion_1_1CMotion}{C\+Motion}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This will execute when the state is exited. 
+
+Implements \mbox{\hyperlink{classmotion_1_1CState_a353db064c159d66b82bf257b35e7c016}{motion\+::\+C\+State$<$ C\+Motion $>$}}.
+
+\mbox{\Hypertarget{classmotion_1_1CMotionWallFollowing_a1b29295eff775104bb16c110c3f8b81a}\label{classmotion_1_1CMotionWallFollowing_a1b29295eff775104bb16c110c3f8b81a}} 
+\index{motion\+::\+C\+Motion\+Wall\+Following@{motion\+::\+C\+Motion\+Wall\+Following}!tune\+Velocity@{tune\+Velocity}}
+\index{tune\+Velocity@{tune\+Velocity}!motion\+::\+C\+Motion\+Wall\+Following@{motion\+::\+C\+Motion\+Wall\+Following}}
+\subsubsection{\texorpdfstring{tune\+Velocity()}{tuneVelocity()}}
+{\footnotesize\ttfamily double C\+Motion\+Wall\+Following\+::tune\+Velocity (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Tune the velocity according to the distance from robot to wall. \begin{DoxyReturn}{Returns}
+The scale that velocity should be Tuned. It\textquotesingle{}s a ratio between 0 and 1. 
+\end{DoxyReturn}
+
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-motion/C\+Motion\+Wall\+Following.\+h\item 
-motion/C\+Motion\+Wall\+Following.\+cpp\end{DoxyCompactItemize}
+motion/\mbox{\hyperlink{CMotionWallFollowing_8h}{C\+Motion\+Wall\+Following.\+h}}\item 
+motion/\mbox{\hyperlink{CMotionWallFollowing_8cpp}{C\+Motion\+Wall\+Following.\+cpp}}\end{DoxyCompactItemize}

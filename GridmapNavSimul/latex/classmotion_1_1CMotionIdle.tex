@@ -1,0 +1,85 @@
+\hypertarget{classmotion_1_1CMotionIdle}{}\section{motion\+:\+:C\+Motion\+Idle Class Reference}
+\label{classmotion_1_1CMotionIdle}\index{motion\+::\+C\+Motion\+Idle@{motion\+::\+C\+Motion\+Idle}}
+
+
+{\ttfamily \#include $<$C\+Motion\+Idle.\+h$>$}
+
+Inheritance diagram for motion\+:\+:C\+Motion\+Idle\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classmotion_1_1CMotionIdle}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classmotion_1_1CMotionIdle_a45b57a25a1b53c585fc2ef648dc1ec4a}{$\sim$\+C\+Motion\+Idle}} (void)
+\item 
+virtual void \mbox{\hyperlink{classmotion_1_1CMotionIdle_adf54cf3d93e54060a3060017e55ea706}{enter}} (\mbox{\hyperlink{classmotion_1_1CMotion}{C\+Motion}} $\ast$mt)
+\item 
+virtual void \mbox{\hyperlink{classmotion_1_1CMotionIdle_aad314bae00925e2fdbbf8e93fff08b9a}{execute}} (\mbox{\hyperlink{classmotion_1_1CMotion}{C\+Motion}} $\ast$mt)
+\item 
+virtual void \mbox{\hyperlink{classmotion_1_1CMotionIdle_a2488eb5516673fd8e188da01a9e4bc51}{exit}} (\mbox{\hyperlink{classmotion_1_1CMotion}{C\+Motion}} $\ast$mt)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classmotion_1_1CMotionIdle_acbd0fc59cc7ee93ec4a13049d7e1f419}\label{classmotion_1_1CMotionIdle_acbd0fc59cc7ee93ec4a13049d7e1f419}} 
+static \mbox{\hyperlink{classmotion_1_1CMotionIdle}{C\+Motion\+Idle}} $\ast$ {\bfseries get\+Instance} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Motion idle state ~\newline
+ example\+: ~\newline
+// To change to this state from other state ~\newline
+ \#include \mbox{\hyperlink{CMotion_8h}{C\+Motion.\+h}} ~\newline
+ mtn-\/$>$set\+Motion(\+M\+O\+T\+I\+O\+N\+\_\+\+I\+D\+L\+E); ~\newline
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmotion_1_1CMotionIdle_a45b57a25a1b53c585fc2ef648dc1ec4a}\label{classmotion_1_1CMotionIdle_a45b57a25a1b53c585fc2ef648dc1ec4a}} 
+\index{motion\+::\+C\+Motion\+Idle@{motion\+::\+C\+Motion\+Idle}!````~C\+Motion\+Idle@{$\sim$\+C\+Motion\+Idle}}
+\index{````~C\+Motion\+Idle@{$\sim$\+C\+Motion\+Idle}!motion\+::\+C\+Motion\+Idle@{motion\+::\+C\+Motion\+Idle}}
+\subsubsection{\texorpdfstring{$\sim$\+C\+Motion\+Idle()}{~CMotionIdle()}}
+{\footnotesize\ttfamily virtual motion\+::\+C\+Motion\+Idle\+::$\sim$\+C\+Motion\+Idle (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+delete m\+\_\+p\+State\+Machine; 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmotion_1_1CMotionIdle_adf54cf3d93e54060a3060017e55ea706}\label{classmotion_1_1CMotionIdle_adf54cf3d93e54060a3060017e55ea706}} 
+\index{motion\+::\+C\+Motion\+Idle@{motion\+::\+C\+Motion\+Idle}!enter@{enter}}
+\index{enter@{enter}!motion\+::\+C\+Motion\+Idle@{motion\+::\+C\+Motion\+Idle}}
+\subsubsection{\texorpdfstring{enter()}{enter()}}
+{\footnotesize\ttfamily void C\+Motion\+Idle\+::enter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmotion_1_1CMotion}{C\+Motion}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This will execute when the state is entered. 
+
+Implements \mbox{\hyperlink{classmotion_1_1CState_a53d5fcfec223b58ccdd364a8430fd23c}{motion\+::\+C\+State$<$ C\+Motion $>$}}.
+
+\mbox{\Hypertarget{classmotion_1_1CMotionIdle_aad314bae00925e2fdbbf8e93fff08b9a}\label{classmotion_1_1CMotionIdle_aad314bae00925e2fdbbf8e93fff08b9a}} 
+\index{motion\+::\+C\+Motion\+Idle@{motion\+::\+C\+Motion\+Idle}!execute@{execute}}
+\index{execute@{execute}!motion\+::\+C\+Motion\+Idle@{motion\+::\+C\+Motion\+Idle}}
+\subsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void C\+Motion\+Idle\+::execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmotion_1_1CMotion}{C\+Motion}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This is the states normal update function. 
+
+Implements \mbox{\hyperlink{classmotion_1_1CState_a71dc72d345b15bf3b5b5bff596a71f33}{motion\+::\+C\+State$<$ C\+Motion $>$}}.
+
+\mbox{\Hypertarget{classmotion_1_1CMotionIdle_a2488eb5516673fd8e188da01a9e4bc51}\label{classmotion_1_1CMotionIdle_a2488eb5516673fd8e188da01a9e4bc51}} 
+\index{motion\+::\+C\+Motion\+Idle@{motion\+::\+C\+Motion\+Idle}!exit@{exit}}
+\index{exit@{exit}!motion\+::\+C\+Motion\+Idle@{motion\+::\+C\+Motion\+Idle}}
+\subsubsection{\texorpdfstring{exit()}{exit()}}
+{\footnotesize\ttfamily void C\+Motion\+Idle\+::exit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmotion_1_1CMotion}{C\+Motion}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This will execute when the state is exited. 
+
+Implements \mbox{\hyperlink{classmotion_1_1CState_a353db064c159d66b82bf257b35e7c016}{motion\+::\+C\+State$<$ C\+Motion $>$}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+motion/\mbox{\hyperlink{CMotionIdle_8h}{C\+Motion\+Idle.\+h}}\item 
+motion/\mbox{\hyperlink{CMotionIdle_8cpp}{C\+Motion\+Idle.\+cpp}}\end{DoxyCompactItemize}

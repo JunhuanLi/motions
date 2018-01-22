@@ -1,3 +1,18 @@
+/**
+  * Copyright (C), 1996-2017, TOPBAND. Co., Ltd. \n
+  * All right reserved.
+  *
+  * @file CActionBase.cpp
+  * @author Junhuan Li       
+  * @version v1.0      
+  * @date 18/01/17
+  * @brief Action base class
+  * @note 
+  * 1. --- \n
+  * History: Create this file \n
+  * <author>       <time>   <version >      <desc> \n
+  * Junhuan Li    18/01/17     1.0         create file
+  */
 #include "CActionBase.h"
 #include "../CMotion.h"
 #include "../CMotionOwnedStates.h"
@@ -86,7 +101,7 @@ void CActionBase::updateCurPose(mrpt::kinematics::CVehicleSimul_DiffDriven* robo
 void CActionBase::updateDist(
     mrpt::obs::CObservation2DRangeScan* scan, size_t winLength)
 {
-    /** Calculate side distance.*/
+    /// Calculate side distance.
     double tDist = 0;
 
     for(size_t i = infraredRayAngle; i < infraredRayAngle+winLength; i++)
@@ -96,7 +111,7 @@ void CActionBase::updateDist(
     sm_motion.sideDist = tDist/winLength*cos(deg2Rad(infraredRayAngle));
     ///printf("sideDist: %.3f\n", sm_motion.sideDist);
 
-    /** Calculate ahead distance.*/
+    /// Calculate ahead distance.
     tDist = 0;
     size_t tMid = (scan->getScanSize()-1)/2;
     size_t tStart = tMid - winLength/2;
@@ -114,9 +129,9 @@ TMotionPose2D CActionBase::frameRot(double x, double y, double phiRad)
     TMotionPose2D poseRes;
 
     /** Rotation matrix:
-     *        |  cos(0) sin(0) 0 |
-     *    R = | -sin(0) cos(0) 0 |
-     *        |     0       0  1 |
+     *        |  cos(0) sin(0) 0 | \n
+     *    R = | -sin(0) cos(0) 0 | \n
+     *        |     0       0  1 | \n
      */
     poseRes.x =  x * cos(phiRad) + y * sin(phiRad);
     poseRes.y = -x * sin(phiRad) + y * cos(phiRad);

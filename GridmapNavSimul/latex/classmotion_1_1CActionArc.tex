@@ -1,5 +1,9 @@
 \hypertarget{classmotion_1_1CActionArc}{}\section{motion\+:\+:C\+Action\+Arc Class Reference}
 \label{classmotion_1_1CActionArc}\index{motion\+::\+C\+Action\+Arc@{motion\+::\+C\+Action\+Arc}}
+
+
+{\ttfamily \#include $<$C\+Action\+Arc.\+h$>$}
+
 Inheritance diagram for motion\+:\+:C\+Action\+Arc\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,23 +16,17 @@ Inheritance diagram for motion\+:\+:C\+Action\+Arc\+:\begin{figure}[H]
 \mbox{\Hypertarget{classmotion_1_1CActionArc_a7b8746c8652bb865f2b606608dffbb16}\label{classmotion_1_1CActionArc_a7b8746c8652bb865f2b606608dffbb16}} 
 void {\bfseries reset} (void)
 \item 
-\mbox{\Hypertarget{classmotion_1_1CActionArc_a45356c022471267db143fd1300f6b465}\label{classmotion_1_1CActionArc_a45356c022471267db143fd1300f6b465}} 
-void {\bfseries set\+State} (E\+Steering\+State\+Type state)
-\item 
 \mbox{\Hypertarget{classmotion_1_1CActionArc_ad6f08adc549f8d19892e0a6a257415dc}\label{classmotion_1_1CActionArc_ad6f08adc549f8d19892e0a6a257415dc}} 
 void {\bfseries set\+End\+Pose} (\mbox{\hyperlink{structmotion_1_1TMotionPose2D}{T\+Motion\+Pose2D}} pose)
+\item 
+\mbox{\Hypertarget{classmotion_1_1CActionArc_ab368fc3d7a9080a81c54df7c3cac5d8b}\label{classmotion_1_1CActionArc_ab368fc3d7a9080a81c54df7c3cac5d8b}} 
+\mbox{\hyperlink{structmotion_1_1TMotionPose2D}{T\+Motion\+Pose2D}} {\bfseries get\+End\+Pose} (void) const
 \item 
 \mbox{\Hypertarget{classmotion_1_1CActionArc_a6af47c85b3b8226b6ae5bc3e27185e77}\label{classmotion_1_1CActionArc_a6af47c85b3b8226b6ae5bc3e27185e77}} 
 void {\bfseries set\+Start\+Up} (bool val)
 \item 
-\mbox{\Hypertarget{classmotion_1_1CActionArc_ae196348547fee7f670bb91f66b55fa36}\label{classmotion_1_1CActionArc_ae196348547fee7f670bb91f66b55fa36}} 
-E\+Steering\+State\+Type {\bfseries get\+State} (void)
-\item 
-\mbox{\Hypertarget{classmotion_1_1CActionArc_ad5ff8628c709a14cbcffb030894daa93}\label{classmotion_1_1CActionArc_ad5ff8628c709a14cbcffb030894daa93}} 
-\mbox{\hyperlink{structmotion_1_1TMotionPose2D}{T\+Motion\+Pose2D}} {\bfseries get\+End\+Pose} (void)
-\item 
-\mbox{\Hypertarget{classmotion_1_1CActionArc_aa2ee90e89b02256cd0c3f422f220caca}\label{classmotion_1_1CActionArc_aa2ee90e89b02256cd0c3f422f220caca}} 
-bool {\bfseries get\+Start\+Up} (void)
+\mbox{\Hypertarget{classmotion_1_1CActionArc_af91ab904a344a373610e73178bfa8203}\label{classmotion_1_1CActionArc_af91ab904a344a373610e73178bfa8203}} 
+bool {\bfseries get\+Start\+Up} (void) const
 \item 
 void \mbox{\hyperlink{classmotion_1_1CActionArc_a64a6fc339df29d196786291f02b2802e}{arc}} (double w, double ang\+Deg, double radius=0)
 \end{DoxyCompactItemize}
@@ -39,6 +37,16 @@ void \mbox{\hyperlink{classmotion_1_1CActionArc_a64a6fc339df29d196786291f02b2802
 static \mbox{\hyperlink{classmotion_1_1CActionArc}{C\+Action\+Arc}} $\ast$ {\bfseries get\+Instance} (void)
 \end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+Make arc ~\newline
+ example\+: ~\newline
+ \#include \mbox{\hyperlink{CActionArc_8h}{C\+Action\+Arc.\+h}} ~\newline
+ mkturns-\/$>$arc(1, 90, 0.\+5); ~\newline
+if(mkturns-\/$>$get\+Action\+State()==A\+R\+C\+\_\+\+F\+I\+N\+I\+S\+H\+ED) ~\newline
+\{ ~\newline
+ printf(\char`\"{}\+Arc task finished. Please command the next order.\textbackslash{}n\char`\"{}); ~\newline
+\} 
 
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{classmotion_1_1CActionArc_a64a6fc339df29d196786291f02b2802e}\label{classmotion_1_1CActionArc_a64a6fc339df29d196786291f02b2802e}} 
@@ -60,14 +68,30 @@ how to avoid multiple tasks? ~\newline
 ~\newline
 ~\newline
 ~\newline
- Start the timer
+~\newline
+~\newline
+~\newline
+~\newline
+ Store current information and calculate information needed
+
+Start the timer
 
 If start up is enabled, update if the vehicle get started everytime. ~\newline
 ~\newline
- throw exceptions assert(!\char`\"{}\+Time out when making Arc move.\char`\"{}); ~\newline
- throw exceptions assert(!\char`\"{}\+Direction reached but can\textquotesingle{}t reach the appropriate location.\char`\"{}); 
+~\newline
+~\newline
+~\newline
+ Timeout check.
+
+throw exceptions assert(!\char`\"{}\+Time out when making Arc move.\char`\"{}); ~\newline
+~\newline
+~\newline
+ Finish condition check.
+
+throw exceptions assert(!\char`\"{}\+Direction reached but can\textquotesingle{}t reach the appropriate location.\char`\"{}); ~\newline
+ w = m\+\_\+controller.\+pid(calc\+Rem()); 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-motion/action/C\+Action\+Arc.\+h\item 
-motion/action/C\+Action\+Arc.\+cpp\end{DoxyCompactItemize}
+motion/action/\mbox{\hyperlink{CActionArc_8h}{C\+Action\+Arc.\+h}}\item 
+motion/action/\mbox{\hyperlink{CActionArc_8cpp}{C\+Action\+Arc.\+cpp}}\end{DoxyCompactItemize}

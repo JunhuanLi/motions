@@ -1,0 +1,73 @@
+\hypertarget{structmotion_1_1TMotionParams}{}\section{motion\+:\+:T\+Motion\+Params Struct Reference}
+\label{structmotion_1_1TMotionParams}\index{motion\+::\+T\+Motion\+Params@{motion\+::\+T\+Motion\+Params}}
+
+
+{\ttfamily \#include $<$T\+Motion\+Params.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structmotion_1_1TMotionParams_a0161219617053bae842f1ce93b555c12}\label{structmotion_1_1TMotionParams_a0161219617053bae842f1ce93b555c12}} 
+{\bfseries T\+Motion\+Params} (double x=0.\+0, double y=0.\+0, \mbox{\hyperlink{motionEnums_8h_a183cd5b7c370a05cb3b44fb54e0fee66}{E\+P\+T\+Mode}} m=L\+PT, \mbox{\hyperlink{motionEnums_8h_a203932f574f7edf20737611293eecaa3}{E\+P\+T\+Bump\+Mode}} bm=F\+R\+A\+G\+I\+LE, double v=wall\+FolV, double dist=wall\+Fol\+Side\+Dist)
+\item 
+\mbox{\Hypertarget{structmotion_1_1TMotionParams_a9a8b167a486d5850503e1c850311dac4}\label{structmotion_1_1TMotionParams_a9a8b167a486d5850503e1c850311dac4}} 
+void {\bfseries reset} (void)
+\item 
+\mbox{\Hypertarget{structmotion_1_1TMotionParams_a20e1399cfa1c1a494018415a912845be}\label{structmotion_1_1TMotionParams_a20e1399cfa1c1a494018415a912845be}} 
+const \mbox{\hyperlink{structmotion_1_1TMotionParams}{T\+Motion\+Params}} \& {\bfseries operator=} (const \mbox{\hyperlink{structmotion_1_1TMotionParams}{T\+Motion\+Params}} \&rhs)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structmotion_1_1TMotionPose2D}{T\+Motion\+Pose2D}} \mbox{\hyperlink{structmotion_1_1TMotionParams_aa2a166593403a7d673854c2243676e88}{P\+T\+\_\+loc}}
+\item 
+\mbox{\hyperlink{motionEnums_8h_a183cd5b7c370a05cb3b44fb54e0fee66}{E\+P\+T\+Mode}} \mbox{\hyperlink{structmotion_1_1TMotionParams_a18e01529102e9029f4f5606e0d129847}{P\+T\+\_\+mode}}
+\item 
+\mbox{\hyperlink{motionEnums_8h_a203932f574f7edf20737611293eecaa3}{E\+P\+T\+Bump\+Mode}} \mbox{\hyperlink{structmotion_1_1TMotionParams_a2bfcdc11525a62ab3b47ced208c5e44e}{P\+T\+\_\+bump\+Mode}}
+\item 
+double \mbox{\hyperlink{structmotion_1_1TMotionParams_ab9825758467d9ed3b06efeb705ad4572}{W\+F\+\_\+V}}
+\item 
+double \mbox{\hyperlink{structmotion_1_1TMotionParams_a821918ccf43fc2a6980945a2f9806257}{W\+F\+\_\+dist}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Motion settable parameters ~\newline
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structmotion_1_1TMotionParams_a2bfcdc11525a62ab3b47ced208c5e44e}\label{structmotion_1_1TMotionParams_a2bfcdc11525a62ab3b47ced208c5e44e}} 
+\index{motion\+::\+T\+Motion\+Params@{motion\+::\+T\+Motion\+Params}!P\+T\+\_\+bump\+Mode@{P\+T\+\_\+bump\+Mode}}
+\index{P\+T\+\_\+bump\+Mode@{P\+T\+\_\+bump\+Mode}!motion\+::\+T\+Motion\+Params@{motion\+::\+T\+Motion\+Params}}
+\subsubsection{\texorpdfstring{P\+T\+\_\+bump\+Mode}{PT\_bumpMode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{motionEnums_8h_a203932f574f7edf20737611293eecaa3}{E\+P\+T\+Bump\+Mode}} motion\+::\+T\+Motion\+Params\+::\+P\+T\+\_\+bump\+Mode}
+
+Bump mode\+: fragile or strong. \mbox{\Hypertarget{structmotion_1_1TMotionParams_aa2a166593403a7d673854c2243676e88}\label{structmotion_1_1TMotionParams_aa2a166593403a7d673854c2243676e88}} 
+\index{motion\+::\+T\+Motion\+Params@{motion\+::\+T\+Motion\+Params}!P\+T\+\_\+loc@{P\+T\+\_\+loc}}
+\index{P\+T\+\_\+loc@{P\+T\+\_\+loc}!motion\+::\+T\+Motion\+Params@{motion\+::\+T\+Motion\+Params}}
+\subsubsection{\texorpdfstring{P\+T\+\_\+loc}{PT\_loc}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structmotion_1_1TMotionPose2D}{T\+Motion\+Pose2D}} motion\+::\+T\+Motion\+Params\+::\+P\+T\+\_\+loc}
+
+Target location. \mbox{\Hypertarget{structmotion_1_1TMotionParams_a18e01529102e9029f4f5606e0d129847}\label{structmotion_1_1TMotionParams_a18e01529102e9029f4f5606e0d129847}} 
+\index{motion\+::\+T\+Motion\+Params@{motion\+::\+T\+Motion\+Params}!P\+T\+\_\+mode@{P\+T\+\_\+mode}}
+\index{P\+T\+\_\+mode@{P\+T\+\_\+mode}!motion\+::\+T\+Motion\+Params@{motion\+::\+T\+Motion\+Params}}
+\subsubsection{\texorpdfstring{P\+T\+\_\+mode}{PT\_mode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{motionEnums_8h_a183cd5b7c370a05cb3b44fb54e0fee66}{E\+P\+T\+Mode}} motion\+::\+T\+Motion\+Params\+::\+P\+T\+\_\+mode}
+
+Point tracking mode\+: L\+P\+T(linear) or A\+P\+T(arc). \mbox{\Hypertarget{structmotion_1_1TMotionParams_a821918ccf43fc2a6980945a2f9806257}\label{structmotion_1_1TMotionParams_a821918ccf43fc2a6980945a2f9806257}} 
+\index{motion\+::\+T\+Motion\+Params@{motion\+::\+T\+Motion\+Params}!W\+F\+\_\+dist@{W\+F\+\_\+dist}}
+\index{W\+F\+\_\+dist@{W\+F\+\_\+dist}!motion\+::\+T\+Motion\+Params@{motion\+::\+T\+Motion\+Params}}
+\subsubsection{\texorpdfstring{W\+F\+\_\+dist}{WF\_dist}}
+{\footnotesize\ttfamily double motion\+::\+T\+Motion\+Params\+::\+W\+F\+\_\+dist}
+
+Wall following side distance. \mbox{\Hypertarget{structmotion_1_1TMotionParams_ab9825758467d9ed3b06efeb705ad4572}\label{structmotion_1_1TMotionParams_ab9825758467d9ed3b06efeb705ad4572}} 
+\index{motion\+::\+T\+Motion\+Params@{motion\+::\+T\+Motion\+Params}!W\+F\+\_\+V@{W\+F\+\_\+V}}
+\index{W\+F\+\_\+V@{W\+F\+\_\+V}!motion\+::\+T\+Motion\+Params@{motion\+::\+T\+Motion\+Params}}
+\subsubsection{\texorpdfstring{W\+F\+\_\+V}{WF\_V}}
+{\footnotesize\ttfamily double motion\+::\+T\+Motion\+Params\+::\+W\+F\+\_\+V}
+
+Wall following linear velocity. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+motion/misc/\mbox{\hyperlink{TMotionParams_8h}{T\+Motion\+Params.\+h}}\end{DoxyCompactItemize}

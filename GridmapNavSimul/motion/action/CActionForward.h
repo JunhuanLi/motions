@@ -1,3 +1,18 @@
+/**
+  * Copyright (C), 1996-2017, TOPBAND. Co., Ltd. \n
+  * All right reserved.
+  *
+  * @file CActionForward.h
+  * @author Junhuan Li       
+  * @version v1.0      
+  * @date 18/01/17
+  * @brief Forward action
+  * @note 
+  * 1. --- \n
+  * History: Create this file \n
+  * <author>       <time>   <version >      <desc> \n
+  * Junhuan Li    18/01/17     1.0         create file
+  */
 #ifndef CACTIONFORWARD_H_
 #define CACTIONFORWARD_H_
 
@@ -11,6 +26,20 @@
 
 namespace motion
 {
+    /** 
+    * Forward \n
+    *
+    * example: \n
+    *
+    * #include CActionForward.h \n
+    *
+    * fwd->forward(1, 90); \n
+    * if(fwd->getActionState()==FORWARD_FINISHED) \n
+    * { \n
+    *     printf("Forwarding task finished. Please command the next order.\n"); \n
+    * }
+    *
+    */
     class CActionForward : public CActionBase
     {
     public:

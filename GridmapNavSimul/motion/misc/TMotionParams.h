@@ -1,3 +1,18 @@
+/**
+  * Copyright (C), 1996-2017, TOPBAND. Co., Ltd. \n
+  * All right reserved.
+  *
+  * @file TMotionParams.h
+  * @author Junhuan Li       
+  * @version v1.0      
+  * @date 18/01/17
+  * @brief Settable motion parameter struct
+  * @note 
+  * 1. --- \n
+  * History: Create this file \n
+  * <author>       <time>   <version >      <desc> \n
+  * Junhuan Li    18/01/17     1.0         create file
+  */
 #ifndef TMOTIONPARAMS_H_
 #define TMOTIONPARAMS_H_
 
@@ -7,6 +22,10 @@
 
 namespace motion
 {
+   /** 
+    * Motion settable parameters \n
+    *
+    */
     struct TMotionParams
     {
         TMotionPose2D PT_loc;  /**< Target location. */

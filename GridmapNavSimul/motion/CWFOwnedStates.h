@@ -1,3 +1,18 @@
+/**
+  * Copyright (C), 1996-2017, TOPBAND. Co., Ltd. \n
+  * All right reserved.
+  *
+  * @file CWFOwnedStates.h
+  * @author Junhuan Li       
+  * @version v1.0      
+  * @date 18/01/17
+  * @brief Motion wall following owned state(s)
+  * @note 
+  * 1. --- \n
+  * History: Create this file \n
+  * <author>       <time>   <version >      <desc> \n
+  * Junhuan Li    18/01/17     1.0         create file
+  */
 #ifndef CWFOWNEDSTATES_H_
 #define CWFOWNEDSTATES_H_
 
@@ -29,7 +44,9 @@ namespace motion
         CWFWallFol& operator=(CWFWallFol&);
     };
 
-    /** Obstacle Avoidance State. */
+    /** Obstacle Avoidance State. 
+     * When the ahead distance is small enough, sub-motion will change to this state. 
+     */
     class CWFObsAvoid : public CState<CMotionWallFollowing>
     {
     public:
@@ -48,7 +65,9 @@ namespace motion
         CWFObsAvoid& operator=(CWFObsAvoid&);
     };
 
-    /** Ridge Tracking State. */
+    /** Ridge Tracking State. 
+     * When the side distance have big jump, sub-motion will change to this state. 
+     */
     class CWFRidgeTrack : public CState<CMotionWallFollowing>
     {
     public:

@@ -1,3 +1,18 @@
+/**
+  * Copyright (C), 1996-2017, TOPBAND. Co., Ltd. \n
+  * All right reserved.
+  *
+  * @file CActionBackward.cpp
+  * @author Junhuan Li       
+  * @version v1.0      
+  * @date 18/01/17
+  * @brief Backward action
+  * @note 
+  * 1. --- \n
+  * History: Create this file \n
+  * <author>       <time>   <version >      <desc> \n
+  * Junhuan Li    18/01/17     1.0         create file
+  */
 #include "CActionBackward.h"
 using namespace motion;
 
@@ -11,7 +26,7 @@ void CActionBackward::backward(double v, double distance)
 {
     static mrpt::utils::CTicTac	s_tictac;
 
-    /** Store current information and calculate information needed*/
+    /// Store current information and calculate information needed.
     if(!getPoseStored())
     {
         reset();
@@ -23,7 +38,7 @@ void CActionBackward::backward(double v, double distance)
         s_tictac.Tic();  /// start the timer
     }
 
-    /** Timeout check.*/
+    /// Timeout check.
     if(s_tictac.Tac() > getTimeNeeded() + 1)
     {
         ///throw exceptions
@@ -35,7 +50,7 @@ void CActionBackward::backward(double v, double distance)
         return;
     }
 
-    /** Finish condition check.*/
+    /// Finish condition check.
     if(calcRem() <= locAccuracy)
     {
         printf("[ljh] Backward finished.\n");
@@ -69,7 +84,7 @@ double CActionBackward::calcRem()
 
 void CActionBackward::reset()
 {
-    resetBase();  //!< Reset base private variables.
+    resetBase();
 
     m_endPose.reset();
 }

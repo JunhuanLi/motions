@@ -1,3 +1,18 @@
+/**
+  * Copyright (C), 1996-2017, TOPBAND. Co., Ltd. \n
+  * All right reserved.
+  *
+  * @file CActionBackward.h
+  * @author Junhuan Li       
+  * @version v1.0      
+  * @date 18/01/17
+  * @brief Backward action
+  * @note 
+  * 1. --- \n
+  * History: Create this file \n
+  * <author>       <time>   <version >      <desc> \n
+  * Junhuan Li    18/01/17     1.0         create file
+  */
 #ifndef CACTIONBACKWARD_H_
 #define CACTIONBACKWARD_H_
 
@@ -11,6 +26,20 @@
 
 namespace motion
 {
+  /** 
+    * Backward \n
+    *
+    * example: \n
+    *
+    * #include CActionBackward.h \n
+    *
+    * bkw->backward(1, 90); \n
+    * if(bkw->getActionState()==BACKWARD_FINISHED) \n
+    * { \n
+    *     printf("Backing task finished. Please command the next order.\n"); \n
+    * }
+    *
+    */
     class CActionBackward : public CActionBase
     {
     public:

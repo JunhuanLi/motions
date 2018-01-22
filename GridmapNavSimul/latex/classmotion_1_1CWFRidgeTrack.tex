@@ -1,0 +1,74 @@
+\hypertarget{classmotion_1_1CWFRidgeTrack}{}\section{motion\+:\+:C\+W\+F\+Ridge\+Track Class Reference}
+\label{classmotion_1_1CWFRidgeTrack}\index{motion\+::\+C\+W\+F\+Ridge\+Track@{motion\+::\+C\+W\+F\+Ridge\+Track}}
+
+
+{\ttfamily \#include $<$C\+W\+F\+Owned\+States.\+h$>$}
+
+Inheritance diagram for motion\+:\+:C\+W\+F\+Ridge\+Track\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classmotion_1_1CWFRidgeTrack}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classmotion_1_1CWFRidgeTrack_a216b8b7778464a2afd1a4f57da4317de}{enter}} (\mbox{\hyperlink{classmotion_1_1CMotionWallFollowing}{C\+Motion\+Wall\+Following}} $\ast$wf)
+\item 
+virtual void \mbox{\hyperlink{classmotion_1_1CWFRidgeTrack_a68b351694d461637ad97c5d657f3fbca}{execute}} (\mbox{\hyperlink{classmotion_1_1CMotionWallFollowing}{C\+Motion\+Wall\+Following}} $\ast$wf)
+\item 
+virtual void \mbox{\hyperlink{classmotion_1_1CWFRidgeTrack_a15ab958b412e2e6a70619822e6697f7f}{exit}} (\mbox{\hyperlink{classmotion_1_1CMotionWallFollowing}{C\+Motion\+Wall\+Following}} $\ast$wf)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classmotion_1_1CWFRidgeTrack}{C\+W\+F\+Ridge\+Track}} $\ast$ \mbox{\hyperlink{classmotion_1_1CWFRidgeTrack_ad85de711d4ce2b59f3dca20d233d77ed}{get\+Instance}} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ridge Tracking State. When the side distance have big jump, sub-\/motion will change to this state. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmotion_1_1CWFRidgeTrack_a216b8b7778464a2afd1a4f57da4317de}\label{classmotion_1_1CWFRidgeTrack_a216b8b7778464a2afd1a4f57da4317de}} 
+\index{motion\+::\+C\+W\+F\+Ridge\+Track@{motion\+::\+C\+W\+F\+Ridge\+Track}!enter@{enter}}
+\index{enter@{enter}!motion\+::\+C\+W\+F\+Ridge\+Track@{motion\+::\+C\+W\+F\+Ridge\+Track}}
+\subsubsection{\texorpdfstring{enter()}{enter()}}
+{\footnotesize\ttfamily void C\+W\+F\+Ridge\+Track\+::enter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmotion_1_1CMotionWallFollowing}{C\+Motion\+Wall\+Following}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This will execute when the state is entered. 
+
+Implements \mbox{\hyperlink{classmotion_1_1CState_a53d5fcfec223b58ccdd364a8430fd23c}{motion\+::\+C\+State$<$ C\+Motion\+Wall\+Following $>$}}.
+
+\mbox{\Hypertarget{classmotion_1_1CWFRidgeTrack_a68b351694d461637ad97c5d657f3fbca}\label{classmotion_1_1CWFRidgeTrack_a68b351694d461637ad97c5d657f3fbca}} 
+\index{motion\+::\+C\+W\+F\+Ridge\+Track@{motion\+::\+C\+W\+F\+Ridge\+Track}!execute@{execute}}
+\index{execute@{execute}!motion\+::\+C\+W\+F\+Ridge\+Track@{motion\+::\+C\+W\+F\+Ridge\+Track}}
+\subsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void C\+W\+F\+Ridge\+Track\+::execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmotion_1_1CMotionWallFollowing}{C\+Motion\+Wall\+Following}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This is the states normal update function. todo 
+
+Implements \mbox{\hyperlink{classmotion_1_1CState_a71dc72d345b15bf3b5b5bff596a71f33}{motion\+::\+C\+State$<$ C\+Motion\+Wall\+Following $>$}}.
+
+\mbox{\Hypertarget{classmotion_1_1CWFRidgeTrack_a15ab958b412e2e6a70619822e6697f7f}\label{classmotion_1_1CWFRidgeTrack_a15ab958b412e2e6a70619822e6697f7f}} 
+\index{motion\+::\+C\+W\+F\+Ridge\+Track@{motion\+::\+C\+W\+F\+Ridge\+Track}!exit@{exit}}
+\index{exit@{exit}!motion\+::\+C\+W\+F\+Ridge\+Track@{motion\+::\+C\+W\+F\+Ridge\+Track}}
+\subsubsection{\texorpdfstring{exit()}{exit()}}
+{\footnotesize\ttfamily void C\+W\+F\+Ridge\+Track\+::exit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmotion_1_1CMotionWallFollowing}{C\+Motion\+Wall\+Following}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This will execute when the state is exited. 
+
+Implements \mbox{\hyperlink{classmotion_1_1CState_a353db064c159d66b82bf257b35e7c016}{motion\+::\+C\+State$<$ C\+Motion\+Wall\+Following $>$}}.
+
+\mbox{\Hypertarget{classmotion_1_1CWFRidgeTrack_ad85de711d4ce2b59f3dca20d233d77ed}\label{classmotion_1_1CWFRidgeTrack_ad85de711d4ce2b59f3dca20d233d77ed}} 
+\index{motion\+::\+C\+W\+F\+Ridge\+Track@{motion\+::\+C\+W\+F\+Ridge\+Track}!get\+Instance@{get\+Instance}}
+\index{get\+Instance@{get\+Instance}!motion\+::\+C\+W\+F\+Ridge\+Track@{motion\+::\+C\+W\+F\+Ridge\+Track}}
+\subsubsection{\texorpdfstring{get\+Instance()}{getInstance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classmotion_1_1CWFRidgeTrack}{C\+W\+F\+Ridge\+Track}} $\ast$ C\+W\+F\+Ridge\+Track\+::get\+Instance (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Ridge Tracking Methods. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+motion/\mbox{\hyperlink{CWFOwnedStates_8h}{C\+W\+F\+Owned\+States.\+h}}\item 
+motion/\mbox{\hyperlink{CWFOwnedStates_8cpp}{C\+W\+F\+Owned\+States.\+cpp}}\end{DoxyCompactItemize}

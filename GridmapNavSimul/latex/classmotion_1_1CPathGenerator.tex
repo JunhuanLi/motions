@@ -1,0 +1,207 @@
+\hypertarget{classmotion_1_1CPathGenerator}{}\section{motion\+:\+:C\+Path\+Generator Class Reference}
+\label{classmotion_1_1CPathGenerator}\index{motion\+::\+C\+Path\+Generator@{motion\+::\+C\+Path\+Generator}}
+
+
+{\ttfamily \#include $<$C\+Path\+Generator.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+list$<$ \mbox{\hyperlink{structmotion_1_1TMotionPoint}{T\+Motion\+Point}} $\ast$ $>$ \mbox{\hyperlink{classmotion_1_1CPathGenerator_ac9d9f955ec67e1d4abdcffd7b1fbecf5}{calc\+Path}} (\mbox{\hyperlink{structmotion_1_1TMotionPoint}{T\+Motion\+Point}} $\ast$start, \mbox{\hyperlink{structmotion_1_1TMotionPoint}{T\+Motion\+Point}} $\ast$target, bool is\+Ignore\+Corner)
+\item 
+vector$<$ \mbox{\hyperlink{structmotion_1_1TMotionPoint}{T\+Motion\+Point}} $\ast$ $>$ \mbox{\hyperlink{classmotion_1_1CPathGenerator_a58b067dca5c18f58fb2338d09b5075c6}{surrounding}} (\mbox{\hyperlink{structmotion_1_1TMotionPoint}{T\+Motion\+Point}} $\ast$cur\+Point, bool is\+Ignore\+Corner)
+\item 
+void \mbox{\hyperlink{classmotion_1_1CPathGenerator_af5b887f515f71346037e247c3171c147}{found\+Point}} (\mbox{\hyperlink{structmotion_1_1TMotionPoint}{T\+Motion\+Point}} $\ast$tmp\+Start\+Point, \mbox{\hyperlink{structmotion_1_1TMotionPoint}{T\+Motion\+Point}} $\ast$cur\+Point)
+\item 
+void \mbox{\hyperlink{classmotion_1_1CPathGenerator_a8756dcc952626706d20a7c9f8e4bfe8f}{not\+Found\+Point}} (\mbox{\hyperlink{structmotion_1_1TMotionPoint}{T\+Motion\+Point}} $\ast$tmp\+Start\+Point, \mbox{\hyperlink{structmotion_1_1TMotionPoint}{T\+Motion\+Point}} $\ast$target, \mbox{\hyperlink{structmotion_1_1TMotionPoint}{T\+Motion\+Point}} $\ast$cur\+Point)
+\item 
+bool \mbox{\hyperlink{classmotion_1_1CPathGenerator_ae2ede33b5f3dc5d9477ce7f0adf0ad89}{can\+Reach}} (\mbox{\hyperlink{structmotion_1_1TMotionPoint}{T\+Motion\+Point}} $\ast$cur\+Point, int x, int y, bool is\+Ignore\+Corner)
+\item 
+bool \mbox{\hyperlink{classmotion_1_1CPathGenerator_a7e940bbce29c6e35ac83dd87c6477574}{can\+Reach}} (int x, int y)
+\item 
+int \mbox{\hyperlink{classmotion_1_1CPathGenerator_acb04e6659d5b3b1a70c6cf485653d74e}{calcG}} (\mbox{\hyperlink{structmotion_1_1TMotionPoint}{T\+Motion\+Point}} $\ast$tmp\+Start\+Point, \mbox{\hyperlink{structmotion_1_1TMotionPoint}{T\+Motion\+Point}} $\ast$cur\+Point)
+\item 
+int \mbox{\hyperlink{classmotion_1_1CPathGenerator_a913cc37174472f68371bd4d3c6cca29a}{calcH}} (\mbox{\hyperlink{structmotion_1_1TMotionPoint}{T\+Motion\+Point}} $\ast$target, \mbox{\hyperlink{structmotion_1_1TMotionPoint}{T\+Motion\+Point}} $\ast$cur\+Point)
+\item 
+\mbox{\hyperlink{structmotion_1_1TMotionPoint}{T\+Motion\+Point}} $\ast$ \mbox{\hyperlink{classmotion_1_1CPathGenerator_a095212daf53fd9d74d94d638e10df03e}{find\+Min}} (void)
+\item 
+\mbox{\hyperlink{structmotion_1_1TMotionPoint}{T\+Motion\+Point}} $\ast$ \mbox{\hyperlink{classmotion_1_1CPathGenerator_a2ff43d2afeedcd679aca4795b193ef1b}{is\+Exist}} (list$<$ \mbox{\hyperlink{structmotion_1_1TMotionPoint}{T\+Motion\+Point}} $\ast$$>$ \&list, \mbox{\hyperlink{structmotion_1_1TMotionPoint}{T\+Motion\+Point}} $\ast$point)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Generate a path input\+: start point, end point, is\+Ignore\+Corner mark output\+: path(a list of point or N\+U\+L\+L) 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmotion_1_1CPathGenerator_acb04e6659d5b3b1a70c6cf485653d74e}\label{classmotion_1_1CPathGenerator_acb04e6659d5b3b1a70c6cf485653d74e}} 
+\index{motion\+::\+C\+Path\+Generator@{motion\+::\+C\+Path\+Generator}!calcG@{calcG}}
+\index{calcG@{calcG}!motion\+::\+C\+Path\+Generator@{motion\+::\+C\+Path\+Generator}}
+\subsubsection{\texorpdfstring{calc\+G()}{calcG()}}
+{\footnotesize\ttfamily int C\+Path\+Generator\+::calcG (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmotion_1_1TMotionPoint}{T\+Motion\+Point}} $\ast$}]{tmp\+Start\+Point,  }\item[{\mbox{\hyperlink{structmotion_1_1TMotionPoint}{T\+Motion\+Point}} $\ast$}]{cur\+Point }\end{DoxyParamCaption})}
+
+Calculate G value. 
+\begin{DoxyParams}{Parameters}
+{\em tmp\+Start\+Point} & The point in the center. \\
+\hline
+{\em cur\+Point} & Current point(it\textquotesingle{}s one of the surrounding points). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classmotion_1_1CPathGenerator_a913cc37174472f68371bd4d3c6cca29a}\label{classmotion_1_1CPathGenerator_a913cc37174472f68371bd4d3c6cca29a}} 
+\index{motion\+::\+C\+Path\+Generator@{motion\+::\+C\+Path\+Generator}!calcH@{calcH}}
+\index{calcH@{calcH}!motion\+::\+C\+Path\+Generator@{motion\+::\+C\+Path\+Generator}}
+\subsubsection{\texorpdfstring{calc\+H()}{calcH()}}
+{\footnotesize\ttfamily int C\+Path\+Generator\+::calcH (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmotion_1_1TMotionPoint}{T\+Motion\+Point}} $\ast$}]{target,  }\item[{\mbox{\hyperlink{structmotion_1_1TMotionPoint}{T\+Motion\+Point}} $\ast$}]{cur\+Point }\end{DoxyParamCaption})}
+
+Calculate H value. 
+\begin{DoxyParams}{Parameters}
+{\em target} & The targe point. \\
+\hline
+{\em cur\+Point} & Current point(it\textquotesingle{}s one of the surrounding points). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classmotion_1_1CPathGenerator_ac9d9f955ec67e1d4abdcffd7b1fbecf5}\label{classmotion_1_1CPathGenerator_ac9d9f955ec67e1d4abdcffd7b1fbecf5}} 
+\index{motion\+::\+C\+Path\+Generator@{motion\+::\+C\+Path\+Generator}!calc\+Path@{calc\+Path}}
+\index{calc\+Path@{calc\+Path}!motion\+::\+C\+Path\+Generator@{motion\+::\+C\+Path\+Generator}}
+\subsubsection{\texorpdfstring{calc\+Path()}{calcPath()}}
+{\footnotesize\ttfamily list$<$ \mbox{\hyperlink{structmotion_1_1TMotionPoint}{T\+Motion\+Point}} $\ast$ $>$ C\+Path\+Generator\+::calc\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmotion_1_1TMotionPoint}{T\+Motion\+Point}} $\ast$}]{start,  }\item[{\mbox{\hyperlink{structmotion_1_1TMotionPoint}{T\+Motion\+Point}} $\ast$}]{target,  }\item[{bool}]{is\+Ignore\+Corner }\end{DoxyParamCaption})}
+
+Calculate the path from start point to target point. 
+\begin{DoxyParams}{Parameters}
+{\em start} & Start point. \\
+\hline
+{\em target} & Target point. \\
+\hline
+{\em is\+Ignore\+Corner} & Is ignore corner obstacle. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+point list which is exactly the path from start to target. N\+U\+LL if no path found. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmotion_1_1CPathGenerator_ae2ede33b5f3dc5d9477ce7f0adf0ad89}\label{classmotion_1_1CPathGenerator_ae2ede33b5f3dc5d9477ce7f0adf0ad89}} 
+\index{motion\+::\+C\+Path\+Generator@{motion\+::\+C\+Path\+Generator}!can\+Reach@{can\+Reach}}
+\index{can\+Reach@{can\+Reach}!motion\+::\+C\+Path\+Generator@{motion\+::\+C\+Path\+Generator}}
+\subsubsection{\texorpdfstring{can\+Reach()}{canReach()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool C\+Path\+Generator\+::can\+Reach (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmotion_1_1TMotionPoint}{T\+Motion\+Point}} $\ast$}]{cur\+Point,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{bool}]{is\+Ignore\+Corner }\end{DoxyParamCaption})}
+
+Is the given point reachable. 
+\begin{DoxyParams}{Parameters}
+{\em cur\+Point} & Current point. \\
+\hline
+{\em x} & x axis of the point evaluated. \\
+\hline
+{\em y} & y axis of the point evaluated. \\
+\hline
+{\em is\+Ignore\+Corner} & Is ignore corner obstacle. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector that contains all of the surrounding points of current point. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classmotion_1_1CPathGenerator_ae2ede33b5f3dc5d9477ce7f0adf0ad89}{can\+Reach}} 
+
+\mbox{\hyperlink{classmotion_1_1CPathGenerator_a58b067dca5c18f58fb2338d09b5075c6}{surrounding}} 
+\end{DoxySeeAlso}
+非 1 并且不在close\+List
+
+x y在正上、下、左、右 \mbox{\Hypertarget{classmotion_1_1CPathGenerator_a7e940bbce29c6e35ac83dd87c6477574}\label{classmotion_1_1CPathGenerator_a7e940bbce29c6e35ac83dd87c6477574}} 
+\index{motion\+::\+C\+Path\+Generator@{motion\+::\+C\+Path\+Generator}!can\+Reach@{can\+Reach}}
+\index{can\+Reach@{can\+Reach}!motion\+::\+C\+Path\+Generator@{motion\+::\+C\+Path\+Generator}}
+\subsubsection{\texorpdfstring{can\+Reach()}{canReach()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool C\+Path\+Generator\+::can\+Reach (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+Is the given point reachable. 
+\begin{DoxyParams}{Parameters}
+{\em x} & x axis of the point evaluated. \\
+\hline
+{\em y} & y axis of the point evaluated. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classmotion_1_1CPathGenerator_a095212daf53fd9d74d94d638e10df03e}\label{classmotion_1_1CPathGenerator_a095212daf53fd9d74d94d638e10df03e}} 
+\index{motion\+::\+C\+Path\+Generator@{motion\+::\+C\+Path\+Generator}!find\+Min@{find\+Min}}
+\index{find\+Min@{find\+Min}!motion\+::\+C\+Path\+Generator@{motion\+::\+C\+Path\+Generator}}
+\subsubsection{\texorpdfstring{find\+Min()}{findMin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structmotion_1_1TMotionPoint}{T\+Motion\+Point}} $\ast$ C\+Path\+Generator\+::find\+Min (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Find the point with minimum F. \begin{DoxyReturn}{Returns}
+Point in open\+List with the minimum F. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmotion_1_1CPathGenerator_af5b887f515f71346037e247c3171c147}\label{classmotion_1_1CPathGenerator_af5b887f515f71346037e247c3171c147}} 
+\index{motion\+::\+C\+Path\+Generator@{motion\+::\+C\+Path\+Generator}!found\+Point@{found\+Point}}
+\index{found\+Point@{found\+Point}!motion\+::\+C\+Path\+Generator@{motion\+::\+C\+Path\+Generator}}
+\subsubsection{\texorpdfstring{found\+Point()}{foundPoint()}}
+{\footnotesize\ttfamily void C\+Path\+Generator\+::found\+Point (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmotion_1_1TMotionPoint}{T\+Motion\+Point}} $\ast$}]{tmp\+Start\+Point,  }\item[{\mbox{\hyperlink{structmotion_1_1TMotionPoint}{T\+Motion\+Point}} $\ast$}]{cur\+Point }\end{DoxyParamCaption})}
+
+If point is found in open\+List. 
+\begin{DoxyParams}{Parameters}
+{\em tmp\+Start\+Point} & The point in the center. \\
+\hline
+{\em cur\+Point} & Current point(it\textquotesingle{}s one of the surrounding points). \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classmotion_1_1CPathGenerator_acb04e6659d5b3b1a70c6cf485653d74e}{calcG}} 
+
+\mbox{\hyperlink{classmotion_1_1CPathGenerator_a913cc37174472f68371bd4d3c6cca29a}{calcH}} 
+\end{DoxySeeAlso}
+do nothing \mbox{\Hypertarget{classmotion_1_1CPathGenerator_a2ff43d2afeedcd679aca4795b193ef1b}\label{classmotion_1_1CPathGenerator_a2ff43d2afeedcd679aca4795b193ef1b}} 
+\index{motion\+::\+C\+Path\+Generator@{motion\+::\+C\+Path\+Generator}!is\+Exist@{is\+Exist}}
+\index{is\+Exist@{is\+Exist}!motion\+::\+C\+Path\+Generator@{motion\+::\+C\+Path\+Generator}}
+\subsubsection{\texorpdfstring{is\+Exist()}{isExist()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structmotion_1_1TMotionPoint}{T\+Motion\+Point}} $\ast$ C\+Path\+Generator\+::is\+Exist (\begin{DoxyParamCaption}\item[{list$<$ \mbox{\hyperlink{structmotion_1_1TMotionPoint}{T\+Motion\+Point}} $\ast$$>$ \&}]{list,  }\item[{\mbox{\hyperlink{structmotion_1_1TMotionPoint}{T\+Motion\+Point}} $\ast$}]{point }\end{DoxyParamCaption})}
+
+Assert whether a point in the given list. 
+\begin{DoxyParams}{Parameters}
+{\em list} & A list to search. \\
+\hline
+{\em point} & The wanted point. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ture if the given point is in the given list. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmotion_1_1CPathGenerator_a8756dcc952626706d20a7c9f8e4bfe8f}\label{classmotion_1_1CPathGenerator_a8756dcc952626706d20a7c9f8e4bfe8f}} 
+\index{motion\+::\+C\+Path\+Generator@{motion\+::\+C\+Path\+Generator}!not\+Found\+Point@{not\+Found\+Point}}
+\index{not\+Found\+Point@{not\+Found\+Point}!motion\+::\+C\+Path\+Generator@{motion\+::\+C\+Path\+Generator}}
+\subsubsection{\texorpdfstring{not\+Found\+Point()}{notFoundPoint()}}
+{\footnotesize\ttfamily void C\+Path\+Generator\+::not\+Found\+Point (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmotion_1_1TMotionPoint}{T\+Motion\+Point}} $\ast$}]{tmp\+Start\+Point,  }\item[{\mbox{\hyperlink{structmotion_1_1TMotionPoint}{T\+Motion\+Point}} $\ast$}]{target,  }\item[{\mbox{\hyperlink{structmotion_1_1TMotionPoint}{T\+Motion\+Point}} $\ast$}]{cur\+Point }\end{DoxyParamCaption})}
+
+If point is not found in open\+List. 
+\begin{DoxyParams}{Parameters}
+{\em tmp\+Start\+Point} & The point in the center. \\
+\hline
+{\em target} & Target point. \\
+\hline
+{\em cur\+Point} & Current point(it\textquotesingle{}s one of the surrounding points). \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classmotion_1_1CPathGenerator_acb04e6659d5b3b1a70c6cf485653d74e}{calcG}} 
+
+\mbox{\hyperlink{classmotion_1_1CPathGenerator_a913cc37174472f68371bd4d3c6cca29a}{calcH}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classmotion_1_1CPathGenerator_a58b067dca5c18f58fb2338d09b5075c6}\label{classmotion_1_1CPathGenerator_a58b067dca5c18f58fb2338d09b5075c6}} 
+\index{motion\+::\+C\+Path\+Generator@{motion\+::\+C\+Path\+Generator}!surrounding@{surrounding}}
+\index{surrounding@{surrounding}!motion\+::\+C\+Path\+Generator@{motion\+::\+C\+Path\+Generator}}
+\subsubsection{\texorpdfstring{surrounding()}{surrounding()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{structmotion_1_1TMotionPoint}{T\+Motion\+Point}} $\ast$ $>$ C\+Path\+Generator\+::surrounding (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmotion_1_1TMotionPoint}{T\+Motion\+Point}} $\ast$}]{cur\+Point,  }\item[{bool}]{is\+Ignore\+Corner }\end{DoxyParamCaption})}
+
+Get surrounding points as a vector. 
+\begin{DoxyParams}{Parameters}
+{\em cur\+Point} & Current point. \\
+\hline
+{\em is\+Ignore\+Corner} & Is ignore corner obstacle. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector that contains all of the surrounding points of current point. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classmotion_1_1CPathGenerator_ae2ede33b5f3dc5d9477ce7f0adf0ad89}{can\+Reach}} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+motion/\+A\+Star\+Nav/\mbox{\hyperlink{CPathGenerator_8h}{C\+Path\+Generator.\+h}}\item 
+motion/\+A\+Star\+Nav/\mbox{\hyperlink{CPathGenerator_8cpp}{C\+Path\+Generator.\+cpp}}\end{DoxyCompactItemize}

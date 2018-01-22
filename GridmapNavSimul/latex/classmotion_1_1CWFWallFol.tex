@@ -1,0 +1,80 @@
+\hypertarget{classmotion_1_1CWFWallFol}{}\section{motion\+:\+:C\+W\+F\+Wall\+Fol Class Reference}
+\label{classmotion_1_1CWFWallFol}\index{motion\+::\+C\+W\+F\+Wall\+Fol@{motion\+::\+C\+W\+F\+Wall\+Fol}}
+
+
+{\ttfamily \#include $<$C\+W\+F\+Owned\+States.\+h$>$}
+
+Inheritance diagram for motion\+:\+:C\+W\+F\+Wall\+Fol\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classmotion_1_1CWFWallFol}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classmotion_1_1CWFWallFol_a4d0e6d05a5bc89c690f86559cbc55ecb}{enter}} (\mbox{\hyperlink{classmotion_1_1CMotionWallFollowing}{C\+Motion\+Wall\+Following}} $\ast$wf)
+\item 
+virtual void \mbox{\hyperlink{classmotion_1_1CWFWallFol_a089095864c2340123e6e5e5e4e08ef23}{execute}} (\mbox{\hyperlink{classmotion_1_1CMotionWallFollowing}{C\+Motion\+Wall\+Following}} $\ast$wf)
+\item 
+virtual void \mbox{\hyperlink{classmotion_1_1CWFWallFol_af90587d832a04a15d6c166e9b6a6afed}{exit}} (\mbox{\hyperlink{classmotion_1_1CMotionWallFollowing}{C\+Motion\+Wall\+Following}} $\ast$wf)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classmotion_1_1CWFWallFol}{C\+W\+F\+Wall\+Fol}} $\ast$ \mbox{\hyperlink{classmotion_1_1CWFWallFol_a56dd0cbd1e50c6e845a9c944e0b9a0a9}{get\+Instance}} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Wall Following State. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmotion_1_1CWFWallFol_a4d0e6d05a5bc89c690f86559cbc55ecb}\label{classmotion_1_1CWFWallFol_a4d0e6d05a5bc89c690f86559cbc55ecb}} 
+\index{motion\+::\+C\+W\+F\+Wall\+Fol@{motion\+::\+C\+W\+F\+Wall\+Fol}!enter@{enter}}
+\index{enter@{enter}!motion\+::\+C\+W\+F\+Wall\+Fol@{motion\+::\+C\+W\+F\+Wall\+Fol}}
+\subsubsection{\texorpdfstring{enter()}{enter()}}
+{\footnotesize\ttfamily void C\+W\+F\+Wall\+Fol\+::enter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmotion_1_1CMotionWallFollowing}{C\+Motion\+Wall\+Following}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This will execute when the state is entered. 
+
+Implements \mbox{\hyperlink{classmotion_1_1CState_a53d5fcfec223b58ccdd364a8430fd23c}{motion\+::\+C\+State$<$ C\+Motion\+Wall\+Following $>$}}.
+
+\mbox{\Hypertarget{classmotion_1_1CWFWallFol_a089095864c2340123e6e5e5e4e08ef23}\label{classmotion_1_1CWFWallFol_a089095864c2340123e6e5e5e4e08ef23}} 
+\index{motion\+::\+C\+W\+F\+Wall\+Fol@{motion\+::\+C\+W\+F\+Wall\+Fol}!execute@{execute}}
+\index{execute@{execute}!motion\+::\+C\+W\+F\+Wall\+Fol@{motion\+::\+C\+W\+F\+Wall\+Fol}}
+\subsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void C\+W\+F\+Wall\+Fol\+::execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmotion_1_1CMotionWallFollowing}{C\+Motion\+Wall\+Following}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This is the states normal update function. If ahead distance is small enough, then go obstacle avoidance. ~\newline
+~\newline
+~\newline
+ If side distance have big jump, then go ridge tracking. ~\newline
+~\newline
+ Wall following. ~\newline
+ todo w!=constant 
+
+Implements \mbox{\hyperlink{classmotion_1_1CState_a71dc72d345b15bf3b5b5bff596a71f33}{motion\+::\+C\+State$<$ C\+Motion\+Wall\+Following $>$}}.
+
+\mbox{\Hypertarget{classmotion_1_1CWFWallFol_af90587d832a04a15d6c166e9b6a6afed}\label{classmotion_1_1CWFWallFol_af90587d832a04a15d6c166e9b6a6afed}} 
+\index{motion\+::\+C\+W\+F\+Wall\+Fol@{motion\+::\+C\+W\+F\+Wall\+Fol}!exit@{exit}}
+\index{exit@{exit}!motion\+::\+C\+W\+F\+Wall\+Fol@{motion\+::\+C\+W\+F\+Wall\+Fol}}
+\subsubsection{\texorpdfstring{exit()}{exit()}}
+{\footnotesize\ttfamily void C\+W\+F\+Wall\+Fol\+::exit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmotion_1_1CMotionWallFollowing}{C\+Motion\+Wall\+Following}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This will execute when the state is exited. 
+
+Implements \mbox{\hyperlink{classmotion_1_1CState_a353db064c159d66b82bf257b35e7c016}{motion\+::\+C\+State$<$ C\+Motion\+Wall\+Following $>$}}.
+
+\mbox{\Hypertarget{classmotion_1_1CWFWallFol_a56dd0cbd1e50c6e845a9c944e0b9a0a9}\label{classmotion_1_1CWFWallFol_a56dd0cbd1e50c6e845a9c944e0b9a0a9}} 
+\index{motion\+::\+C\+W\+F\+Wall\+Fol@{motion\+::\+C\+W\+F\+Wall\+Fol}!get\+Instance@{get\+Instance}}
+\index{get\+Instance@{get\+Instance}!motion\+::\+C\+W\+F\+Wall\+Fol@{motion\+::\+C\+W\+F\+Wall\+Fol}}
+\subsubsection{\texorpdfstring{get\+Instance()}{getInstance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classmotion_1_1CWFWallFol}{C\+W\+F\+Wall\+Fol}} $\ast$ C\+W\+F\+Wall\+Fol\+::get\+Instance (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Wall Following Methods. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+motion/\mbox{\hyperlink{CWFOwnedStates_8h}{C\+W\+F\+Owned\+States.\+h}}\item 
+motion/\mbox{\hyperlink{CWFOwnedStates_8cpp}{C\+W\+F\+Owned\+States.\+cpp}}\end{DoxyCompactItemize}

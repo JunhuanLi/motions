@@ -1,3 +1,18 @@
+/**
+  * Copyright (C), 1996-2017, TOPBAND. Co., Ltd. \n
+  * All right reserved.
+  *
+  * @file CActionBase.h
+  * @author Junhuan Li       
+  * @version v1.0      
+  * @date 18/01/17
+  * @brief Action base class
+  * @note 
+  * 1. --- \n
+  * History: Create this file \n
+  * <author>       <time>   <version >      <desc> \n
+  * Junhuan Li    18/01/17     1.0         create file
+  */
 #ifndef CACTIONBASE_H_
 #define CACTIONBASE_H_
 
@@ -11,6 +26,10 @@
 
 namespace motion
 {
+   /** 
+    * Base class \n
+    *
+    */
     class CActionBase
     {
     public:
@@ -39,20 +58,23 @@ namespace motion
         void setPoseStored(bool flag) { sm_motion.poseStored = flag; }
         TMotionPose2D getStartPose(void) const { return sm_motion.startPose; }
         TMotionPose2D getCurPose(void) const { return sm_motion.curPose; }
-        double getTimeNeeded(void) { return sm_motion.timeNeeded; }
+        double getTimeNeeded(void) const { return sm_motion.timeNeeded; }
         void setMotionParams(TMotionParams param);
-        TMotionParams getMotionParams(void) { return sm_motion.motParams; }
-        void setPrePhi(double pp) { sm_motion.prePhi = pp; }
-        double getPrePhi(void) const { return sm_motion.prePhi; }
-        void setJumpCount(int jc) { sm_motion.jumpCount = jc; }
+        TMotionParams getMotionParams(void) const { return sm_motion.motParams; }
+//        void setPrePhi(double pp) { sm_motion.prePhi = pp; }
+//        double getPrePhi(void) const { return sm_motion.prePhi; }
+//        void setJumpCount(int jc) { sm_motion.jumpCount = jc; }
         int getJumpCount(void) const { return sm_motion.jumpCount; }
-        void setJumpDir(ERotateSide rs) { sm_motion.jumpDirection = rs; }
+//        void setJumpDir(ERotateSide rs) { sm_motion.jumpDirection = rs; }
         ERotateSide getJumpDir(void) const { return sm_motion.jumpDirection; }
-        void setPositive(ERotateSide rs) { sm_motion.positive = rs; }
-        ERotateSide getPositive(void) const { return sm_motion.positive; }
-        void setJumpCount(bool ps) { sm_motion.positiveSet = ps; }
-        bool getPositiveSet(void) const { return sm_motion.positiveSet; }
+//        void setPositive(ERotateSide rs) { sm_motion.positive = rs; }
+//        ERotateSide getPositive(void) const { return sm_motion.positive; }
+//        void setPositiveSet(bool ps) { sm_motion.positiveSet = ps; }
+//        bool getPositiveSet(void) const { return sm_motion.positiveSet; }
 
+        /** Call this method in updateCurPose to capture jumps -180->180 and -180->180
+         * @see updateCurPose
+         */
         void captureJump(void);
 
         /** Remove later.*/
